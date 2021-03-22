@@ -1,0 +1,49 @@
+/* 中间分类模块 */
+.grid {
+    height: 480px;
+}
+.grid-col1 {
+    width: 190px;
+    height: 100%;
+    font-size: 14px;
+    background-color: #6e6568;
+    color: #fff;
+}
+.grid-col2 {
+    width: 790px;
+    height: 100%;
+
+    margin-left: 10px;
+}
+.grid-col3 {
+    width: 190px;
+    height: 100%;
+    background-color:burlywood;
+}
+.grid-col1 a{
+    color: #fff;
+    font-size: 14px;
+    margin:  0 3px;
+}
+.grid-col1 ul{
+    padding: 19px 0;
+}
+.grid-col1 ul li{
+    padding-left: 18px;
+    height: 25px;
+    line-height: 19px;
+}
+.grid-col1 li a:hover{
+    color: #f10215;
+}
+/* banner部分 */
+.grid-col2-b div{
+    float: left;
+    margin-top: 10px;
+
+}
+.grid-col2-b div:last-child {
+    float: right;
+    margin-top: 10px;
+    
+}
