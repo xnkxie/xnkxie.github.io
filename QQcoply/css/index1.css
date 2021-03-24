@@ -1,0 +1,314 @@
+body {
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 1px 0 black, 0 0 5px black;
+}
+p {
+    padding:  0 0.5em;
+    margin: 0;
+}
+html,body,
+div,dl,
+dt,dd,
+ul,ol,
+li,h1,
+h2,h3,
+h4.h5,
+h6,pre,
+code,form,
+fieldset,legend,
+input,textarea,
+p,blockquote,
+th,td {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica,Tahoma,Arial,
+    "Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",
+    STXihei,STHeiti,Heiti,SimSun,sans-serif;
+    font-size: 100%;
+}
+html,
+body{
+    color:  #333;
+}
+body {
+    background: #fff;
+    overflow-x: hidden;
+}
+ul,ol,li{
+    list-style: none;
+}
+a:link,a:visited {
+    color: #333;
+    text-decoration: none;
+}
+a:hover {
+    color: #12b7f5;
+}
+img {
+    border: none;
+}
+em {
+    font-style: normal;
+}
+h1,h2,h3,h4,h5 {
+    font-weight: normal;
+}
+.clearfloat::after {
+    content: '.';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+}
+.clearfloat {
+    zoom:  1;
+}
+
+/*头文件css*/
+.max1600 {
+    max-width: 1600px;
+    min-width: 1007px;
+    margin: 0 auto;
+}
+.topbar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    z-index: 900;
+}
+.toppic {
+    max-width: 1170px;
+    min-width: 980px;
+    width: 80%;
+    height: 75px;
+    margin:  0 auto;
+}
+.toppic a:link,
+.toppic a:visited {
+    color: #333;
+}
+.topicfixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fff;
+    border-bottom: 1px solid #f1f1f1;
+}
+.topicfixed a:link,
+.topicfixed a:visited {
+    color: #333;
+}
+.topside {
+    float: left;
+    width: 59%;
+}
+.logoLink {
+    float: left;
+    display: block;
+    width: 106px;
+    height:  0px;
+    overflow: hidden;
+    padding-top: 76px;
+    font-size: 0;
+    background: transparent url(../images/imlogo_b.png)no-repeat left 15px;
+}
+.topNav {
+    float: left;
+    width: 450px;
+    padding-left: 18px;
+}
+.topNav li {
+    float: left;
+    margin-left: 20px;
+}
+.topNav li a {
+    float: left;
+    padding: 0 20px;
+    line-height: 75px;
+    font-size: 1.125em;
+}
+.topNav li a:hover {
+    background: #12b7f5;
+}
+.topNav li.current a{
+    background: #12b7f5;
+}
+.topicfixed {
+    height: 75px;
+}
+.topicfixed .logoLink {
+    background-image: url(../images/imlogo_b.png);
+}
+.topicfixed li.current a {
+    background: none;
+}
+.topicfixed .topNav li a:hover {
+    background: none;
+}
+.topTool {
+    float: right;
+    width: 320px;
+    font-size: 0.875em;
+}
+.topTool a.barzc {
+    float: left;
+    width: 96px;
+    height: 0;
+    overflow: hidden;
+    padding: 39px 0 0 0;
+    margin: 18px 0 0 0 ;
+    background: transparent url(../images/icons.png) no-repeat 0 -244px;
+    text-align: center;
+    line-height: 39px;
+    color: #fff;
+}
+.topTool a.barzc:hover,
+.topicfixed a.barzc:hover {
+    background: transparent url(../images/icons.png) no-repeat 0 -284px;
+    color: #fff;
+}
+.topTool ul{
+    float: right;
+    height: 40px;
+    padding-top: 6px;
+}
+.topTool li {
+    float: right;
+    margin-left: 30px;
+    position: relative;
+    line-height: 40px;
+}
+.topTool .login {
+    height: 43px;
+    line-height: 43px;
+}
+.topTool .login span {
+    padding:  0 18px;
+    color: #cecece;
+}
+.flashData {
+    float: right;
+    line-height: 17px;
+    text-align: right;
+    letter-spacing: 0.04em;
+}
+.flashData a:hover {
+    text-decoration: underline;
+}
+.topicfixed a.barzc {
+    display: inline;
+}
+#loginInfo img {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+    vertical-align: middle;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.loginpenel {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 120px;
+    height: 85px;
+    z-index: 100;
+}
+.loginpenel .trg {
+    position: absolute;
+    right: 8px;
+    top: 4px;
+    width: 10px;
+    height: 7px;
+    background: transparent url(../images/trg.png) no-repeat 0 0;
+    font-size: 0;
+}
+.logindrop {
+    width: 120px;
+    height: 75px;
+    margin-top:  10px;
+    background: #fff;
+}
+.nick {
+    width: 100px;
+    height: 39px;
+    overflow: hidden;
+    margin:  0 auto;
+    white-space: nowrap;
+    line-height: 39px;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+.lgout {
+    width: 100%;
+    border-top: 1px solid #d7d7d7;
+    line-height: 35px;
+    text-align: center;
+}
+.lgout a:link,
+.lgout a:visited {
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
