@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    1.8外边距合并
+        使用margin定义块元素的垂直外边距时，可能会出现外边距的合并，
+
+        1，相邻块元素垂直外边距的合并
+            当上下相邻的两个块元素(兄弟关系)相遇时，如果上面的元素有下外边距 margin-bottom,下面的元素有上外边距 margin-top，则他们之间的垂直间距不是 margin-bottom 与 margin- top之和，取两个值中的较大者这种现象称为相邻块元素垂直外边距的合并。
+            解决方案：
+            尽量只给一个盒子添加margin值 
+        
+        -->
+    <style>
+.qw,
+.qe {
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+}
+.qw {
+    margin-bottom: 100px;
+}
+.qe {
+    margin-top: 200px;
+}
+    </style>
+</head>
+<body>
+    <div class="qw"></div>
+    <div class="qe"></div>
+</body>
+</html>

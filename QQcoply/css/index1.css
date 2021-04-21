@@ -1,11 +1,13 @@
 body {
-    font-size: 20px;
-    color: white;
+    font-size: 20px; /*字体大小*/
+    color: white; /*颜色*/
     text-shadow: 0 1px 0 black, 0 0 5px black;
-}
+        /*设置或检索对象中文本的文字是否有阴影及模糊效果*/
+}   
+
 p {
-    padding:  0 0.5em;
-    margin: 0;
+    padding:  0 0.5em; /*检索或设置对象四边的内部边距*/
+    margin: 0;/*检索或设置对象四边的外延边距*/
 }
 html,body,
 div,dl,
@@ -20,62 +22,69 @@ fieldset,legend,
 input,textarea,
 p,blockquote,
 th,td {
-    margin: 0;
-    padding: 0;
+    margin: 0;/*检索或设置对象四边的外延边距*/
+    padding: 0;/*检索或设置对象四边的内部边距*/
     font-family: Helvetica,Tahoma,Arial,
     "Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",
     STXihei,STHeiti,Heiti,SimSun,sans-serif;
-    font-size: 100%;
+    /*设置或检索用于对象中文本的字体名称序列*/
+    font-size: 100%;/*字体大小*/
 }
 html,
 body{
-    color:  #333;
+    color:  #333;/*颜色*/
 }
 body {
-    background: #fff;
-    overflow-x: hidden;
-}
+    background: #fff;/*背景*/
+    overflow-x: hidden;/*检索或设置当对象的内容超过其指定宽度时如何管理内容
+                    hidden： 将超出对象宽度的内容进行裁剪，将不出现滚动条                 */
+
+                }
 ul,ol,li{
-    list-style: none;
+    list-style: none;/*复合属性。设置列表项目相关内容*/
 }
 a:link,a:visited {
-    color: #333;
-    text-decoration: none;
+    color: #333;/*颜色*/
+    text-decoration: none;/*复合属性。检索或设置对象中的文本的装饰*/
 }
 a:hover {
-    color: #12b7f5;
+    color: #12b7f5;/*颜色*/
 }
 img {
-    border: none;
+    border: none;/*复合属性。设置对象边框的特性*/
 }
 em {
-    font-style: normal;
+    font-style: normal;/*设置或检索用于对象中文本的字体名称序列*/
 }
 h1,h2,h3,h4,h5 {
-    font-weight: normal;
+    font-weight: normal;/*设置或检索对象中的文本字体的粗细
+                    normal： 正常的字体。相当于number为400 */
 }
 .clearfloat::after {
-    content: '.';
-    display: block;
-    overflow: hidden;
-    visibility: hidden;
-    font-size: 0;
-    line-height: 0;
-    width: 0;
-    height: 0;
+    content: '.'; /*用来和:after及:before伪元素一起使用，在对象前或后显示内容*/
+    display: block;/*设置或检索对象是否及如何显示 block:指定对象为块元素。*/
+    overflow: hidden;/*检索或设置当对象的内容超过其指定高度及宽度时如何管理内容
+                    hidden： 将超出对象尺寸的内容进行裁剪，将不出现滚动条*/
+    visibility: hidden;/*设置或检索是否显示对象 hidden：设置对象隐藏 */
+    font-size: 0; /*字体大小*/
+    line-height: 0;/*检索或设置对象的行高。即字体最底端与字体内部顶端之间的距离*/
+    width: 0;/*检索或设置对象的宽度*/
+    height: 0;/*检索或设置对象的高度*/
 }
 .clearfloat {
-    zoom:  1;
+    zoom:  1; /*设置或检索对象的缩放比例*/
 }
 
 /*头文件css*/
+/*
 .max1600 {
     max-width: 1600px;
     min-width: 1007px;
     margin: 0 auto;
 }
+*/
 .topbar {
-    position: absolute;
+    position: absolute; 
     left: 0;
     top: 0;
     width: 100%;

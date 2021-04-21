@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- 
+圆角边框(重点)
+    在css3中，新增加了圆角边框样式，这样我们的盒子就可以变成圆角了。
+
+    border-radius 属性用于设置元素的外边框圆角。
+    语法格式：
+        border-radius: length;
+    radius 半径(圆的半径)原理 
+    分开写：
+    border-top-left-radius
+    border-top-right-radius
+    border-bottom-right-radius
+    border-bottom-left-radius
+
+
+    
+    
+    
+    
+    -->
+    <style>
+        /* div {
+            width: 270px;
+            height: 200px;
+            background-color: pink;
+
+            圆角边框
+            border-radius: 10px;
+        } */
+        .yuanxing {
+            width: 200px;
+            height: 200px;
+            background-color: salmon;
+            /* border-radius: 100px; */
+
+            border-radius: 50%;
+        }
+        .juxing {
+            width: 300px;
+            height: 100px;
+            background-color:slateblue;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div></div> -->
+    <div class="yuanxing"></div>
+    <div class="juxing"></div>
+</body>
+</html>

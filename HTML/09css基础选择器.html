@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 选择器分类：
+        选择器分为基础选择器和复合选择器两个大类，我们先讲解一下基础选择器
+        1：基础选择器是由单个选择器组成的
+        2：基础选择器又包括：标签选择器，类选择器，id选择器和通配符选择器
+        作用：
+    一：标签选择器可以把某一个类标签全部选择出来，比如所有的<div></div>标签和所有的<span></span>标签。
+        优点：
+        能快速的为页面中同类型的标签统一设置样式。
+        缺点：
+        不能设计差异化样式，只能选择全部的当前标签。
+    二：如果想要差异化选择不同的标签，单独选一个或者某几个标签，可以使用类选择器。
+        语法：
+        .类名(red) {
+            属性1(color)： 属性值1(red)；
+        } 结构需要用class属性来调用class类的意思
+        <div class="red">红色</div> 
+        多类名：
+        使用方式：
+        <div class="red font20">亚索</div>
+        1：在标签class属性中写多个类名。
+        2：多个类名中间必须用空格分开。
+        这些标签都可以调用这个公共的类，然后再调用自己独有的类。
+
+    三：id选择器
+        id选择器可以为标有特定的id的HTML元素指定特定的样式。
+        HTML元素以id属性来设置id选择器，css中的id选择器以 # 来定义。
+        语法：
+        #id名 {
+            属性1：属性值1；
+        }
+        注意：id属性只能在每个HTML文档中出现一次.
+
+    四：通配符选择器
+        在css中，通配符选择器使用 "*" 定义，它表示选取页面中所有元素(标签)。
+        语法：
+        * {
+            属性1：属性值1；
+        }
+        
+    
+    
+    
+    
+    
+    
+    -->
+    <style>
+        .red {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .green {
+            width: 100px;
+            height: 100px;
+            background-color: lime;
+        }
+
+    </style>
+</head>
+<body>
+        <div class="red"></div>
+        <div class="green"></div>
+        <div class="red"></div>
+
+</body>
+</html>

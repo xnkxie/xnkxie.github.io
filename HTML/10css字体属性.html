@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- 字体属性：
+        一：css使用font-family属性定义文本的字体属性。
+            p { font-family:"微软雅黑";}
+            div { font-family:Arial,"Microsoft Yahei","微软雅黑";}
+            /*'Times New Roman',Times,serif,Helvetica,sans-serif*/
+            最常用的几个字体：
+            body {'Microsoft Yahei',tahoma,arial,'Hiragino Sans GB';}
+
+        二：css使用font-size属性定义字体大小。
+            标题标签比较特殊，需要单独指定文字大小。
+
+        三：css使用font-weight属性设置文本字体的粗细。
+            bold-粗体 
+            bolder：特粗体
+            lighter:细体
+            normal：正常的字体-相当于number中的400.
+        
+        四：css使用font-style属性设置文本的风格。
+            属性值-作用
+            normal-默认值，浏览器会显示标准的字体样式 font-style：normal;
+            italic-浏览器会显示斜体样式。
+        注意：
+            平时我们很少给文字加斜体，反而要给斜体标签(em,i)改为不倾斜字体。
+        
+        复合属性：简写的方式
+        font:font-style font-weight font-size/line-height font-family;
+        font: italic 700 16px 'Microsoft yahei';
+        
+        不需要的属性可以省略(取默认值) ，但必须保留font-size和font-family属性，否则font属性将不起作用。
+
+
+
+
+
+        
+    -->
+    
+    <style>
+        .bold {
+            /* 实际开发中，我们通常使用数字，表示加粗或者变细。 */
+            font-weight: 700;
+            /* font-weight: bold; */
+        }
+    </style>
+</head>
+<body>
+    
+    <p class="bold">文本字体</p>
+</body>
+</html>

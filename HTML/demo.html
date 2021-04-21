@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 标签选择器  默认样式*/
+        body {
+            /* 外边距 */
+            margin: 0;
+
+        }
+        .rolelist {
+            width: 1150px;
+            height: 516px;
+             /* 背景颜色:颜色值 */
+            background-color: #ff0000; 
+            margin: 100px auto;
+        
+        }
+        .list {
+            
+            /* 浮动(横排)left(从左到右) */
+            float: left;
+            /* 转换的意思，块元素独占一行 */
+            display: block;
+            width: 220px;
+            height: 100%;
+            /* 百分比是基于父元素计算的 */
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="rolelist">
+        <!-- 超链接标签 -->
+        <a class="list" href="#" title="漫画屋">1</a>
+        <a class="list" href="#" title="漫画屋">2</a>
+        <a class="list" href="#" title="漫画屋">3</a>
+        <a class="list" href="#" title="漫画屋">4</a>
+        <a class="list" href="#" title="漫画屋">5</a>
+
+    </div>
+</body>
+</html>
+<!-- 元素的性质
+    块元素->默认设置宽高能够生效->div -->

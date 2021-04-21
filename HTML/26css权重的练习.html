@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .nav {
+            color: red;
+        }
+        li {
+            /* 最后权重选择的是粉红色因为父元素权重高但是子元素继承为0 */
+            color: pink;
+        }
+        .nav .pink {
+            /* 权重为 10 + 10 = 20 */
+            color: red;
+            font-weight: 700;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="pink">人身四大悲</li>
+        <li>家里没宽带</li>
+        <li>网速不够快</li>
+        <li>手机没流量</li>
+        <li>学校没WiFi</li>
+    </ul>
+</body>
+</html>

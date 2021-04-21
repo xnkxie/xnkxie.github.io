@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css的三大特性
+            css有3个非常重要的三个特性：层叠性，继承性，优先级。
+        一：层叠性
+            相同选择器给设置相同的样式，此时一个样式就会覆盖(层叠)另一个冲突的样式，层叠性主要解决样式冲突的问题。
+            层叠性原则：
+                样式冲突，遵循的原则是就近原则，哪个样式离结构近，就执行哪个样式。
+                样式不冲突，不会层叠。
+        二：继承性
+            css中的继承，子标签会继承父标签的某些样式，如文本颜色和子号，简单的理解就是子承父业。
+
+            子元素可以继承父元素的样式(text-,font-,line--这些元素开头的可以继承，以及color属性。)
+
+            行高的继承性
+                body {
+                    font:12px/1.5;
+                }
+                1:行高可以跟单位也可以不跟单位
+                2：如果子元素没有设置行高
+                ，则会继父元素的行高为1.5
+                3：此时子元素的行高是：当前子元素的文本大小 * 1.5
+                4：body行高 1.5 这样写法最大的优势就是里面子元素可以根据自己文字大小自动调整行高
+
+    
+    
+            -->
+    <style>
+        /* div {
+            background-color: teal;
+        }
+        div {
+            background-color: turquoise;
+        } */
+        /* div {
+            background-color: violet;
+            font-size: 16px;
+        } */
+        body {
+            color: darkorange;
+            /* font: 12px/24px; */
+            font: 12px/1.5;
+        }
+        div {
+            /* 子元素继了父元素 body 的行高 1.5  */
+
+            /* body里面的1.5就是当前元素文字大小 font-size 的1.5倍 所以当前div 的行高就是21像素。 */
+
+            font-size: 14px;
+        }
+        p {
+            /* 16 * 1.5 = 24 */
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div>伟大时代</div>
+    <p>戴维斯定位</p>
+    <!-- li木有手动指定文字大小，则会继承父亲的 文字大小 body 12px 所有 li 的文字大小为12px 当前 li 的行高就是 12 * 1.5 = 18 -->
+    <ul>
+        <li>指定的文字大小</li>
+    </ul>
+    <!-- <div>我顶我顶我顶</div> -->
+    <!-- <div>
+        <p>伟大伟大伟大</p>
+    </div> -->
+</body>
+</html>

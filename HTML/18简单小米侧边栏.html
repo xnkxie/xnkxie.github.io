@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- 小技巧：
+            单行文字垂直居中的代码
+            解决方案：
+                让文字的行高等于盒子的高度，就可以让文字在当前盒子内垂直居中。
+                height： 等于 line-height:;
+                原理：
+                        上空隙
+                行高{   文字本身高度
+                        下空隙
+
+                简单理解：行高的上空隙和下空隙把文字挤到中间了，是如果行高小于盒子高度，文字会偏上，如果行高大于盒子高度，则文字偏下
+            -->
+    <style> 
+
+        a {
+             /* 1：把a链接转换为块级元素 */
+            display: block;
+            width: 200px;
+            height: 56px;
+            background-color: #a09e9e;
+            /* 取消链接下划线 */
+            text-decoration: none;
+            /* 文字大小 */
+            font-size: 14px;
+            color: #fff;
+            /* 首行缩进2个字 */
+            /* text-indent: 2em; */
+            padding-left: 30px;
+            line-height: 56px;
+        }
+        /* 鼠标经过改变颜色 */
+        a:hover {
+            background-color: #ff6700;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="#">手机 电话卡</a>
+    <a href="#">电视 盒子</a>
+    <a href="#">笔记本 显示器</a>
+    <a href="#">家电 插线板</a>
+    <a href="#">出行 穿戴</a>
+    <a href="#">智能 路由器</a>
+    <a href="#">电源 配件</a>
+    <a href="#">健康 儿童</a>
+    <a href="#">耳机 音响</a>
+    <a href="#">生活 箱包</a>
+</body>
+</html>

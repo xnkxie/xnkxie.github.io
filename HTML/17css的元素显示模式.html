@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- 了解元素的显示模式可以更好的让我们布局页面
+        一：什么是元素显示模式
+            作用：网页的标签非常多，在不同地方会用到不同类型的标签，了解他们的特点可以更好的布局我们的网页。
+            元素显示模式就是元素(标签) 以什么方式进行显示，比如<div></div>自己占一行，比如一行可以放多个<span></span>
+            HTML元素一般分为块元素和行内元素二种类型
+            1：块元素
+                块级元素的特点：
+                    1：比较霸道，自己独占一行。
+                    2：高度，宽度，外边距以及内边距都可以控制。
+                    3：宽度默认是容器(父级宽度)的100%。
+                    4：是一个容器及盒子，里面可以放行内或者块级元素。
+                注意：
+                    文字类的元素内不能使用块级元素。
+            2：行内元素
+                <span>标签是最典型行内元素
+                    行内元素的特点：
+                        1：相邻行内元素在一行上，一行可以显示多个。
+                        2：高，宽直接设置是无效的。
+                        3：默认宽度就是它本身内容的宽度。
+                        4：行内元素只能容纳文本或其他行内元素。
+                注意：
+                    链接里面不能放链接。
+                    特殊情况链接<a>里面可以放块级元素，但是给<a>转换一下块级模式最安全。
+            3:行内块元素
+                    在行内元素中有几个特殊的标签-<img/>,<input/>,<td>,它们同时具有块元素和行内元素的特点。
+                        行内块元素的特点：
+                            1：和相邻行内元素(行内块) 在一行上，但是他们之间会有空白缝隙。一行可以显示多个(行内元素特点)。
+                            2：默认宽度就是它本身内容的宽度(行内元素特点)。
+                            3：高度，行高，外边距以及内边距都可以控制(块级元素特点)。
+        二：元素显示模式转换
+                特殊情况下，我们需要元素模式转换，简单理解；一个模式的元素需要另外一种模式的特性，
+                比如想要增加链接<a>的触发范围。
+                    转换为块级元素：display:block;
+                    转换为行内元素：display:inline;
+                    转换为行内块：display:inline-block;
+        
+        
+        
+        -->
+    <style>
+        a {
+            /*取消链接下划线*/
+            text-decoration: none;
+            /*把行内元素 a 转换为块级元素*/
+            display:block;
+            height: 120px;
+            width: 150px;
+            background-color: blanchedalmond;
+        }
+        div {
+            /*把块级元素 div 转换为行内元素*/
+            display: inline;
+            height: 200px;
+            background-color: olive;
+        }
+        span {
+            /*把行内元素 span 转换为行内块元素*/
+            display: inline-block;
+            width: 190px;
+            height: 150px;
+            background-color: orchid;
+
+        }
+        input {
+            width: 280px;
+            height: 29px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">我是a链接</a>
+    <a href="#">我也是a链接</a>
+    <div>比较霸道，自己独占一行</div>瑟瑟发抖
+    <span>里面的位置怎么改变</span><strong>不知道</strong>
+    <input type="text">
+    <input type="text">
+</body>
+</html>

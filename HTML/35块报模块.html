@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 去掉li前面的项目符号(小圆点)
+        语法格式：
+            list-style：none; -->
+    <style>
+        li {
+            list-style: none;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 250px;
+            height: 165px;
+            /* background-color: skyblue; */
+            border: 1px solid #ccc;
+            /* 页面中央 */
+            margin: 100px auto;
+        }
+        .box h3 {
+            height: 32px;
+            border-bottom: 1px dotted #ccc;
+            font-size: 14px;
+            /* 取消加粗 */
+            font-weight: 400;
+            /* 行高等于盒子的高度 实现水平居中 */
+            line-height: 32px;
+            /* 用padding属性，因为我们的h3属性没有设置宽度的值，所以可以用padding左右属性 */
+            padding-left: 15px;
+        }
+        a {
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+            
+        }
+        a:hover{
+            color:royalblue;
+            /* background-color:orchid; */
+        }
+        .box ul li a:hover{
+            text-decoration: underline;
+        }
+        .box ul li {
+            height: 23px;
+            line-height: 23px;
+            padding-left: 20px;
+        }
+        .box ul {
+            padding-top: 7px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>品优购快报</h3>
+        <ul>
+            <li><a href="#">【特惠】边框耳机单位5折</a></li>
+            <li><a href="#">【特惠】母亲节，健康送好礼</a></li>
+            <li><a href="#">【特惠】9.9洗100张照片</a></li>
+            <li><a href="#">【特惠】爆款耳机5 折起</a></li>
+            <li><a href="#">【特惠】边框耳机单位5折</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- css背景 
+            背景平铺
+            如果需要在HTML页面上对背景图像进行平铺，可以使用background-repeat属性
+                background-repeat:repeat(平铺) | no-repeat(不平铺) | repeat-x(沿着x轴平铺) | repeat-y(沿着y轴平铺) 、
+            
+                页面元素既可以添加背景颜色也可以添加背景图片，只不过背景图片会压住背景颜色
+            
+            背景图片位置
+                利用background-position 属性可以改变图片在背景中的位置。
+                语法格式
+                    background-position： x y;
+                    参数代表的意思是：x坐标和y坐标 可以使用方位名词或者精确单位。
+                    
+                参数值 说明
+                
+                length - 百分数|由浮点数和单位标识符组成的长度值。
+                position - top (上) | center (中) | botton (下) | left (左边) | center (中) |right (右边) 方位名词。
+
+            1：参数是方位名词
+                如果指定的二个值都是方位名词，则二个值前后顺序无关，比如left top 和 top left 效果一样。
+
+                如果只指定了一个方位名词，另一个值省略，则第二个值默认居中对齐。
+
+            2：参数是精确单位
+                如果参数值是精确坐标，那么第一个肯定是x坐标，第二个一定是y坐标。
+            3:参数是混合单位
+                如果指定的二个值是精确单位和方位名词混合使用，则第一个值是x坐标，第二个值是y坐标。
+            4：背景图像固定(背景附着)
+                background-attachment属性设置背景图像是否固定或者随着页面的其余部分滚动。
+
+                background-attachment后期可以制作视差滚动的效果。
+
+                语法格式：
+                    background-attachment: scroll | fixed 
+
+                    参数 - 作用
+                    scroll - 背景图像是随对象内容滚动
+
+                    fixed - 背景图像固定。
+            5：背景的复合写法
+                为了简化背景属性的代码，我们可以将这些属性合并简写在同一个属性background中，从而节约代码量。
+
+                当使用简写属性时，没有特定的书写顺序，一般习惯约定顺序为：
+                background：背景颜色 背景图片位置 背景平铺 背景图像滚动 背景图片位置。
+
+            6:背景颜色的半透明
+                css3为我们提供了背景颜色半透明的效果。
+            background：rgba(0,0,0,0.3);
+                最后一个参数是alpha透明度
+                ，取值范围在0~1之间。
+            
+            我们习惯把0.3的0省略掉，.3
+            注意：
+                背景半透明是指盒子半透明，盒子里面的内容不受影响。    
+                -->
+
+    <style>
+        /* div {
+            width: 390px;
+            height: 309px;
+            background-color: blue;
+            background-image: url(/HTML/images/logo.png);
+            背景图像不平铺
+            background-repeat: no-repeat;
+            背景图片位置利用background-position属性在上居中使用方位名词
+            background-position: center top;
+
+            背景图片位置利用background-position属性在右居中使用方位名词
+            background-position: right center;
+
+            使用精确单位
+            background-position: 20px 50px;
+
+            参数是混合单位 x坐标是20px y坐标是center
+            background-position: 20px center;
+
+            水平是居中对齐，垂直是20px
+            background-position: center 20px;
+
+        } */
+        /* body { */
+            /* background-image: url(/mi/image/677281104659467.png);
+            图片不平铺
+            background-repeat: no-repeat;
+            background-position: center 40px;
+            背景图像固定默认值是背景图像是随对象内容滚动 下面改变其为固定的样式
+            background-attachment: fixed; */
+
+            /* 合并简写属性 */
+            /* background: black url(/mi/image/677281104659467.png) no-repeat fixed center top;
+            
+            color: cornsilk; */
+            /* } */
+            div {
+                width: 290px;
+                height: 290px;
+                background: rgba(0,0,0, 0.3);
+            }
+    </style>
+</head>
+<body>
+    <div></div>
+    <!-- <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p>
+    <p>我是历史文化，万物生伟大</p> -->
+
+</body>
+</html>

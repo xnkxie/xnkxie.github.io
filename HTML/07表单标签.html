@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 表单标签-表单的组成
+        在HTML中，一个完整的表单通常由表单域，表单控件(也称为表单元素)和提示信息3个部分构成。
+1-表单域：是一个包含表单元素的区域。
+        在HTML标签中，<form></form>标签用于定义表单域，以实现用户信息的收集和传递
+        <form></form>会把它范围的表单元素信息提交给服务器。
+        表单域的语法格式：
+        <form action="url地址" method="提交方式" name="表单域名称">各种表单元素控件</form>
+        常用属性：
+        action:属性值-url地址 作用-用于指定接收并处理表单数据的服务器程序的url地址。
+        method:属性值-get/post 作用-用于设置表单数据的提交方式，其取值为get或post。
+        name:属性值-名称 作用-用于指定表单的名称，以区分同一个页面中的多个表单域。
+    
+2-表单控件(表单元素)
+        input输入表单元素——select下拉表单元素——textarea文本域元素
+    一：<input>标签用于收集用户信息，在<input>标签中，包含一个type属性，根据不同的type属性值，
+        输入字段拥有很多种形式(可以是文本字段，复选框，掩码后的文本控件，单选按钮，按钮等)。
+        语法格式：
+        <input type="属性值" />
+        <input/>标签为单标签 —— type属性设置不同的属性值用来指定不同的控件类型。
+    type属性的属性值及其描述如下：(属性值-描述)
+        1：button-定义可点击按钮(多数情况下，用于通过JavaScript启动脚本)
+        2：checkbox-定义复选框。
+        3：file-定义输入字段和 "浏览"按钮，供文件上传。
+        4：hidden-定义隐藏的输入字段。
+        5：image-定义图像形式的提交按钮。
+        6：password-定义密码字段，该字段中的字段被掩码。
+        7：radio-定义单选按钮。
+        8：reset-定义重复按钮，重复按钮会清除表单中的所有数据。
+        9：submit-定义提交按钮，提交按钮会把表单数据发送到服务器
+        10：text-定义单行的输入字段，用户可在其中输入文本，默认宽度为20个字符。
+    <input>表单元素
+        除type属性外，<input>标签还有其它很多属性，其属性如下：
+        属性-属性值-描述
+    1：name-由用户自定义-定义input元素的名称。
+    2：value-由用户自定义-规定input元素的值。
+    3：checked-checked-规定此input元素首次加载时应当被选中。
+    4：maxlength-正整数-规定输入字段中的字符的最大长度。
+        name和value是每个表单元素都有的属性值，主要是给后台人员使用。
+        name表单元素的名字，要求单选按钮和复选按钮要有相同的name值。
+        单选按钮和复选按钮可以设置checked属性，当页面打开的时候就可以默认选中这个按钮。
+    <label>标签
+        <label>标签为input元素定义标注(标签)
+            <label>标签用于绑定一个表单元素，当点击<label>标签内的文本时，浏览器就会自动将焦点(光标)转到或者选择对应的表单元素上，用来增加用户体验。
+        语法：
+        <label for="sex">男</label>
+        <input type="radio" name="sex" id="sex"/>
+    核心：<label>标签的for属性应当与相关元素的id属性相同
+    
+    二：<select>表单元素
+        使用场景：在页面中，如果有多个选择让用户选择，并且想要节约页面空间时，我们可以使用<select>标签控件定义下拉列表。
+        语法格式：
+        <select>
+            <option>选项1</option> 选项的意思
+            <option>选项2</option>
+            <option>选项3</option>
+        </select>
+        1:<select>中至少包含一对<option>
+        2:在<option>中定义selected="selected" 时，当前项即为默认选中项。
+
+    三：<textarea>表单标签
+        使用场景：当用户输入内容较多的情况下，我们就不能使用文本框表单了，此时我们可以用<textarea>标签。
+        在表单元素中，<textarea>标签是用于定义多行文本输入的控件。
+        使用多行文本输入控件，可以输入更多的文字，该控件常用于留言板，评论。
+        语法格式：
+        <textarea rows="3" cols="20">
+            文本内容
+        </textarea>
+        1:通过<textarea>标签可以轻松地创建多行文本输入框
+        2：cols="每行中的字符数"，rows="显示的行数"，我们在实际开发中不会使用，都是用css来改变大小。
+
+
+
+
+
+
+
+
+
+
+
+    -->
+
+<form action="demo.php" method="GET" name="name1">
+    <!-- 10：text-定义单行的输入字段，用户可在其中输入文本，默认宽度为20个字符。 -->
+    用户名<input type="text" name="username" value="请输入" maxlength="7"> <br>
+
+    <!-- 6：password-定义密码字段，该字段中的字段被掩码。 -->
+    密码 <input type="password" name="pwd" > <br>
+
+    <!-- 7：radio-定义单选按钮。这里性别单选按钮必须有相同的名字name，才可以实现多选1 -->
+    性别: 男<input type="radio" name="sex" value="男" checked="checked"> 女<input type="radio" name="sex" value="女"> <br>
+
+    <!-- 2：checkbox-定义复选框。 -->
+    爱号: 吃饭<input type="checkbox" name="hobby" value="吃饭" > 睡觉<input type="checkbox" name="hobby" value="睡觉" checked="checked"><br>
+    
+    <!-- 9：submit-定义提交按钮，提交按钮会把表单数据form里面的表单元素发送到服务器 -->
+    <input type="submit" value="免费注册">
+
+    <!-- 8：reset-定义重复按钮，重复按钮会清除表单中的所有数据。 -->
+    <input type="reset" value="重新选择">
+
+    <!-- 1：button-定义可点击按钮(多数情况下，用于通过JavaScript启动脚本) -->
+    <input type="button" value="短信验证码"><br>
+
+    <!-- 3：file-定义输入字段和 "浏览"按钮，供文件上传。 -->
+    上传头像:<input type="file"><br>
+
+
+    籍贯：
+    <select>
+        <option>北京</option>
+        <option>安徽</option>
+        <option selected="selected">江西</option>
+        <option>江苏</option>
+    </select><br>
+
+
+
+    <label for="text">用户名:</label>
+    <input type="text" id="text"><br>
+
+    <input type="radio" id="nan" name="sex">
+    <label for="nan">男</label>
+
+    <input type="radio" id="nv" name="sex">
+    <label for="nv">女</label>
+
+今日反馈:
+<textarea cols="55" rows="5">6反馈留言
+</textarea>
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

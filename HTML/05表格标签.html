@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            height: 249px;
+        }
+        th {
+            height: 37px;
+        }
+
+        table,
+        td,
+        th{
+            border:  1px solid blueviolet;
+            /* 合并相邻的单元格 */
+            border-collapse: collapse;
+        }
+        table,
+        a {
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 表格的主要作用
+        表格主要用于显示，展示数据，因为它可以让数据展示的非常的规整，
+        表格不是用来布局页面的，而是用来展示数据的。
+    表格的基本语法：
+        1：<table></table>是用于定义表格的标签
+        2：<tr></tr>标签用于定义表格中的行，必须嵌套在<table></table>标签中
+        3：<td></td>用于定义表格中的单元格，必须嵌套在<tr></tr>标签中
+    表头单元格标签：
+        一般表头单元格位于表格的第一行或第一列，表头单元格里面的文本内容加粗居中显示
+        <th>标签表示HTML表格的表头部分
+            <th>项目</th>
+    
+    表格属性：(这些属性要写到表格标签table里面去)
+            属性名：align(对齐的意思)。属性值：left(默认值左边对齐) center(居中显示) right(右侧显示)。
+            属性名：border(边框的意思).默认值为 ""，表示没有边框
+            属性名：cellpadding。属性值：像素值。规定单元边沿与其内容之间的空白，默认为1像素。
+            属性名：cellspacing。属性值：像素值。规定单元格之间的空白，默认为2像素。
+            width:宽
+            height:高
+
+    表格结构标签：
+            1：<thead></thead>:用于定义表格的头部。<thead>内部必须拥有<tr>标签。一般是位于第一行。
+            2：<tbody></tbody>:用于定义表格的主体，主要用于放数据主体。
+            3：以上标签都是放在<table></table>标签中的。
+
+    合并单元格：
+            方式：
+                1：跨行合并：rowspqn="合并单元格的个数"
+                2：跨列合并：colspan="合并单元格的个数"
+    目标单元格：(写合并代码)
+            跨行：最上侧单元格为目标单元格，写合并代码。
+            跨列：最左侧单元格为目标单元格，写合并代码。
+
+
+
+
+
+
+    -->
+
+<table align="center" border="1" cellpadding="0" cellspacing="0">
+    <thead>
+    <tr>
+        <th>排名</th>
+        <th>关键词</th>
+        <th>趋势</th>
+        <th>今日热搜</th>
+        <th>最近七日</th>
+        <th>相关链接</th>
+    </tr>
+</thead>
+<tbody>
+    <!-- <tr>
+        <td></td>
+        <td colspan="5"></td>
+        
+    </tr>
+    <tr>
+        <td></td>
+        <td rowspan="3"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    
+    
+    -->
+    
+    
+    
+    <tr>
+        <td>1</td>
+        <td>鬼吹灯</td>
+        <td></td> 
+        <td>345</td>
+        <td>123</td>
+        <td><a href="#">贴吧</a> <a href="#">图片</a> </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>盗墓笔记</td>
+        <td></td>
+        <td>124</td>
+        <td>675432</td>
+        <td><a href="#">贴吧</a> <a href="#">图片</a></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>西游记</td>
+        <td></td>
+        <td>212</td>
+        <td>7654</td>
+        <td><a href="#">贴吧</a> <a href="#">图片</a></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>东游记</td>
+        <td></td>
+        <td>23</td>
+        <td>75645</td> 
+        <td><a href="#">贴吧</a> <a href="#">图片</a></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>山东省</td>
+        <td></td>
+        <td>121</td>
+        <td>7676</td> 
+        <td><a href="#">贴吧</a> <a href="#">图片</a></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>水浒传</td>
+        <td></td>
+        <td>576576</td>
+        <td>1231421</td> 
+        <td><a href="#">贴吧</a> <a href="#">图片</a></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>三国演义</td>
+        <td></td>
+        <td>234</td>
+        <td>7686</td> 
+        <td><a href="#">贴吧</a> <a href="#">图片</a></td>
+    </tr>
+</tbody>
+</table>
+    
+</body>
+</html>

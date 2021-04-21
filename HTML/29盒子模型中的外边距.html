@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    1.7外边距(margin)
+        margin属性用于设置外边距，即控制盒子和盒子之间的距离
+        属性 - 作用
+        margin-left - 左外边距
+        margin-right - 右外边距
+        margin-top - 上外边距
+        margin-bottom - 下外边距
+
+        margin简写的方式表达的意义跟padding完全一致。
+    
+    外边距典型应用
+        外边距可以让块级盒子水平居中，但是必须满足两个条件：
+
+        1：盒子必须指定了宽度(width)。
+
+        2：盒子左右的外边距都设置为auto。
+
+        注意：
+            以上方法是让块级元素水平居中，行内元素或者行内块元素水平居中给其父元素添加 text-align：center 即可。
+
+    -->
+    <style>
+        /* div {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+        .one {
+            添加下外边距20像素
+            margin-bottom: 20px;
+        } */
+        .nav {
+            width: 900px;
+            height: 300px;
+            background-color:black;
+            /* 让盒子水平居中 */
+            margin: 0 auto;
+            text-align: center;
+            color: blanchedalmond;
+
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div class="one">1</div>
+    <div>2</div> -->
+        <div class="nav">
+            <span>行内元素在父元素中添加text-align:center;即可</span>
+        </div>
+</body>
+</html>

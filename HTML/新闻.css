@@ -1,0 +1,42 @@
+body {
+    font: 16px/28px 'Microsoft YaHei';
+}
+h1 {
+    /* 水平对齐 */
+    text-align: center;
+    /* 文字不加粗 */
+    font-weight: normal;
+}
+.gray {
+    /* 水平对齐 */
+    text-align: center;
+    /* 颜色 */
+    color: #888888;
+    font-size: 12px;
+
+}
+a {
+    /* 取消下划线 */
+    text-decoration: none;
+}
+.search {
+    color: #666666;
+    width: 170px;
+}
+.btn {
+    /* 文字加粗 */
+    font-weight: 700;
+}
+p {
+    /* 首行缩进 */
+    text-indent: 2em;
+}
+.pic {
+    /* 图片对齐，是要让它的父亲p标签添加水平居中的代码 */
+    /* 居中对齐 */
+    text-align: center;
+}
+.footer {
+    color: #888;
+    font-size: 12px;
+}
