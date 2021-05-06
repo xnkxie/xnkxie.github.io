@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- 
+盒子阴影
+    我们可以使用 box-shadow 属性为盒子添加阴影。
+    语法：
+        box-shadow: h-shadow v-shadow blur spread color inset;
+
+        值 - 描述
+        h-shadow - 必须，水平阴影的位置，允许负值。
+
+        v-shadow - 必须，垂直阴影的位置，允许为负值。
+
+        blur - 可选，模糊距离。
+
+        spread - 可选，阴影的尺寸。
+
+        color - 可选，阴影的颜色
+
+        inset - 可选。将外部阴影(outset)改为内部阴影。
+
+        注意：
+            1：默认的是外阴影(outset),但是不可以写这个单词，否则导致阴影无效。
+            
+            2：盒子阴影不足空间，不会影响其他盒子排列。
+-->
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color:springgreen;
+            margin: 100px auto;
+            
+        }
+        div:hover {
+            box-shadow: 10px 10px 10px -4px
+            /*半透明色*/rgba(0, 0,0,.3);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

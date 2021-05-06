@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    1.6浮动元素经常和标准流父级搭配使用
+        为了约束浮动元素位置，我们网页布局一般采取的策略是：
+            1：先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置，符合网页布局第一准则。
+        
+        
+        
+        
+        
+        -->
+
+
+    <style>
+        /* .box {
+            width: 1200px;
+            height: 460px;
+            background-color: cadetblue;
+            块级元素居中因为有宽度高度，就不用padding 了，使用margin就可以了。
+            margin: 0 auto;
+        }
+        .left {
+            float: left;
+            width: 230px;
+            height: 460px;
+            background-color: cornflowerblue;
+
+        }
+        .right {
+            float: right;
+            width: 970px;
+            height: 460px;
+            background-color: darkmagenta;
+        } */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            /* 清除小圆点 */
+            list-style: none;
+        }
+        .box {
+            width: 1226px;
+            height: 285px;
+            background-color: darkorange;
+            margin: 0 auto;
+        }
+        .box li {
+            width: 296px;
+            height: 285px;
+            background-color: rgb(49, 15, 245);
+            float: left;
+            margin-right: 14px;
+        }
+        .box .last {
+            margin-right:  0 ;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box">
+        <div class="left">z</div>
+        <div class="right">y</div>
+    </div> -->
+
+    <ul class="box">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="last">4</li>
+    </ul>
+</body>
+</html>
