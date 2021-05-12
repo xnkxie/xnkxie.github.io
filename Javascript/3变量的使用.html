@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- 
+    1.4变量语法扩展
+        1。更新变量
+            一个变量被重新赋值后，它原有的值会被覆盖，变量值将以最后一次赋的值为准
+
+                var age =18;
+                age = 81; //最后的结果就是81因为18被覆盖掉了
+        3.声明变量的特殊情况
+            情况--说明--结果
+            
+            var age;
+            console.log(age) -- 
+            只声明 不赋值 -- undefined(未定义的)
+
+            console.log(age) -- 不声明，不赋值 直接使用 -- 报错
+
+            age = 10;
+            console.log(age); -- 不声明 只赋值 -- 10
+-->
+
+</head>
+<body>
+    <script>
+        // 1.用户输入姓名,存储到一个myName的变量里面
+        var myName = prompt('请输入您的名字')
+        //2，输出这个用户名
+        alert(myName)
+        
+
+        //更新变量
+        var xie = 18;
+        console.log(xie);
+        xie = 100;
+        console.log(xie);
+        //声明多个变量
+        var xx = 18,
+            addres = '文档',
+            gz = 20000;            
+
+        var temp
+        var apple1 = '红色'
+        var apple2 = '绿色'
+        temp = apple1
+        apple1 = apple2
+        apple2 = temp
+    </script>
+    
+</body>
+</html>
