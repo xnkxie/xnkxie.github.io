@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        2.5布尔值   Boolean
+            布尔类型有二个值，true 和 false，其中true表示真(对),而false表示假(错)
+
+            布尔值和数字类型相加的时候，true的值为1，false的值为0，
+
+            console.log(true + 1); //2
+            console.log(false + 1); //1
+
+        2.6 
+
+        3.1获取检测变量的数据类型
+            typeof可用来获取检测变量的数据类型
+            
+    -->
+    
+    <script>
+        //如果一个变量声明未赋值，就是undefined 未定义数据类型
+        var str;
+        console.log(str);
+        var variable = undefined;
+        console.log(variable + 'xxx'); //undefinedxxx
+        console.log(variable + 1); //NaN undefined 和数字相加 最后的结果是NaN
+        // null 空值
+        var space = null;
+        console.log(space + 'xxx'); //nullxxx
+        console.log(space + 1); //1
+
+        var num = 10
+        console.log(typeof num) //number
+        
+        var str1 = '伟大的'
+        console.log(typeof str1) //String
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

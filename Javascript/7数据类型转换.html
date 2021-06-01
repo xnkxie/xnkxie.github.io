@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    4.1 什么是数据类型转换
+        使用表单，prompt获取过来的数据默认是字符串类型的，此时就不能直接简单的进行加法运算，而需要转换变量的数据类型，通俗来说，就是把一种数据类型的变量转换成另一种数据类型。 
+        我们通常会实现3种方式的转换：
+            1：转换为字符串类型
+            2：转换为数字型
+            3：转换为布尔型
+    4.2转换为字符串
+                            方式 -- 说明  -- 案例
+        toString() -- 转成为字符串 -- var num=1; alert(num.toString());
+        
+        String()强制转换 -- 转成字符串 -- var num = 1; alert(String(num));
+
+        加号拼接字符串 -- 和字符串拼接的结果都是字符串 -- var num = 1； alert(num+ "我是字符串")；
+
+
+    4.3转换为数字型(重点)
+                        方式 -- 说明 -- 案例
+        parselnt(string)函数 -- 将String 类型转成为整数数值型 -- parselnt('78')
+
+        parsrFloat(string)函数 -- 将string类型转成浮点数数值型 -- parseFloat('78.21')
+
+        Number()强制转换函数 -- 将string类型转换为数值型 -- Number('12')
+
+        js隐式转换(- * /) -- 利用算术运算隐式转换为数值型 -- '12' - 0
+
+
+    4.4转换为布尔型
+                        方式 -- 说明 -- 案例
+            Boolean()函数 -- 其他类型转成布尔值 -- Boolean('true');
+
+            代表空，否定的值会被转换为false ，如 ",0,NaN,null,undefined
+            其余值都会转换为true
+            console.log(Boolean('')) //false
+            console.log(Boolean(0)) //false
+            console.log(Boolean(NaN)) //false
+            console.log(Boolean(null)) //false
+            console.log(Boolean(undefined)) //false
+            console.log(Boolean('性别')) //true
+            console.log(Boolean(12)) //true
+            
+    -->
+    <script>
+        //1.把数字型转换为字符串型 toString()
+        var num = 10
+        var str = num.toString()
+        console.log(str)
+        console.log(typeof str)
+        //2.利用String(变量)
+        console.log(String(num))
+        //3.利用 + 拼接字符串的方法实现转换效果
+        console.log(num + '')
+
+        var age = prompt('请输入您的年龄')
+        //1.parseInt(变量) 可以把 字符型的转换为数字型 得到的是整数
+        console.log(parseInt(age))
+        console.log(parseInt('3.1415')) //3 取整
+        console.log(parseInt('120px')) //120 会去掉px
+        console.log(parseInt('rem120px')) //NaN
+        //2.parseFloat(变量) 可以把 字符型的转换为数字型 得到的是小数 浮点数
+        console.log(parseFloat('3.14'))
+        //3.利用    Number(变量)
+        var stt = '111'
+        console.log(Number(stt))
+        console.log(Number('12333'))
+        //4.利用了算术运算 - * / 隐式转换
+        console.log('12' - 0); //12
+        console.log('123' - '122'); //1
+        console.log('123' * 1 );
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
