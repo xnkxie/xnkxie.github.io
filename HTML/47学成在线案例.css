@@ -244,6 +244,7 @@ a {
     width: 1225px;
 }
 .box-bd ul li {
+    position: relative;
     float: left;
     width: 228px;
     height: 270px;
@@ -253,7 +254,12 @@ a {
     /* position: relative; */
     /* transition: all 0.2s; */
 }
-.box-bd ul li img {
+.box-bd ul li em {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+}
+.box-bd ul li > img {
     width: 100%;
 }
 /* .box-bd ul li:hover { */

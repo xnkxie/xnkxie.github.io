@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1.1为什么需要定位
+            1.浮动可以让多个块级盒子一行没有缝隙排列显示，经常用于横向排列盒子。
+            2.定位则是可以让盒子自由的在某个盒子内移到位置或者固定屏幕中的某个位置，并且可以压住其他盒子。
+        
+        1.2定位组成
+            定位：将盒子定在某一个位置，所以定位也是在摆放盒子，按照定位的方式移到盒子。
+                定位 = 定位模式 + 边偏移。
+            定位模式用于指定一个元素在文档中的定位方式。边偏移则决定了该元素的最终位置。
+
+            1.定位模式
+                定位模式决定元素的定位方式。它通过css的position属性来设置，其值可以分为四个：
+                    值 -- 语义
+                static--   静态定义
+                relative-- 相对定位
+                absolute-- 绝对定位
+                fixed--    固定定位
+
+            2.边偏移
+                边偏移就是定位的盒子移动到最终位置。有top，bottom，left和right 4个属性。
+                    边偏移属性 -- 示例 -- 描述
+                top -- top：80px -- 顶端偏移量，定义元素相对于其父元素上边线的距离。
+                bottom -- bottom：80px -- 底部偏移量，定义元素相对于其父元素下边线的距离。
+                left -- left：80px -- 左侧偏移量，定义元素相对于其父元素左边线的距离。
+                right -- right：80px -- 右侧偏移量，定义元素相对于其父元素右边线的距离。
+
+        1.4相对定位relative(重要)
+            相对定位是元素在移到位置的时候，是相对于它原来的位置来说的(自恋型)
+                语法：
+                    选择器 {position：relative;}
+                    相对定位的特点：(务必记住)
+                    1.它是相对于自己原来的位置来移到的(移到位置的时候参照点是自己原来的位置)。
+                    2.原来在标准流的位置继续占有，后面的盒子仍然以标准流的方式对待它。(不脱标，继续保留原来位置)
+        1.5 绝对定位absolute(重要)
+            绝对定位是元素在移到位置的时候，是相对于它祖先元素来说的(拼爹型)。
+                语法：
+                    选择器 {position：absolute;}
+            绝对定位的特点：(务必记住)
+                1.如果没有祖先元素或者祖先元素没有定位，则以浏览器为准定位(Document文档)
+                2.如果父元素有定位(相对，绝对，固定定位)则以最近一级的有定位父元素为参考点移到位置。
+                3.绝对定位不再占有原先的位置。(脱标)
+
+        1.6子绝父相的由来
+            常用的一句话的意思是：子级是绝对定位的话，父级要用相对定位
+                1.子级绝对定位，不会占有位置，可以放到父盒子里面的任何一个地方，不会影响其他的兄弟盒子
+
+                2.父盒子需要加定位限制子盒子在父盒子内显示。
+
+                3.父盒子布局时，需要占有位置，因此父元素只能是相对定位。
+        这就是子绝父相的由来，所以相对定位经常用来作为绝对定位的父元素。
+        总计：因为父元素需要占有位置，因此是相对定位，子盒子不需要占有位置，则是绝对定位。
+        
+        1.7固定定位fixed(重要)
+                
+
+-->
+
+
+    <style>
+        /* 相对定位 */
+        /* .box1 {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            
+            width: 200px;
+            height: 200px;
+            background-color:blanchedalmond;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        } */
+
+        
+        /* 绝对定位 */
+        .box1 {
+            /* 父元素添加定位 */
+            position: relative;
+            width: 500px;
+            height: 600px;
+            background-color: blueviolet;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+    </div>
+
+
+
+    </div>
+</body>
+</html>
