@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid blue;
+            margin: 120px auto;
+            position: relative;
+        }
+        #box img{
+            width: 300px;
+            height: 300px;
+        }
+        #box h2{
+            width: 100%;
+            height: 40px;
+            background: rgba(255,0,0, 0.5);
+            color: #ffffff;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            font-weight: normal;
+            font-size: 18px;
+        }
+        #box p{
+                width: 100%;
+                height: 40px;
+                position: absolute;
+                bottom: 10px;
+                text-align: center;
+                line-height: 30px;
+            }
+
+        #box span{
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            background: orchid;
+            color: #ffffff;
+        }
+        #box span.active {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>狗狗1</h2>
+        <img src="/A/imgs/01.jpeg" alt="">
+        <p>
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+        </p>
+    </div>
+    <script>
+        //找到span标签中的每一个点击改变颜色
+        var span = document.getElementsByTagName("span");
+        var h2  = document.getElementsByTagName("h2")[0];
+        var img = document.getElementsByTagName("img")[0];
+        var span_cd = span.length;
+        // for(var i = 0;i <span_cd;i++){
+        //     //设置一下自定义索引，目的为了能够让其他元素找到对应的下标
+        //     span[i].index = i;
+        //     span[i].onclick = function(){
+        //         //先把所有的span样式先清除掉
+        //         for(var j = 0; j<span_cd;j++){
+        //             span[j].className = ""
+        //         }
+        //         // console.log(this);
+        //         //点到哪一个span标签，给具体的元素添加样式
+        //         //给点击span标签添加class样式
+        //         this.className = "active"
+        //         h2.innerText = "狗狗"+(this.index+1)
+        //         img.src = "imgs/"+(this.index+1)+".jpeg";
+        //     }
+        // }
+
+
+        //思路二：将每一个需要变化的值一次性的存储到数组中，根据数组的下标来找到对应的值
+        var arr = [
+            {
+                "title":'狗狗1',
+                "imgsrc":"/A/imgs/01.jpeg"
+            },
+            {
+                "title":'狗狗2',
+                "imgsrc": "/A/imgs/02.jpeg"
+            },
+            {
+                "title": '狗狗3',
+                "imgsrc": "/A/imgs/03.jpeg"
+            },
+            {
+                "title": '狗狗4',
+                "imgsrc": "/A/imgs/04.jpeg"
+            }
+        ]
+        for(var i = 0;i<span_cd;i++){
+            span[i].index = i;
+            span[i].onclick = function(){
+                for(var j = 0;j<span_cd; j++){
+                    span[j].className = ""
+                }
+                //当前点击的span变化颜色
+                this.className = "active"
+                // console.log(arr[this.index]);
+                h2.innerText = arr[this.index].title
+                img.src = arr[this.index].imgsrc
+            }
+        }
+            
+
+
+
+
+
+    </script>
+</body>
+</html>

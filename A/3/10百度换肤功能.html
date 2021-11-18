@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+            list-style: none;
+        }
+        body{
+            background: url("imgs/001.jpeg") no-repeat center top;
+        }
+        ul {
+            width: 540px;
+            overflow: hidden;
+            background: #ffffff;
+            margin: 120px auto;
+            height: 90px;
+            padding: 3px;
+        }
+        ul li {
+            float: left;
+            margin: 0 2px;
+        }
+        img {
+            width: 130px;
+            height: 90px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><img src="imgs/01.jpeg" ></li>
+        <li><img src="imgs/02.jpeg" ></li>
+        <li><img src="imgs/03.jpeg" ></li>
+        <li><img src="imgs/04.jpeg" ></li>
+    </ul>
+    <script>
+        //获取元素
+        var li = document.getElementsByTagName("ul")[0].getElementsByTagName("li");
+        //给每一个li添加点击事件
+        for(var i =0;i<li.length;i++){
+            li[i].onclick = function () {
+                //在每一个li中查找下面的img
+                //在点击事件中找到发生事件的元素
+                //this: 在事件函数中表示的含义就是当前发生事件的元素
+                var url = this.getElementsByTagName("img")[0].src
+                //要干什么事
+                document.body.style.background = "url('"+url+"') no-repeat center top";
+            }
+        }
+
+
+
+
+        
+    </script>
+</body>
+</html>

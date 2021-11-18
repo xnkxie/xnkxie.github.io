@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- 
+        要求：在页面加载的时候，数字就开始自动(间隔多长时间之后)的减1，一直减到0，就不需要减了
+        思路：
+            调用周期性的定时器
+            1，模拟一个变量，变量的值就是标签中的值，利用这个变量的自减，每次所变化的值重新赋值给标签
+    -->
+    倒计时: <span>10</span>
+
+    <script>
+        var span = document.getElementsByTagName("span")[0];
+        var n = 10;
+        var timer = setInterval(function(){
+            n--;
+            //判断限制
+            if(n<=0){
+                n=0;
+            }
+            span.innerText = n;
+            if(n == 0){
+                clearInterval(timer)
+            }
+        },950)
+    </script>
+</body>
+</html>

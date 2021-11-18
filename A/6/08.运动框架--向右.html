@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 140px;
+            height: 140px;
+            background: teal;
+            position: absolute; /*第一步：给元素设置绝对定位，相当于整体页面*/
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        元素的初始位置
+    -->
+    <button>
+        div运动向右
+    </button>
+    <div></div>
+    <script src="/A/6/01style.js"></script>
+    <script>
+        var btn =document.getElementsByTagName("button")[0];
+        var div = document.getElementsByTagName("div")[0];
+        btn.onclick = function(){
+            var timer = setInterval(function(){
+                 //元素的初始位置，元素的非行间样式
+                //调用函数
+                var left = parseInt(getStyle(div,"left")) +10//parseint转换  起始 + 步长
+                //设置值之前进行判断
+                if(left>800){
+                    left =800;
+                }
+                //设置元素的left值等于每次运动的新值
+                div.style.left = left + "px";
+                //判断如果元素已经达到了目标点，就停止定时器
+                if(left == 800){
+                    clearInterval(timer);
+                }
+            },100)
+        }
+    </script>
+</body>
+</html>

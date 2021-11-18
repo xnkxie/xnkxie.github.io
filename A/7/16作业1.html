@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>倒计时</h2>
+        <div id="box1">
+            <input type="text" id="year" class="input" value="2021">年
+            <input type="text" id="month" class="input" value="11">月
+            <input type="text" id="date" class="input" value="15">日
+        </div>
+        <button>开始</button>
+        <div id="box2">
+            现在距离- <span class="time1">0000</span>-还剩:
+        </div>
+        <div id="box3">
+            <span class="timer1">00</span>天<span class="timer1">00</span>小时<span class="timer1">00</span>分<span class="timer1">00</span>秒
+        </div>
+
+    </div>
+
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        var year = document.getElementById("year");
+        var month = document.getElementById("month");
+        var date = document.getElementById("date");
+        var span = document.getElementsByTagName("span");
+        var timer = null;
+        //给按钮添加点击事件
+        btn.onclick = function(){
+            //获取三个文本框的值
+            var year_value = year.value;
+            var month_value = month.value;
+            var date_value = date.value;
+
+            showTime();
+            clearInterval(timer);
+            timer = setInterval(showTime,1000);
+            function showTime(){
+                  //创建当前系统时间
+            var now = new Date();
+            //组装目标时间
+            var target = new Date(year_value,month_value-1,date_value)
+            //算倒计时
+            var miao = parseInt((target - now) / 1000);
+
+            //换算单位
+            var day = parseInt(miao / 86400);
+            var hour = parseInt(miao % 86400 / 3600);
+            var mis = parseInt(miao % 3600 / 60)
+            var sec = parseInt(miao%60);
+
+            span[0].innerText = year_value+'年'+month_value+'月'+date_value+'日'
+            span[1].innerText = day;
+            span[2].innerText = hour;
+            span[3].innerText = mis;
+            span[4].innerText = sec;
+        }
+            }
+    
+    </script>
+</body>
+</html>

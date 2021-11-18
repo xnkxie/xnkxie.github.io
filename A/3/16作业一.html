@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            outline: none;   
+            /*去掉浏览器中对于文本框的选中颜色  */
+        }
+        #box{
+            width: 540px;
+            height: auto;
+            overflow: hidden;
+            margin: 120px auto;
+            position: relative;
+        }
+        h1{
+            font-weight: normal;
+            font-size: 20px;
+            text-align: center;
+            color: #333333;
+        }
+        input {
+            border: none;
+        }
+        #box input {
+            border-bottom: 1px solid rgb(253, 246, 254);
+            width: 100%;
+            height: 50px;
+            font-size: 16px;
+        }
+        #box img {
+            width: 24px;
+            position: absolute;
+            top: 105px;
+            right: 10px;
+            cursor: pointer;
+        }
+        button {
+            width: 100%;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 15px;
+            background: rgb(254, 180, 183);
+            color: #ffffff;
+            font-size: 18px;
+            letter-spacing: 10px;/* 字符和字符之间的间距 | 文字和文字之间的间距 */
+            cursor: pointer;
+        }
+        button:hover{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p><input type="text" placeholder="用户名/邮箱/手机号"></p>
+        <p>
+            <img src="img1.png" alt="">
+            <input type="password" placeholder="请输入密码">
+        </p>
+        <p><button>登录</button></p>
+    </div>
+    <script>
+        //获取图片
+        var img = document.getElementsByTagName("img")[0];
+        var input = document.getElementsByTagName("input")[1];
+        var tag = true;
+        //给图片添加点击事件
+        img.onclick = function(){
+            // img.src = "img2.png"
+            if(tag){
+                img.src = "img2.png"
+                input.type = "text";
+                tag = false;
+            }else{
+                img.src = "img1.png"
+                input.type = "password";
+                tag = true;
+            }
+        }
+    </script>
+</body>
+</html>

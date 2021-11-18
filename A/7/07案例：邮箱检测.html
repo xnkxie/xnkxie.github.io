@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    邮箱：<input type="text">
+    <button>检测</button>
+
+    <script>
+        //获取元素
+        var input = document.getElementsByTagName("input")[0];
+        var btn = document.getElementsByTagName("button")[0];
+        //2给按钮添加点击事件，获取文本框的值
+        btn.onclick = function(){
+            var value = input.value;
+            //非空检测
+            if(value==""){
+                alert('请输入邮箱')
+            }else{
+                //有没有@字符@
+                if(value.indexOf("@")==-1){
+                    alert('请输入@字符')
+                }else{
+                    //@字符串出现的位置，不能是首尾
+                    //找下标
+                    if(value.charAt(0)=='@' || value.charAt(value.length -1)=='@'){
+                        alert('@字符不能出现在首位和末尾')
+                    }else{
+                        //结尾必须是.com
+                        if(value.substring(value.length-4)!='.com' || value.substring(value.length-5) =='@.com')
+                        {
+                            alert('结尾必须是.com或者@与.com不能连用')
+                        }else{
+                            alert('验证通过')
+                        }
+                    }
+                }
+
+            }
+        }
+    </script>
+</body>
+</html>

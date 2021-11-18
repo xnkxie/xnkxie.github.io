@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            widows: 400px;
+            border: 1px solid #999999;
+            border-collapse: collapse;
+            margin: 120px auto;
+        }
+        table tr td {
+            border: 1px solid #999999;
+            height: 45px;
+            text-align: center;
+        }
+        thead {
+            background: rgb(255, 137, 0);
+        }
+        thead tr td {
+            height: 45px;
+            text-align: center;
+        }
+        tbody {
+            background: rgb(250, 249, 249);
+        }
+        tbody tr:hover{
+            background: rgb(233, 232, 232);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td><input type="checkbox" id="all"></td>
+                <td>项目</td>
+                <td>现象</td>
+                <td>形式</td>
+            </tr>
+        </thead>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+    </table>
+    <script>
+        //获取元素
+        var all = document.getElementById("all")
+        var input = document.getElementsByTagName("tbody")[0].getElementsByTagName("input")
+        //点击事件
+        all.onclick = function() {
+            for(var i = 0; i<input.length;i++) {
+                input[i].checked = all.checked
+            }
+        }
+        //在页面中针对这些复选框进行每一个的点击效果
+            for(var i =0;i< input.length;i++){
+                input[i].onclick = function(){
+                    //在点击事件的时候想要知道其余的元素情况，那么还得需要在进行一圈循环
+                    // console.log(this);//点击事件元素
+                    // all.checked = this.checked;
+
+                    var tag = true;
+                    //在点击每一个复选框的时候，需要判断其余的复选框是否全部选择了
+                    for(var j=0;j<input.length;j++){
+                        if(!input[j].checked){
+                            //改变这个标识
+                            tag = false;
+                            break;
+                        }
+                    }
+                    all.checked = tag;
+                }
+            }
+    </script>
+</body>
+</html>

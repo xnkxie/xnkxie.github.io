@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            width: 300px;
+            height: 40px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    
+    <div>
+        <p class="p1">1</p>
+        <p class="p2">2</p>
+        <p class="p3">3</p>
+    </div>
+
+    <ul></ul>
+
+    <script>
+        //有一个空的元素，利用for循环来写人标签里
+        //需要获取到这个ul标签
+        var ul = document.getElementsByTagName("ul")[0];
+        //添加5个li，里面的值就是<li>1</li>......<li>5</li>
+        for(var i = 0;i<5;i++){
+            ul.innerHTML += "<li>"+i+1+"</li>";
+
+        }
+
+
+
+        //要求 想要获取最后一组div中的所有p标签中的类名
+        var div = document.getElementsByTagName("div")[6];
+        var p = div.getElementsByClassName('p')
+        for(var i =0; i< p.length;i++) {
+            // console.log(p[i].className);
+            //修改第二个p标签的class，名称我active
+            if(i==1) {
+                p[i].className = "active";
+            }
+        }
+
+
+
+
+
+
+
+    var div = document.getElementsByTagName("div");
+    //利用for循环遍历页面中所有的标签
+    for(var i = 0; i <div.length; i++) {
+        //输出每一个div
+        // console.log(div[i]);
+        //输出元素值
+        console.log(div[i].innerText);
+        //只需要div3中的
+        if (i==2) {
+            console.log(div[i].innerText);
+        }
+    }
+
+
+
+
+
+
+
+
+        // //求1-100之间所有偶数和奇数的和
+        // var even = 0;
+        // var odd = 0;
+        // for (var i = 0; i<=100; i++) {
+        //     if (i % 2 == 0) {
+        //         even += i;
+        //         //第一圈: i =2 even = 0+2 = 2
+        //         //第二圈：i =4 even = 4+2 = 6
+        //         //       i =6 even = 6+6 = 12
+        //         //       i =8 even = 12+8 = 20
+        //         //       i =10 even = 20+10 = 30
+        //     }else {
+        //         odd += i;
+        //     }
+        // }
+        // console.log('偶数和' + even);
+        // console.log('奇数和' + odd);
+    </script>
+</body>
+</html>

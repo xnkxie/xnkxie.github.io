@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: purple;
+        }
+        span {
+            width: 200px;
+            height: 30px;
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <!--( <div style="width:200px"></div> -->
+    <div></div>
+    <span>
+
+    </span>
+    <button>我的娃</button>
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        var div = document.getElementsByTagName("div")[0];
+        var span = document.getElementsByTagName("span")[0];
+        btn.onclick = function(){
+            /*
+                获取的是具体哪一个元素对象 obj
+                获取的哪一个元素对象下的哪一个属性 attr
+             */
+            function getstyle(obj,attr){
+                if(window.getComputedStyle){
+                    //主流浏览器
+                    // console.log(getComputedStyle(div).width);
+                    console.log(getComputedStyle(obj)[attr]);
+                }else{
+                    // console.log(div.currentStyle).width;
+                    // console.log(obj.currentStyle.attr);
+                    console.log(obj.currentStyle[attr]);
+                }
+            }
+            //调用函数
+            getstyle(div,"width");
+            getstyle(div,"height");
+
+            //根据不同的实际参数获取到的是不同的效果
+
+            //获取span标签中的width和height
+            getstyle(span,"width");
+            getstyle(span,"height");
+
+        }
+    </script>
+</body>
+</html>

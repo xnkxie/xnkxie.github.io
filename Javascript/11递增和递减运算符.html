@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1.前置递增运算符
+            ++num前置递增。就是自加一，类似num = num + 1，但是 ++num 写起来更简单
+            使用口诀：先自加，后返回值
+        2.后置递增运算符
+            后置自增 口诀：先返回原值， 后自加1
+
+    -->
+</head>
+<body>
+    <script>
+        var num = 1;
+        ++num;
+        console.log(num);
+
+
+        var p = 10;
+        console.log(++p + 10);//21
+
+        var t = 11;
+        console.log(t++ + 10);//21
+        console.log(t);//12
+
+        var a = 10;
+        ++a; //11
+        var b = ++a + 2; //12 + 2 = 14
+        console.log(b);//14
+
+        var c = 10;
+        c++;//c++ 11 c=11
+        var d = c++ + 2; //c++ = 11 c = 12
+        console.log(d);//13
+
+        var e = 10;
+        var f = e++ + ++e; //e++ = 10, e = 11, e = 12, ++e = 12.
+        console.log(f);//22
+    </script>
+    
+</body>
+</html>

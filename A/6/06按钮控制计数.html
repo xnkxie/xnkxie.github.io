@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        要求：
+        思路：
+            1，当点击第一个按钮的时候，需要启动周期性定时器，利用一个变量，让其+1，每次变化的值重新写回标签
+    -->
+    <button>计数开始</button>
+    <button>计数停止</button>
+    <span>1</span>
+    <script>
+        var btn = document.getElementsByTagName("button");
+        var span = document.getElementsByTagName("span")[0];
+        //变量的初始值定义在点击事件的外面
+        var n = 1;
+        var stime = null;
+        btn[0].onclick = function(){
+            //如果有事件来操作定时器的话，一定要放置频繁的操作定时器，使得定时器的值一直加1
+            //先清除一下之前所运行的定时器
+            clearInterval(stime);
+            
+            var stime = setInterval(function(){
+                n++;
+                span.innerText = n;
+            },950)
+        }
+        btn[1].onclick = function(){
+            clearInterval(stime);
+        }
+    </script>
+</body>
+</html>

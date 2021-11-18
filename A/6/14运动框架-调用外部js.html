@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 140px;
+            height: 140px;
+            background: teal;
+            position: absolute; /*第一步：给元素设置绝对定位，相当于整体页面*/
+            top: 30px;
+            /* left:  800px; */
+        }
+    </style>
+</head>
+<body>
+    <button>div运动向左</button>
+    <button>div运动向右</button>
+    <button>div运动向下</button>
+    <button>div运动向上</button>
+    <div>
+
+    </div>
+    <!-- 左右 -->
+    <div></div>  
+    <!-- 上下 -->
+<script src="/A/6/01style.js"></script>
+<script src="/A/6/common/move.js"></script>
+<script>
+    var btn = document.getElementsByTagName("button");
+    var div = document.getElementsByTagName("div");
+    var timer = null;
+    btn[0].onclick = function(){
+        move(div[0],"left",20,8)
+    }
+    btn[1].onclick = function(){
+        move(div[0],"left",15,1400)
+
+    }
+    btn[2].onclick = function(){
+        move(div[1],"top",10,630)
+    }
+    btn[3].onclick = function(){
+        move(div[1],"top",10,30)
+    }
+    /*
+        obj：运动的哪一个元素
+        attr：运动元素的哪一个属性
+        step：运动元素的步长
+        target：运动元素的目标值
+    */
+
+        
+</script>
+
+
+</body>
+</html>

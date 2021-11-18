@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+
+        }
+        #box {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: 120px auto;
+            display: none;
+        }
+        span {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        要求：页面一加载的时候，图片显示，当点击关闭x的时候，图片消失，然后在间隔一会又显示
+        思路：
+            1，页面本身布局有一个img图片,然后用div包围起来
+            2，当点击span标签的时候，让图片隐藏 display： none
+    -->
+    <div id="box">
+        <img src="/A/imgs/03.jpeg" alt="">
+        <span>x</span>
+
+    </div>
+    <script>
+        //获取span标签
+        var span = document.getElementsByTagName("span")[0];
+        //获取box盒子
+        var box = document.getElementById("box");
+        
+        
+        //让这个盒子在页面加载2s之后显示
+        setTimeout(function(){
+            box.style.display = "block";
+        },850)
+        span.onclick = function(){
+            box.style.display = "none";
+
+            //重新启动定时器
+            setTimeout(function(){
+                box.style.display = "block"
+            },850)
+        }
+        //----------一次性定时器更适用于广告弹窗---------------    
+
+
+
+
+
+        // span.onclick = function(){
+        //     box.style.display = "none";
+        //     //之后启动定时器
+        //     //采用周期性定时器
+        //     setInterval(function(){
+        //         //让box盒子显示出来
+        //         box.style.display = "block"
+        //     },800)
+        // }
+    </script>
+</body>
+</html>

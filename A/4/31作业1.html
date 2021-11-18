@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+
+
+        #dots ul li.active{
+            background: darkmagenta;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="header">1/4</div>
+        <div id="left"><</div>
+        <div id="right">></div>
+        <img src="/A/imgs/01.jpeg" alt="">
+        <div id="dots">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div id="bottom">美女1</div>
+    </div>
+    <script>
+         //5,将需要变换的内容存入数组
+        var arr = [
+                {
+                    "title":"1/4",
+                    "imgsrc":"/A/imgs/01.jpeg",
+                    "bottom":"美女1"
+                },
+                {
+                    "title":"2/4",
+                    "imgsrc":"/A/imgs/02.jpeg",
+                    "bottom":"美女2"
+                },
+                {
+                    "title":"3/4",
+                    "imgsrc":"/A/imgs/03.jpeg",
+                    "bottom":"美女3"
+                },
+                {
+                    "title":"4/4",
+                    "imgsrc":"/A/imgs/04.jpeg",
+                    "bottom":"美女4"
+                }
+
+            ]
+        //操作数字点
+        var li = document.getElementsByTagName("li");
+        //获取header，bottom以及图片
+            var header = document.getElementById("header");
+            var bottom = document.getElementById("bottom");
+            var imgs = document.getElementsByTagName("img")[0]
+        
+        //获取左二个控制点
+        var left = document.getElementById("left");
+        var right = document.getElementById("right")
+        
+
+
+        //循环找到每一个li元素
+        var li_cd = li.length;
+        for(var i = 0;i<li_cd;i++){
+            //自定义一个索引
+            li[i].index = i;
+
+            //给每一个li添加点击事件
+            li[i].onclick = function () {
+                //处理当前元素的同时，要去掉其他元素的颜色
+                for(var j = 0;j<li_cd;j++){
+                    li[j].className = ""
+                }
+                //4,点谁，谁变化颜色 this                 
+                this.className = "active";
+
+                //需要给header中的内容变成点击的那一个元素下的title
+                header.innerText = arr[this.index].title
+                bottom.innerText = arr[this.index].bottom
+                imgs.src = arr[this.index].imgsrc
+
+
+                //需要将点击时候产生的下标和左右控制点出现的下标要同步
+                //点击的下标修改左右控制点的下标
+                n = this.index
+                
+            }
+        }
+        var n = 0;
+        right.onclick = function(){
+            //下标加1 --用一个变量模拟下标
+            n++;
+            //设置限制
+            if(n==arr.length){
+                //给n重置为0
+                n = 0;
+            }
+            header.innerText = arr[n].title
+            bottom.innerText = arr[n].bottom
+            imgs.src = arr[n].imgsrc
+                for(var i = 0;i<li_cd;i++){
+                    li[i].className = ""
+                }
+                li[n].className = "active";
+        }   
+
+        left.onclick = function(){
+            n--;
+            //设置限制
+            if(n<0){
+                n = arr.length-1;
+            }
+            header.innerHTML = arr[n].title
+            bottom.innerHTML = arr[n].bottom
+            imgs.src = arr[n].imgsrc
+                for(var i = 0; i <li_cd;i++){
+                    li[i].className = ""
+                }
+                li[n].className = "active";
+        }
+    
+
+    </script>
+</body>
+</html>

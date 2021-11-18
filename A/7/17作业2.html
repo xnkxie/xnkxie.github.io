@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="background: violet;">智慧树是全球大型的学分课程运营服务平台,在线教育平台拥有海量大学高品质课程,网络教育在线完美支持跨校授课,学分认证,名师名课名校,在线互动教育学堂,体验VIP级课程学习,让你成为学堂中的MVP</p>
+    <p style="background: yellowgreen;"></p>
+
+    <script>
+        var p = document.getElementsByTagName("p");
+        setInterval(function(){
+            //先从第一个p标签中获取第一位的值
+            p[1].innerText += p[0].innerText.substring(0,1);
+            p[0].innerText = p[0].innerText.substring(1);
+        },300)
+    </script>
+</body>
+</html>

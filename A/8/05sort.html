@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [5,6,3,7,2,1,9];
+        //默认排序为升序(从小到大)
+        arr.sort();
+        comsole.log(arr);//[1,2,3,5,6,7,9]
+
+        //特殊情况1：当排序的数组中的元素位数不相等的时候，需要特殊排序
+        //默认是按照每一个元素的首位来进行排序
+        //根本：仍然是ASCII码值
+        var arr = [1,34,46,234,84,1455];
+        arr.sort();
+        console.log(arr);//[1,1455,234,34,46,84];
+
+
+
+        //特殊情况2：如果当数组元素为对象的时候，也无法进行默认的sort排序，仍然需要特殊处理
+        var arr = [
+            {
+                "score":33
+            },
+            {
+                "score":67
+            },
+            {
+                "score":98
+            },
+            {
+                "score":111
+            }
+        ]
+        arr.sort;
+        console.log(arr);
+
+
+
+        //使用sort的高级用法解决的第一个情况
+        //数组名.sort(function()) 高级用法
+        var arr = [1,34,46,234,84,1454];
+        //为了能够获取到数组中的值，给函数传入参数
+        arr.sort(function(a,b){
+            console.log(a);//表示的是后面的一组值   34,46,234,84,1454
+            console.log(b);//1,34,46,234,84
+
+            //比较两组值   使用差值减法
+            //如果a>b a的值比较大 b的值放在a的前面
+            //如果b>a b的值比较大 b的值放在a的后面
+            //a - b = 0 两个值是相等的
+            return a - b;
+
+            //需要降序
+            return b - a; ///[1454,234,84,46,34,1]
+        })
+        //结论：a - b:升序  b - a ：降序
+        console.log(arr);//1,34,46,84,234,1454
+
+
+
+
+
+        //使用sort的高级用法解决的第二个情况
+        var arr = [
+            {
+                "score":33
+            },
+            {
+                "score":67
+            },
+            {
+                "score":98
+            },
+            {
+                "score":111
+            }
+        ]
+        arr.sort(function(a,b){
+            //a的值：67，98，111
+            //b的值：33，67，98
+            console.log(a.score);   //67,98,111
+            console.log(b.score);   //33,67,98
+
+            //升序
+            return a.score - b.score;
+            //33,67,98,111
+            //降序
+            return b.score - a.score;
+            //111,98,67,33
+        });
+        console.log(arr);
+    </script>
+</body>
+</html>

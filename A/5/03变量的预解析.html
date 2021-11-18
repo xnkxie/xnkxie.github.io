@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(a);//undefined
+        var a = 100;
+        console.log(a);//100
+        //预解析
+        //如果程序遇到了var关键字，才会在内存中开辟一个空间，给空间起名字为变量名，在遇到了 = += -= *= /= %= 这类的赋值运算符之后，再将右侧的值覆盖给左侧的值
+
+        //程序中需要先找到function关键字，如果找到了，即使程序不运行，内存中也会有函数的结构，所以在定义函数之前调用和之后调用都会认识这个函数
+        fn();
+        function fn(){
+            console.log(111);
+        }
+        fn();
+    </script>
+</body>
+</html>

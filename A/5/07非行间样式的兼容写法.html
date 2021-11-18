@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: purple;
+        }
+    </style>
+</head>
+<body>
+    <!--( <div style="width:200px"></div> -->
+    <div></div>
+    <button>我的娃</button>
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        var div = document.getElementsByTagName("div")[0];
+        btn.onclick = function(){
+            // f getComputedStyle(){[native code]} 有值 只要输出的值不是null，undefined就表示有具体的值
+            // console.log(getComputedStyle);
+            //判断如果当前getComputedStyle里面有值，吧报错，证明浏览器的环境就是主流浏览器(ie9+)否则只要不是，那么就是低版本的ie8以下
+            if(window.getComputedStyle){
+                //主流浏览器
+                console.log(getComputedStyle(div).width);
+            }else{
+                console.log(div.currentStyle.width);
+            }
+        }
+    </script>
+</body>
+</html>

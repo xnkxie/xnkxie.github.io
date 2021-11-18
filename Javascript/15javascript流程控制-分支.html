@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var age = prompt('请输入您的年龄');
+        // if (age >= 18) {
+        //     alert('欢迎光临！');
+        // }
+        // else {
+        //     alert('未成年不能进入！');
+        // }
+        
+        // 算法：能被4整除且不能整除100的为闰年，或者能够被400整除的就是闰年
+
+        var year = prompt('请输入您的年份:');
+        if (year % 4 === 0 && year % 100 != 0 || year % 400 === 0) {
+            alert('您输入的年份为闰年！');
+        }
+        else {
+            alert('您输入的是正常年份')
+        }
+        
+        // var nan = prompt('请输入您的名字:');
+        //     if (nan === '刘德华') {
+        //         alert('恭喜你中奖了！奖励5块钱！');
+        //     }else {
+        //         alert('谢谢参加');
+        //     }
+
+    </script>
+    
+</body>
+</html>

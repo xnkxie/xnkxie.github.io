@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="">
+    <button>
+        去除空格
+    </button>
+
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        var input = document.getElementsByTagName("input")[0];
+        btn.onclick = function(){
+            //语法结构：字符串.trim() 去除字符串的首尾空格
+            var value = input.value.trim();
+            console.log(value);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    手机号: <input type="text">
+    <button>发送</button><br/>
+    验证码: <input type="text">
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        var n = 10;
+        btn.onclick = function(){
+            btn.disabled = true;
+            var timer = setInterval(function(){
+                // btn.innerText = +n+'秒'
+                // n--;
+                //如果n还没有减到0，就正常减
+                //如果n已经到达了0，就不减了
+
+                //this的环境一定在函数中，普通函数，事件函数，字面量值函数，表达式函数
+                if(n<=0){
+                    btn.innerText = '发送'
+                    btn.disabled = false;
+                    //停止定时器
+                    clearInterval(timer);
+                    //修改n的值为10
+                    n = 10;
+                }else{
+                    // btn.disabled = true;
+                    btn.innerText = +n+ '秒'
+                    n--;
+                }
+            },1000)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Number
+        // function fn(num1,num2) {
+        //         //想要在函数内部使用实际参数？？ -- 定义形参， 相当于给每一个值起一个变量名称
+        //         console.log(num1,num2);
+        // }
+        // fn(100,200)
+
+        // String
+        // var str = "offcn"
+        // function fn(s) {
+        //     //获取字符串的长度
+        //     console.log(s.lenght);
+        // }
+        // fn(str);
+
+        // Boolean 一般参与运算上
+            // function fn(b) {
+                // var a=20;
+                // console.log(a+b); 21 number + boolean = number
+            // }
+            // fn(true)
+
+
+        //数组
+        // var arr = [1,2,3,4,5,6]
+        //         function fn(a) {
+        //             //循环数组中的每一个值？？
+        //             for(var i = 0;i <a.length;i++){
+        //                 console.log(arr[i]);
+        //             }
+        //         }
+        //         fn(arr);
+
+
+            //对象
+            // function fn(obj) {
+            //     //遍历对象
+            //     for(var j in obj){
+            //         //获取所有的键名
+            //         console.log(j);//  a b
+            //         //获取所有的键值
+            //         console.log(obj[j]); // 1 2
+            //     }
+            // }
+            // fn({"a":1,"b":2})
+
+            //函数
+            function f1(f) {
+                //调用了函数
+                f();//f2()
+            }
+            function f2() {
+                    console.log('f2');
+            }
+            f1(f2);
+
+    </script>
+</body>
+</html>

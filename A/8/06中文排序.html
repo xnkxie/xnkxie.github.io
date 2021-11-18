@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var str = "阿里山"//a
+            var str1 = "北京"//b
+            str.localeCompare(str1);//a-b = -1 前者比后者小
+
+            var str = "西安"//x
+            var str1 = "北京"//b
+            str.localeCompare(str1);//x-b = 1;前者比后者大
+
+            var str = "北京"//b  j
+            var str1 = "北平"//b  p
+            str.localeCompare(str1) // 
+
+            如果是数组中的值为对象的话
+            var arr = [
+            {
+            "address":"北京"
+            },
+            {
+            "address":"西安"
+            },
+            {
+            "addres":"上海"
+            },
+            {
+            "addres":"广州"
+                },
+            {
+            "addres":"杭州"
+            }
+            ]
+            arr.sort(function(a,b){
+            //a：西安，上海，广州，杭州
+            //b：北京,西安，上海，广州
+            return b.addres.localeCompare(a.addres)
+            })
+            console.log(arr)
+    </script>
+</body>
+</html>

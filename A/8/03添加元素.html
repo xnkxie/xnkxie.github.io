@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //末尾添加
+            var arr = [1,2,3]
+            //调用数组的方法来添加
+            //在数组的末尾添加元素
+            //语法结构1：可以单个值 arr.push(值)
+            arr.push(10)
+            //console.log(arr) [1,2,3,10]
+            //语法结构2：可以添加多个值 arr.push(值1，值2，值3.....)
+            arr.push(10,20,30)
+            console.log(arr) //[1,2,3,10,10,20,30]
+
+        //开头添加
+            var arr = [10,20,30];
+            //语法结构1：可以单个值 arr.unshift(值)
+            arr.unshift([1,2,3])
+            console.log(arr);//[[1,2,3],10,20,30]
+
+            //语法结构2：可以添加多个值 arr.unshift(值1，值2，值3.....)
+            arr.unshift(true,"off",{"a":100});
+            console.log(arr);//[true,"off",{...},10,20,30]
+
+
+        //练习一下
+        var arr = [1,3,5,4,8,6];
+        arr.push(30)
+        arr.unshift(20);
+        arr[1] = 100;
+        console.log(arr);//[20,100，3，5，4，8，6，30]
+
+
+        //删除元素
+            var arr = [1,2,3,4,5];
+            arr.push(6);
+        //末尾删除
+            arr.pop();//调用一次，删除一次 1,2,3,4,5
+            arr.pop();//1,2,3,4
+            arr.unshift(100);
+            arr.unshift(200);
+        //开头删除
+            arr.shift();//[100,1,2,3,4]
+            console.lo0g(arr);
+</script>
+</body>
+</html>

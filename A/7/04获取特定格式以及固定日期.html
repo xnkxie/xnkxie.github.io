@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        格式1：new Date('年，月份，日期 小时:分钟：秒')
+        格式2：new Date(年，月份，日期 ，小时,分钟,秒)
+        格式3：new Date('星期 月份 日期 年份 小时:分钟：秒')
+        格式4：new Date(时间戳)
+    -->
+    <script>
+        //格式1：
+        // var target = new Date('2021,11,13 20:22:20');
+        // console.log(target);
+        
+        
+        // //格式2
+        // var target1 = new Date(2021,10,13,20,22,20)
+        // console.log(target1);
+        
+        
+        // //格式3
+        // var target2 = new Date('Sun Aug 02 2021 12:22:22')
+        // console.log(target2);
+        
+        
+        //格式4
+        //如何得到某个日期的时间搓
+        // var str = '2021-11-13'
+        // var target3 = new Date(str)
+        // console.log(target3.getTime());//1636761600000
+        // var now = new Date(1636761600000)
+        // console.log(now);
+
+
+
+        // //设置某日期
+        // var now = new Date();
+        // //设置年份
+        // now.setFullYear(2022);//直接设置
+        // now.setFullYear(now.getFullYear() + 1);//更灵活
+
+        // //设置月份
+        // now.setMonth(now.getMonth() +3)
+
+        // //设置日期
+        // now.setDate(now.getDate() +3)
+
+        // //设置小时
+        // now.setHours(17)
+        // //设置分钟
+        // now.setMinutes(now.getMinutes() -10)
+        // //设置秒
+        // now.setSeconds(now.getSeconds() +10)
+        // console.log(now);
+
+
+        var now = new Date();
+        //获取特定格式日期，可以是当前系统时间，也可以是某一个固定的时间
+        console.log(now.toTimeString());//15:24:58 GMT+0800
+        console.log(now.toDateString()); //tue jul 28 2021
+        console.log(now.toLocaleDateString());//2021/11/13
+        console.log(now.toLocaleTimeString());//晚上22：56：50
+    </script>
+</body>
+</html>

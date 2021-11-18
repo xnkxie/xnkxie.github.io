@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1 number类型
+        var a = 30;//全局变量
+        //如果在函数的形式参上直接赋值，那么就是这个参数的初始默认值
+        //可以在给对应形参上的实参值进行重新赋值来修改
+        function fn(a,b = 30){
+            var a=20;//局部变量
+            //原因：在查找当前a的变量的时候，是离输出语句最近的那一个a的变量
+            return a+b // 20+30=50 number类型
+        }
+        console.log(fn(a));
+
+
+        //2 string类型
+        var str = "hello"//全局变量
+
+        function fn(str){//var str = 'hello'
+            var s = "";
+            for(var i = 0; i<str.length;i++){
+                // console.log(str[i]); // h e l l o
+                s+=str[i];
+            }
+            return s
+            //字符串获取每一个字符:根据下标 默认下标从0开始
+        }
+        // fn(str);
+        console.log(fn(str));
+
+
+
+        //3 Boolean类型
+        var a = 1;
+        //如果形式参数中有参数有默认值，往后放
+        function fn(a,b=true){
+            //如果是Boolean类型不是做判断就是做运算
+            return a+b //20+1=21 隐式转换
+        }
+        console.log(fn());
+
+
+        //4 数组类型
+        var arr = [1,2,3,4,5,6,7,8,9];
+        function fn(arr){
+            var sum = 0;
+            for(var i =0;i< arr.length;i++){
+                sum+=arr[i];//给数组中的每一个值求和
+            }
+            return sum;
+        }
+        console.log(fn(arr));
+
+        //5，对象类型
+        function fn(){
+            var obj = {
+                "a":1,
+                "b":2,
+                "c":3,
+                "d":function(){
+                    // console.log(this.a+this.b+this.c);//1+2+3
+                    return this.a+this.b+this.c
+                }
+            }
+            // return obj;
+            return obj.d(); //6
+        }
+        // console.log(fn());
+        //要函数中d的结果
+        console.log(fn());//6
+
+
+
+        //6,函数类型
+        function fn(){
+            return function(){
+                return 'hello';
+            }
+        }
+        var result =fn();
+        // console.log(result);//function(){}结构
+        console.log(result());//result() -- 调用函数,求函数的返回值结果,利用console.log来输出结果
+        // fn();
+    </script>
+</body>
+</html>

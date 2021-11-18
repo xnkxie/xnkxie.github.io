@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //不能纯数字，不能是关键字或者是保留字，数字不能开头，不能是纯中文，函数名一般是见名知义
+        // //普通函数(过程化函数)
+        function fn(){
+            console.log('hello');
+        }
+        //调用一下
+        fn();
+        //js的程序解悉:如果碰到了function关键字，那么就将函数的结构存入内存中保存，所以放到函数定义之前和定义之后都能够获取到具体的内容
+
+
+
+        // //需求：从1-5所有数字的总和 (循环的初始和截至都不是固定的值)
+        // function Count(){
+        //     var sum = 0;
+        //     for(var i = 0; i <= 5;i++){
+        //         sum+=i;
+        //     }
+        //     console.log(sum);
+        // }
+        // Count();
+
+        // function Count(a,b) {
+        //         var sum = 0;
+        //         for(var i = a;i<=b; i++){
+        //             sum+=i;
+        //         }
+        //         console.log(sum);
+        // }
+        // //调用不同的情况
+        // Count(10,20)
+
+        // //表达式函数
+        var fn = function(){
+            console.log('hello');
+        }
+        //调用函数
+        fn();
+
+
+        //将循环的值提取出来当做参数
+            //函数中建立一个参数
+                // function fn(a){
+                //     console.log(a); //类似于var a; 参数也是一个变量
+                // }
+                // fn(20);
+
+
+                //函数中建立多个参数
+                //参数之间使用逗号间隔
+                // function fb(a,b) {
+                //     // var a = 10, var b;
+                //     // console.log(a+b);// 10 + undefined = NaN
+                // }
+                // fn(10);
+
+                // function fn(a,b) {
+                //     console.log(a+b);//数字 + 数字字符串 = 拼接
+                // }
+                // fn(10,"30");
+                //形参和实参之间的关系是一一对应的，如果某一个形参没有具体的实参，那么这个参数的值就是undefined，如果相加的话就会得到NaN
+    </script>
+</body>
+</html>

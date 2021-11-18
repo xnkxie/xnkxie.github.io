@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fn(){
+        //     var a = 10,b =20;
+        //     console.log(a+b);
+        // }
+        // fn();// 30
+        //如果说想要在函数的外部来获取函数内部中的运行结果？
+        // console.log(a+b);//由于都是局部变量，所以无法获取
+        //在函数的外部想要获取函数内部的运行结果就需要用到函数的返回值
+
+        //利用返回值调整上面的代码
+        // var c = 100;
+        // function fn(){
+        //     var a = 10,b =20;
+        //     return a+b; //number 类型的数字
+        // }
+        // // alert(fn()); //30
+        // //利用c和函数的运行结果相加
+        // var result = fn();
+        // console.log(result + c);//130
+
+
+        // function fn(){
+        //     var a = 10;
+        //     var b = 20;
+        //     // return a,b //如果是多个值的话，返回的只能是最后一个值
+        //     //注意事项1:如果一定要想返回多个值，可以存入一个数组
+        //     return[a,b]
+        // }
+        // var result = fn();
+        // console.log(result);
+
+
+        // function fn(){
+        //     var a = 10;
+        //     var b = 20;
+        //     // return a,b //如果是多个值的话，返回的只能是最后一个值
+        //     //注意事项1:如果一定要想返回多个值，可以存入一个数组
+
+        //     //注意事项2:如果在函数中遇到了return关键字，程序就结果就直接返回到调用函数的部分，而return语句后面的都不执行
+        //     return[a,b]
+        //     console.log(a);
+        // }
+        // var result = fn();
+        // console.log(result);
+
+
+        function fn(){
+            var a = 10;
+            var b = 20;
+            // return a,b //如果是多个值的话，返回的只能是最后一个值
+            //注意事项3:如果在函数的内部已经是输出语句，但是在函数的外部仍然利用变量名接受函数的返回值，不会影响函数的结果输出，但是就是无返回值的值为undefined
+            // return[a,b]
+            console.log(a,b);
+        }
+        var result = fn();// 10 20
+        console.log(result);// undefined
+
+
+    </script>
+
+</body>
+</html>

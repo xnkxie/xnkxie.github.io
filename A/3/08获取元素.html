@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li id="li1">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul>
+        <li id="li1">11</li>
+        <li class="li2">22</li>
+        <li>33</li>
+        <li class="li4">44</li>
+        <li>55</li>
+    </ul>
+    <script>
+        //通过id的形式来获取元素
+        // var li1 = document.getElementById("li1");
+        // console.log(li1,typeof li1);//DOM对象
+
+        //想要获取页面中所有的li标签(获取页面中的所有！！！)
+        // var li = document.getElementsByName("li");
+        //HTMLCollection(5) [li#li1,li,li,li,li1:li#li1]
+
+        //元素集合也是一个伪数组，可以按照数组的方法或者属性来进行操作
+        // console.log(li);
+        // console.log(li.length);
+
+        //获取某一个元素，根据下标
+        // console.log(li[2]); //<li>3</li>
+
+        //想要获取某一个父元素下的子元素
+        //首先获取父元素
+        // var ul = document.getElementsByName("ul")[1];
+        //如果当前这个变量获取的只是多个元素，只想要其中的某一种而不变化，就可以在获取的时候直接给下标
+        //继续在获取当前这个ul下的所有的li子元素
+        // var li = ul.getElementsByName("li");
+        // console.log(li);
+
+        //通过class的形式来获取
+        var ul = document.getElementsByName("ul")[1];
+        var li = ul.getElementsByClassName('li')
+
+    </script>
+</body>
+</html>

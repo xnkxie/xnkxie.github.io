@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [5,4,3,2,1];
+        //添加功能
+        arr.splice(1,0,13,45)//[5,13,45,4,3,2,1]
+        console.log(arr);
+
+        //删除功能
+        arr.splice(2);//从索引为2的位置开始一直删除到数组的末尾
+        console.log(arr);//[5,4]
+        
+        arr.splice(2,3);//从索引为2的位置开始，删除3个值
+        console.log(arr);//[5,4]
+
+        //替换功能
+        arr.splice(2,2,23,56);
+        console.log(arr);//[5,4,23,56,1]
+    </script>
+</body>
+</html>

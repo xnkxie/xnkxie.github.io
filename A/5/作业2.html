@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            text-decoration: none;
+        }
+        #box {
+            width: 800px;
+            height: 400px;
+            background: red;
+            margin: 120px auto;
+            
+        }
+        #box_left{
+            width: 200px;
+            height: 400px;
+            background: yellow;
+            float: left;
+        }
+        #box_right{
+            width: 600px;
+            height: 400px;
+            background: purple;
+            float: left;
+        }
+        #box_right div{
+            display: none;
+        }
+        #box_right div.active{
+            display: block;
+        }
+        #box_left ul li{
+            width: 100%;
+            height: 95px;
+            background: lightgreen;
+            line-height: 95px;
+            text-align: center;
+            font-size: 40px;
+            border-bottom: 5px solid brown;
+        }
+        #box_left ul li.active{
+            background:darkblue;
+            color: #ffffff;
+        }
+        #box_right div a{
+            display: block;
+            width: 100%;
+            height: 350px;
+            background: cornflowerblue;
+            line-height: 350px;
+            text-align: center;
+            font-size: 100px;
+            color: #ffffff;
+        }
+        #box_right div ul{
+            width: 100%;
+            height: 50px;
+            background: cyan;
+            display: table;
+        }
+        #box_right div ul li{
+            display: table-cell;
+            width: auto;
+            height: 50xp;
+            background: darkgreen;
+            border-right: 5px solid blanchedalmond;
+            text-align: center;
+            line-height: 50px;
+            font-size: 25px;
+
+        }
+        #box_right div ul li.hover{
+            background: #ffffff;
+            color: #000000;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box_left">
+            <ul>
+                <li class="active">a</li>
+                <li>b</li>
+                <li>c</li>
+                <li>d</li>
+            </ul>
+        </div>
+        <div id="box_right">
+            <div class="active">
+                <a href="javascript:;">a1</a>
+                <ul>
+                    <li class="hover">a1</li>
+                    <li>a2</li>
+                    <li>a3</li>
+                    <li>a4</li>
+                </ul>
+            </div>
+            <div>
+                <a href="javascript:;">b1</a>
+                <ul>
+                    <li class="hover">b1</li>
+                    <li>b2</li>
+                    <li>b3</li>
+                    <li>b4</li>
+                </ul>
+            </div>
+            <div>
+                <a href="javascript:;">c1</a>
+                <ul>
+                    <li class="hover">c1</li>
+                    <li>c2</li>
+                    <li>c3</li>
+                    <li>c4</li>
+                    <li>c5</li>
+                    <li>c6</li>
+                </ul>
+            </div>
+            <div>
+                <a href="javascript:;">d1</a>
+                <ul>
+                    <li class="hover">d1</li>
+                    <li>d2</li>
+                    <li>d3</li>
+                    <li>d4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        //找到所有页面当中找到左侧所有的li
+        var left_li = document.getElementById("box_left").getElementsByTagName("li");
+        var right_li = document.getElementById("box_right").getElementsByTagName("div");
+        //2，对于每一个li发生事件，然后改变其发生事件的那个元素的样式
+        var left_li_cd = left_li.length;
+        for(var i = 0;i<left_li_cd;i++){
+            //onmouseover 鼠标悬停
+            //给出当前的所有元素都添加一个自定义的索引
+            left_li[i].index = i;
+
+            left_li[i].onmouseover = function(){
+                //给当前元素添加样式之前要先清空所有的li
+                for(var j = 0; j< left_li_cd;j++){
+                    left_li[j].className = ""
+                    //让当前悬停的元素以外的所有的元素，包括自己都先清空样式
+                    right_li[j].className = "";
+                }
+
+                //找到发生事件的那个元素
+                // console.log(this);
+                //给当前这个元素添加样式
+                this.className = "active";
+                //当悬停的这个元素的时候找到对应的右侧的div并且显示出来
+                right_li[this.index].className ="active";
+
+            }
+        }
+        showDiv(right_li[0])
+        showDiv(right_li[1])
+        showDiv(right_li[2])
+        showDiv(right_li[3])
+        function showDiv(parents){
+            //显示哪一个div？
+            // console.log(parents);
+            //获取一下每一个div中的a标签以及旗下的所有的li
+            var a = parents.getElementsByTagName("a")[0];
+            var li = parents.getElementsByTagName("li");
+
+            //对应所有的li要发生事件
+            var li_cd = li.length;
+            for(var i = 0; i<li_cd;i++){
+                li[i].onmouseover = function(){
+                    for(var j = 0; j< li_cd;j++){
+                    // left_li[j].className = ""
+                    //让当前悬停的元素以外的所有的元素，包括自己都先清空样式
+                    li[j].className = "";
+                }
+                    //当前元素添加背景，其他元素清空背景
+                    this.className = "hover";
+                    //a标签的值受每一次悬停的当前元素的值得控制
+                    a.innerText = this.innerText;
+                
+                
+                }
+            }
+        }
+    </script>
+</body>
+</html>

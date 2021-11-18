@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>智慧树是全球大型的学分课程运营服务平台,在线教育平台拥有海量大学高品质课程,网络教育在线完美支持跨校授课,学分认证,名师名课名校,在线互动教育学堂,体验VIP级课程学习,让你成为学堂中的MVP</span>
+    <a href="javascript:;">收起</a>
+
+    <script>
+        //1.获取元素
+        var a = document.getElementsByTagName("a")[0];
+        var span = document.getElementsByTagName("span")[0];
+        var tag = true;
+        //在截取之前保存一份原本的值
+        var copy = span.innerText;
+        //2，点击a标签，控制span中的文字量
+        a.onclick = function(){
+            //本身文字的变换
+            if(tag){
+                span.innerText = span.innerText.substring(0,19)
+                a.innerText = "展开"
+                tag = false;
+            }else{
+                span.innerText = copy;
+                a.innerText = "收起"
+                tag = true;
+            }
+        }
+    </script>
+</body>
+</html>

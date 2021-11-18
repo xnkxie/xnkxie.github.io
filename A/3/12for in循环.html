@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //length属性？？
+        //数组 字符串 DOM元素集合
+        var obj = {
+            "a":1,
+            "b":2
+        }
+        // console.log(obj.a); 100
+        // console.log(obj['a']);100
+        // console.log(obj.length);//undefined
+        //对象无长度，所以不能通过for循环来遍历里面的键值对
+        //利用for in循环
+        for(var j in obj){
+            // console.log(j);//获取对象中所有的键名
+            // console.log();//注意：不能直接通过对象名. 键名的形式获取
+            console.log(obj[j]);//在写法上注意不需要添加引号
+        }
+    </script>
+</body>
+</html>

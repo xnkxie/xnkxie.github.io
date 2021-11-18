@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="abc">+</button>
+    <button id="abcd">-</button>
+    <p id="p1" style="font-size: 12px;">小行星</p>
+    <script>
+        //获取元素
+        var abc = document.getElementById("abc");
+        var abcd = document.getElementById("abcd");
+        var p1 = document.getElementById("p1");
+        //创建新的变量
+        var size = 12;
+        //按钮点击事件
+        abc.onclick = function() {
+
+            //思路1：先获取行间样式进行强制转换，然后判断值的大小
+            var size = parseInt(p1.style.fontSize)//(强制转换)
+            //做判断不能超过36px
+            if (size>=36) {
+                p1.style.fontSize="36px";
+            }else{
+                p1.style.fontSize = size+1+"px";
+            }
+            //思路2:可以借鉴一个变量
+            //先创建一个初始化的变量
+            size+=1;
+            //还是需要循环判断数字
+            if (size>=36) {
+                size=36;
+            }
+            p1.style.fontSize = size+"px";
+
+        }
+        abcd.onclick = function() {
+            //思路1
+            var size = parseInt(p1.style.fontSize)
+            if (size<=12) {
+                p1.style.fontSize = "12px";
+            }else {
+                p1.style.fontSize = size-1+"px";
+            }
+            //思路2
+            size-=1;
+            if (size<=12) {
+                size="12";
+            }
+            p1.style.fontSize =size+"px";
+        }
+    </script>
+</body>
+</html>

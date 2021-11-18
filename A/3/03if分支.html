@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 056; //6*8^0+5*8^1 = 6+40 =46
+        var b = 23;
+        a++; //46+1=47
+        b = a++;//a = 47+1 = 48, b = 47
+        if (a > b) {  //48>47 = true
+            console.log(b++);//console.log(b)47, b++ = 47 + 1 =48
+            console.log(b);
+        }
+    </script>
+</body>
+</html>

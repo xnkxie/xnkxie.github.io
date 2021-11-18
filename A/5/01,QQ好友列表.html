@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        #box {
+            width: 300px;
+            margin: 120px auto;
+        }
+        #box ul p{
+            width: 100%;
+            height: 40px;
+            background: rgb(255, 216, 112);
+            line-height: 40px;
+        }
+        #box ul>li>div{
+            background: rgb(255, 216, 112);
+            display: none;
+        }
+        img{
+            width: 10px;
+            height: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>
+                <p><img src="/A/imgs/01.jpeg" alt="">朋友</p>
+                <!-- <ul>
+                    <li>身上</li>
+                    <li>身上</li>
+                    <li>身上</li>
+                </ul> -->
+                <div>
+                    <p>身上</p>
+                    <p>身上</p>
+                    <p>身上</p>
+                </div>
+            </li>
+            <li>
+                <p><img src="/A/imgs/01.jpeg" alt="">家人</p>
+                <div>
+                    <p>身上</p>
+                    <p>身上</p>
+                    <p>身上</p>
+                </div>
+            </li>
+            <li>
+                <p><img src="/A/imgs/01.jpeg" alt="">同学</p>
+                <div>
+                    <p>身上</p>
+                    <p>身上</p>
+                    <p>身上</p>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+    <script>
+        //找当前发生事件的那个唯一父元素
+        var li = document.getElementById("box").getElementsByTagName("li");
+        //每一个li的点击事件
+        var li_cd = li.length;
+        // var tag = true;
+        for( var i = 0; i <li_cd;i++){
+            //给每一个元素添加一个自定义的属性
+            li[i].tag = true;
+
+            li[i].onclick = function(){
+                //当前点击的是谁？ this
+                // console.log(this);
+                //找到当前点击的那个元素li中的img图片
+                // console.log(this.getElementsByTagName("img")[0]); <img src="/A/imgs/01.jpeg" alt="">
+                //获取到元素改变src地址
+                // this.getElementsByTagName("img")[0].src = "/A/imgs/02.jpeg"
+                //不同的状态切换不同的图片
+
+                // if(tag){
+                //     this.getElementsByTagName("img")[0].src = "/A/imgs/02.jpeg";
+                //     tag = false;
+                // }else{
+                //     this.getElementsByTagName("img")[0].src = "/A/imgs/01.jpeg";
+                //     tag = true;
+                // }
+
+                //判断自己的tag是否为true还是false
+                    if(this.tag){
+                        this.getElementsByTagName("img")[0].src = "/A/imgs/02.jpeg";
+                        this.getElementsByTagName("div")[0].style.display = "block"
+                        this.tag = false;
+                    }else{
+                        this.getElementsByTagName("img")[0].src = "/A/imgs/01.jpeg";
+                        this.getElementsByTagName("div")[0].style.display = "none"
+                        this.tag = true;
+                    }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="" id="imgs"><br>
+    <button id="btn">关闭</button>
+    <script>
+        var btn = document.getElementById("btn");
+        var imgs = document.getElementById("imgs");
+        
+        //在点击之前建立一个模拟的切换状态
+        var tag = true;//给变量定义初始值
+
+        btn.onclick = function() {
+            if (tag==true) {
+                imgs.src = "";
+                btn.innerText = "打开";
+                tag = false;//对于变量的值重新赋值
+            }else {
+                imgs.src = "";
+                btn.innerText = "关闭";
+                tag = true;
+            }
+        }
+    </script>
+</body>
+</html>

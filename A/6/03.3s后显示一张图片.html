@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!-- 
+    要求页面在3s之后显示一张图片
+    思路：
+        1，先在页面中放一个img图片，设置其样式为隐藏 display：none
+        2，在页面一加载的时候添加一个定时器，事件为3s
+            定时器：一次性定时器(延时定时器)
+-->
+    <img src="/A/imgs/01.jpeg" alt="" id="img">
+    <script>
+        var img = document.getElementById("img");
+        setTimeout(function(){
+            img.style.display = "block"
+        },3000)
+    </script>
+</body>
+</html>

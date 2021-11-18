@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            /* 完全转换为大写 */
+            /* text-transform: uppercase; */
+            /* 完全转换为小写 */
+            /* text-transform: lowercase; */
+        }
+    </style>
+</head>
+<body>
+    <span>
+        <!-- dasdasdasdas -->
+        <!-- DSDASDASDASDA -->
+        <!-- asasdasdasdda -->
+    </span>
+
+
+    <script>
+        var span = document.getElementsByTagName("span")[0];
+        //转换为小写
+        span.innerText = span.innerText.toLowerCase();
+        //转换为大写
+        span.innerText = span.innerText.toUpperCase();
+    </script>
+</body>
+</html>

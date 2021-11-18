@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>html</button>
+    <button>css</button>
+    <button>javascript</button>
+
+    <script>
+        //数据源
+        var arr = ['html','css','javascript'];
+        //获取按钮
+        var btn = document.getElementsByTagName("button");
+        //给每一个按钮添加点击事件
+        for(var i = 0; i<btn.length;i++){
+            //给每一个按钮添加一个自定义的索引
+            btn[i].index = i
+            btn[i].onclick = function(){
+                // console.log(this.index);
+                alert(arr[this.index])
+            }
+        }
+    </script>
+</body>
+</html>

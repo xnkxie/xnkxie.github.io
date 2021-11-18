@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 2021/11/14
+        // var now = new Date();
+        // var str = now.toLocaleDateString();
+        //split：将字符串转换成数组，按照字符串中特定的分隔符来进行转换
+        //如果该方法中只设置一个参数，默认转换为数组中的值全部都要
+        //语法结构：字符串.split('字符串中携带的分隔符'，(获取的长度))
+        // console.log(str.split('/'));
+        //如果想要在转换之后获取自定义的长度，需要给出第二个参数
+        //保留多少，第二个参数就设置为多少！！
+        // console.log(str.split('/',2));
+
+
+        //需求：改变字符串中的分隔符
+        var now = new Date();
+        var str = now.toLocaleDateString();
+        // console.log(str.split('/'));
+        var arr = str.split('/')
+        //语法结构：数组.join('自定义分隔符')
+        //作用：将数组按照自定义分隔符的方法转换为字符串
+        console.log(arr.join('-'));
+
+
+        //需求：想要获取字符串中的三个单词
+        var str = "T Love web"
+        console.log(str.split(' '));
+    </script>
+</body>
+</html>

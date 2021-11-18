@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="img1.png" id="imgs">
+    <script>
+        var imgs =document.getElementById("imgs");
+        //思路1：
+        var n = 0;
+        imgs.onclick = function () {
+            n++;
+            //做循环判断
+            if (n==3) {
+                n = 1;
+            }
+            //改变图片的地址
+            imgs.src = "img"+n+".png";
+        }
+
+        //思路2:可以把所有的图片存入到数组里面
+        var arr = ['img1.png','img2.png']
+        var n = 0;
+        imgs.onclick = function () {
+            n++;
+            if (n==arr.length) {
+                n = 0;
+            }
+            imgs.src = arr[n]
+        }
+        
+    </script>
+</body>
+</html>

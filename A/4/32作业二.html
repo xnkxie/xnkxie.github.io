@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        #tabUl {
+            width: 100%;
+        }
+        #tab ul{
+            background: rgb(247, 247, 247);
+            height: 45px;
+            width: 100%;
+            border-bottom: 1px solid red;
+
+        }
+        #tab ul li{
+            float: left;
+            width: auto;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            padding:0 20px;
+            font-size: 15px;
+
+        }
+        #tab ul li.active,#tab ul li.active:hover{
+            background: rgb(255, 0, 0);
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        #tab ul li:hover{
+            color: #ff0000;
+            cursor: pointer;
+        }
+        #tabcon {
+            clear: both;
+        }
+        #tabcon div{
+            display: none;
+            padding: 30px;
+        }
+        #tabcon div.active{
+            display: block;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <div id="tabUl">
+            <ul>
+                <li class="active">商品介绍</li>
+                <li>规则标准</li>
+                <li>社会保障</li>
+                <li>商品评价(210万+)</li>
+                <li>实际情况</li>
+            </ul>
+        </div>
+        <div id="tabcon">
+            <div class="active">商品介绍</div>
+            <div>规则标准</div>
+            <div>社会保障</div>
+            <div>商品评价(210万+)</div>
+            <div>实际情况</div>
+        </div>
+    </div>
+    <script>
+        //获取li
+        var li = document.getElementById("tabUl").getElementsByTagName("li");
+
+        //获取tabcon下的所有的div
+        var div = document.getElementById("tabcon").getElementsByTagName("div");
+
+        //每一个元素都需要发生事件
+        var li_cd = li.length;
+        for(var i = 0; i<li_cd;i++){
+            //让点击元素和其他元素下标一致的时候，需要给点击的元素添加自定义的索引
+            li[i].index = i;
+
+            li[i].onclick = function(){
+                for(var j = 0; j < li_cd;j++){
+                    li[j].className = "";
+                    div[j].className = "";
+                }
+
+                //添加颜色
+                this.className = "active"
+                div[this.index].className = "active"
+
+            }
+        }
+    </script>
+</body>
+</html>

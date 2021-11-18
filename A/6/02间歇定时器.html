@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>开启定时器</button>
+    <button>停止定时器</button>
+    <script>
+        //获取2个button
+        var btn = document.getElementsByTagName("button");
+        var timer = null;
+        //给2给按钮添加点击事件
+        btn[0].onclick = function(){
+            timer = setInterval(function(){
+                console.log('xxx');
+            },3000);
+            console.log(timer);
+            
+        }
+        btn[1].onclick = function(){
+            clearInterval(timer)
+            console.log(timer);
+        }
+        // //不给时间，默认立即执行
+        // setInterval(function(){
+        //     console.log('hello');
+        // });
+
+        // //每隔3s执行一次函数
+        // setInterval(function(){
+        //     console.log('hello');
+        // },3000)
+
+        // //
+        // setInterval(fu,3000);
+        // function fu(){
+        //     console.log('hello world');
+        // }
+
+        // //给定时器添加编号
+        // //只看调用的定时器的次数，前面的变量怎么定义不管
+        // var timer = setInterval(fu,3000);
+        // var timer1 = setInterval(fu,3000);
+        // console.log(timer);
+        // console.log(timer1);
+        // function fn(){
+        //     console.log('hello world');
+        // }
+        // //停止定时器
+        // clearInterval(timer);
+    </script>
+</body>
+</html>

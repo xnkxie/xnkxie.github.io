@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        定时器：延时定时器(一次性定时器)，间歇定时器（周期性定时器）
+    -->
+    <button>开启定时器</button>
+    <button>停止定时器</button>
+    <script>
+        //定时器的开启和停止如果在事件函数之内要注意timer的函数作用域！！！
+        //1，获取元素
+        var btn = document.getElementsByTagName("button");
+        //先定义一个timer的初始值
+        var timer = null;
+
+        btn[0].onclick = function(){
+        //2,开启定时器
+        setTimeout(function(){
+            console.log('hello');
+        },3000) //timer是在发生点击事件之后的重新赋值
+        console.log(timer);
+
+        }
+        btn[1].onclick = function(){
+            //清除当前运行的那个定时器
+            clearTimeout(timer);//停止的就是这个编号为1的定时器
+            console.log(timer);
+        }
+
+
+
+
+
+        //开启延时定时器
+        //如果没有给出时间，默认立即执行
+        // setTimeout(function (){
+        //     console.log('hello 定时器');
+        // })
+
+        // //延迟1s之后再输出hello 定时器
+        // setTimeout(function(){
+        //     console.log('hello 定时器');
+        // },1000);
+
+        // //函数变成函数名
+        // //延迟2s之后再调用fn函数
+        // setTimeout(fn,2000);
+        // function fn(){
+        //     console.log('hello');
+        // }
+
+        // //定时器调用了几次，timer1值就为几
+        // var timer1 = setTimeout(fn,3000);//1
+        // // console.log(timer1);
+        // var timer1 = setTimeout(fn,3000);//2
+        // console.log(timer1);
+        // function fn(){
+        //     console.log('hello');
+        // }
+
+
+
+    </script>
+</body>
+</html>

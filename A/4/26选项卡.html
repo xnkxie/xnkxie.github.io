@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: none;
+        }
+        div.active{
+            height: 400px;
+            width: 400px;
+            border: 1px solid #000000;
+            display: block;
+        }
+        button.active{
+            background: purple;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        布局：页面中有三个按钮，对应每一个按钮都有一个需要显示其内容的div
+    -->
+    <button class="active">我的</button>
+    <button>你的</button>
+    <button>我们的</button>
+    <div class="active">我</div>
+    <div>你</div>
+    <div>我们</div>
+    <script>
+        //获取元素
+        var btn = document.getElementsByTagName("button");
+        var div = document.getElementsByTagName("div");
+        //给每一个按钮循环添加点击事件
+        var cd = btn.length;
+        for(var i = 0; i< cd;i++){
+            //绑定一个索引
+            btn[i].index = i;
+            btn[i].onclick = function() {
+                //考虑除了当前元素以外的其他元素div
+                //循环其他元素让其隐藏起来
+                for(var j = 0;j<cd;j++){
+                    //获取所有的div元素
+                    div[j].className = ""
+                    btn[j].className = ""
+                }
+
+
+                // div[对应的那个下标]
+                // console.log(this.index);
+                // console.log(div[this.index]);
+                //点击的是哪一个元素，对应的下标的那个div就配拥有class的active样式
+                div[this.index].className = "active";
+                this.className = "active"
+                //当前操作的元素
+            }
+        }
+    </script>
+</body>
+</html>

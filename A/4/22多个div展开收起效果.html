@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100%;
+            height: 50px;
+            background: purple;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        //批量获取所有的div
+        var div = document.getElementsByTagName("div");
+        //每一个元素都有可能添加点击事件，所有利用for循环
+        var div_cd = div.length;
+        var tag = true;
+        for(var i = 0; i<div_cd;i++){
+            //给每一个div添加点击事件
+            // div[i].onclick = function(){
+            //     // this.style.height = "100px"
+            //     if(tag){
+            //         this.style.height = "100px"
+            //         tag = false;
+            //     }else{
+            //         this.style.height = "50px"
+            //         tag = true;
+            //     }
+            // }
+
+            //给每一个div元素分配一个属性
+            //自定义属性
+            //语法结构： div[i].自定义属性名
+            div[i].tag = true;
+            div[i].onclick = function(){
+                //当前的点击这个元素下的tag为true的时候才能变化，否则再次点击就是当前这个元素的高度
+                if(this.tag){
+                    this.style.height = "100px"
+                    this.tag = false;
+                }else{
+                    this.style.height = "50px"
+                    this.tag = true;
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

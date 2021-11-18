@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fn() {
+        //     console.log(this);//this表示的是调用者
+        // }
+        // //自定义的函数在window窗体对象中表示的其下的方法
+        // //fn();
+        // window.fn();
+        // console.log(window);
+        // //普通函数中的this指向的是window对象
+
+
+        var obj = {
+            "name":"xx",
+            "age": 22,
+            "study": function() {
+                console.log(this);
+            }
+        }
+        //在字面量对象中的this指向的就是当前字面量对象本身
+        //调用study
+        obj.study()
+
+
+
+    </script>
+</body>
+</html>

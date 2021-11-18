@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: purple;
+        }
+        span {
+            width: 200px;
+            height: 30px;
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <!--( <div style="width:200px"></div> -->
+    <div></div>
+    <span>
+
+    </span>
+    <button>我的娃</button>
+
+    <script src="01style.js"></script>
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        var div = document.getElementsByTagName("div")[0];
+        var span = document.getElementsByTagName("span")[0];
+        btn.onclick = function(){
+            //调用函数
+            var width = getstyle(div,"width")
+            console.log(width);
+        }
+
+    </script>
+</body>
+</html>

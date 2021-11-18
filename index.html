@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        #box {
+            width: 450px;
+            height: 400px;
+            border: 1px solid #000000; 
+            position: relative;
+        }
+        #left_box {
+            width: 250px;
+            height: 85px;
+            border: 1px solid #000000;
+            margin: 15px;
+        }
+        #btn {
+            position: absolute;
+            right: 80px;
+            top: 15px;
+        }
+        #show {
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            width: 155px;
+            height: 224px; 
+            background:white;
+            padding: 5px;
+            display: none;        
+
+        }
+        h1 {
+            font-size: 20xp;
+            margin-bottom: 10px;
+
+        }
+        a {
+            text-decoration: none;
+            display: inline-block;
+            width: 70px;
+            height: 20px;
+            border: 1px solid #000000;  
+            margin-bottom: 10px;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+        <div id="box">
+            <div id="left_box"></div>
+            <button id="btn">显示div的样式</button>
+            <div id="show">
+                <h1>大小</h1>
+                    <a href="a" id="a1">300*300</a>
+                    <a href="a" id="a2">300*300</a>
+                    <a href="a" id="a3">300*300</a>
+                    <a href="a" id="a4">300*300</a>
+                <h1>颜色</h1>
+                <a href="a" id="a5">#ff0000</a>
+                <a href="a" id="a6">#00ff00</a>
+                <a href="a" id="a7">#0000ff</a>
+                <a href="a" id="a8">#00ffff</a>
+                <button>确定</button>
+                <button>取消</button>
+            </div>
+        </div>
+        <script>
+            var box =document.getElementById("box");
+            var left_box = document.getElementById("left_box");
+            var btn =document.getElementById("btn");
+            var show =document.getElementById("show");
+            var a1 = document.getElementById("a1");
+            var a2 = document.getElementById("a2");
+            var a3 = document.getElementById("a3");
+            var a4 = document.getElementById("a4");
+            var a5 = document.getElementById("a5");
+            var a6 = document.getElementById("a6");
+            var a7 = document.getElementById("a7");
+            var a8 = document.getElementById("a8");
+
+
+            btn.onclick =  function() {
+                box.style.background = "rgb(146,146,145)";
+                show.style.display = "block"
+            }
+            a1.onclick = function() {
+            
+            }
+        </script>
+</body>
+</html>

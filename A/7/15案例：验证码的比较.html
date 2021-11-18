@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="">
+    <span>HVMY</span>
+    <button>检测</button>
+
+    <script>
+        var input = document.getElementsByTagName("input")[0];
+        var span = document.getElementsByTagName("span")[0];
+        var btn = document.getElementsByTagName("button")[0];
+        btn.onclick = function(){
+            var value = input.value.toLowerCase();
+            var text = span.innerText.toLowerCase();
+            //比较
+            if(value!=text){
+                alert('验证码输入错误')
+            }else{
+                alert('验证通过')
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" >
+    <!-- tag="11" -->
+
+    <script>
+        //获取文本框属性
+        var input = document.getElementsByTagName("input")[0];
+        //获取内置属性
+        console.log(input.type);
+        //获取自定义属性--且在元素身上直接定义出来的
+        console.log(input.tag);//目前js无法获取 -- 这种写法无法获取
+        //通过设置自定义属性名
+        input.tag = 100;
+        console.log(input.tag);
+    </script>
+</body>
+</html>

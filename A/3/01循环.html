@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="chk">
+    <button id="btn">选中</button>
+    <script>
+        //1获取元素
+        var btn = document.getElementById("btn");
+        var chk = document.getElementById("chk");
+
+        //2发生的事件
+        btn.onclick = function() {
+            //3具体要干的事情
+            //现象：选中效果的切换
+            //console.log(chk.checked);//true -- 选中 false --没选中
+            chk.checked = !chk.checked
+        }
+    </script>
+</body>
+</html>

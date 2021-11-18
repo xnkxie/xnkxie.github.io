@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    请输入: <input type="text" id="txt">
+    <button id="btn">检查</button>
+    <script>
+        var btn = document.getElementById("btn");
+        var txt = document.getElementById("txt");
+            btn.onclick = function() {
+                var value = txt.value;
+                //进行判断 要么"xxx" 要么""
+                if(value == "") {
+                    alert("请输入")
+                }else {
+                    //不满足if条件 false
+                    //判断是不是一个数字 isNaN
+                    // console.log(isNaN(value)); true --不是数字 false--是数字
+                    //继续判断
+                    if (isNaN(value)) {
+                        alert("请输入数字")
+                    }else {
+                        //是不是整数
+                        //思路：可以利用强制取整，然后和文本框中的值作比较，如果相等，那么证明用户填写的值就是整数，否则就是浮点数
+                        //用这2个 parseInt,Number
+                        console.log(parseInt(value))
+                            if (parseInt(value) != Number(value)) {
+                                alert("请输入整数")
+                            }
+                        //思路2 在文本框中搜索字符. 如果存在字符. 证明用户写的就是浮点数
+                        // if (value.indexof('.')!=-1) {
+                            // alert("请输入整数")
+                        // }
+                            else {
+                                //首位是不是0
+                                //从先标出发  获取下标 charAt
+                                if (value.charAt(0) == '0') {
+                                    alert("首位不能为0")
+                                }else{
+                                    //长度5-11位
+                                    //获取字符串的长度  length属性
+                                    var cd = value.length;
+                                    //思路1 先将正确的区间写好。然后取反
+                                    // if (!(cd>=5 && cd<=11)) {
+                                    //     alert("长度应该为5-11")
+                                    // }else {
+                                    //     alert("验证通过")
+                                    // }
+                                    //思路2 将每一个区间写成开区间
+                                    if (cd<5 || cd>11) {
+                                        alert("长度为5-11")
+                                    }else{
+                                        alert("验证通过")
+                                    }
+                                }
+                            }
+                }
+            }
+            }
+    </script>
+</body>
+</html>

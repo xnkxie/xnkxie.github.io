@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        要求：页面开始的时候，标签中的文字在不断的更换，当用户点击确定按钮停止更换
+        思路：
+            1，页面一加载的时候启动定时器
+            2，将需要变换的内容存入一个数组中，定时器每次执行的函数都是数组中的随机下标,让随机的值赋值给p标签。
+            3，当点击确定按钮的时候停止当前定时器
+    -->
+    <p>一等奖:一百万</p>
+    <button>确定</button>
+
+    <script>
+        var p = document.getElementsByTagName("p")[0];
+        var btn = document.getElementsByTagName("button")[0]
+        var arr = ['一等奖:一百万','二等奖:五十万','三等奖:十万','安慰奖:谢谢参与']
+        var timer = setInterval(fn,100)
+        btn.onclick = function(){
+            clearInterval(timer)
+            //再次调用定时器
+            timer = setInterval(fn,100)
+        }
+        function fn(){
+            var index = Math.floor(Math.random() * arr.length);
+            p.innerText = arr[index];
+            //【随机下标】
+        }
+    </script>
+</body>
+</html>

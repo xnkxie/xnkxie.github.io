@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 父元素下的第几个子元素 */
+        p:nth-child(2){
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <p>
+                <span>javascript权威指南</span>
+                <!-- 
+                    禁止超链接跳转：
+                    写法1：JavaScript:;
+                    写法2：JavaScript:void(0)
+                -->
+                <a href="jsvascript:;">编辑</a>
+            </p>
+            <p>
+                <input type="text" name="" id="">
+                <a href="javascript:;">取消</a>
+                <a href="javascript:;">保存</a>
+            </p>
+        </li>
+        <li>
+            <p>
+                <span>javascript权威指南</span>
+                <!-- 
+                    禁止超链接跳转：
+                    写法1：JavaScript:;
+                    写法2：JavaScript:void(0)
+                -->
+                <a href="jsvascript:;">编辑</a>
+            </p>
+            <p>
+                <input type="text" name="" id="">
+                <a href="javascript:;">取消</a>
+                <a href="javascript:;">保存</a>
+            </p>
+        </li>
+        <li>
+            <p>
+                <span>javascript权威指南</span>
+                <!-- 
+                    禁止超链接跳转：
+                    写法1：JavaScript:;
+                    写法2：JavaScript:void(0)
+                -->
+                <a href="jsvascript:;">编辑</a>
+            </p>
+            <p>
+                <input type="text" name="" id="">
+                <a href="javascript:;">取消</a>
+                <a href="javascript:;">保存</a>
+            </p>
+        </li>
+        <li>
+            <p>
+                <span>javascript权威指南</span>
+                <!-- 
+                    禁止超链接跳转：
+                    写法1：JavaScript:;
+                    写法2：JavaScript:void(0)
+                -->
+                <a href="jsvascript:;">编辑</a>
+            </p>
+            <p>
+                <input type="text" name="" id="">
+                <a href="javascript:;">取消</a>
+                <a href="javascript:;">保存</a>
+            </p>
+        </li>
+        <li>
+            <p>
+                <span>javascript权威指南</span>
+                <!-- 
+                    禁止超链接跳转：
+                    写法1：JavaScript:;
+                    写法2：JavaScript:void(0)
+                -->
+                <a href="jsvascript:;">编辑</a>
+            </p>
+            <p>
+                <input type="text" name="" id="">
+                <a href="javascript:;">取消</a>
+                <a href="javascript:;">保存</a>
+            </p>
+        </li>
+    </ul>
+    <script>
+            //1由于每一行li所做的事情都是通过编辑超链接点击之后切换另一个p
+            //在建立函数之前必须要获取需要的元素
+            var li = document.getElementsByTagName("li")
+            //需要得到每一个li
+            for(var i = 0; i<li.length;i++){
+                // console.log(li[i]);
+                //调用函数，给出实际参数
+                edit(li[i]);
+            }
+            function edit(parents){
+                var p = parents.getElementsByTagName("p");
+                var a = parents.getElementsByTagName("a");
+                var span = parents.getElementsByTagName("span")[0];
+                var input = parents.getElementsByTagName("input")[0]
+
+                a[0].onclick = function(){
+                    p[0].style.display = "none";
+                    p[1].style.display = "block"
+
+                    //将span标签的值传给文本框
+                    input.value = span.innerText;
+                }
+                a[2].onclick = function(){
+                    //切换p
+                    p[1].style.display = "none";
+                    p[0].style.display = "block"
+
+                    //将文本框的值写回span标签
+                    span.innerText = input.value;
+
+                }
+                a[1].onclick = function(){
+                    p[1].style.display = "none";
+                    p[0].style.display = "block"
+                }
+            }
+    </script>
+</body>
+</html>

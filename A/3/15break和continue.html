@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //所有的循环都可以添加break和continue
+        for(var i = 1; i <= 5;i++){
+            //要求1 如果循环到3后 后面不执行
+            //break:当前的条件以后后面的条件不执行
+            if(i==3){
+                break;
+            }
+            console.log(i);
+            
+            //要求2: 从这5个数中，只要是3就跳过。然后后面继续执行
+            //continue: 跳出当前的条件，程序继续执行下面，保留之前结果以及后面的结果
+            if(i==3){
+                continue;
+            }
+            console.log(i);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        要求：页面中原本有一张图，在间隔3s之后换下一张图，如果运行的图片已经到头了，需要设置运动的限制，使得如果达到了限制，就从头再来一遍
+        思路：
+            1，页面一加载的时候就准备一张图,
+            2，在页面一开始的时候等3s之后就开始换一个图片，建立一个模拟的下标变量从0开始
+
+    -->
+<img src="/A/imgs/04.jpeg" alt="">
+    <script>
+        //将所有的图片资源存入数组，利用改变下标的方式变换图片
+        var arr = ["/A/imgs/04.jpeg","/A/imgs/03.jpeg","/A/imgs/02.jpeg","/A/imgs/01.jpeg"]
+        var img = document.getElementsByTagName("img")[0];
+        //设置定时器
+        setInterval(autoNext,1500);
+        var n = 0;
+        function autoNext(){
+            //让n++
+            n++;
+            //拦截一下
+            if(n==arr.length){
+                n=0;
+            }
+            img.src = arr[n];
+        }
+    </script>
+</body>
+</html>

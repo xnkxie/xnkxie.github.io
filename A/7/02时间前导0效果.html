@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1想要获取系统日期，那么就必须先创建一个系统日期对象
+        //对象都是通过new关键字创建出来
+        var now = new Date(); //Date()构造函数 首字母必须大写
+        // console.log(now);
+
+        //2如果想要获取其中的年月份小时分钟秒，那么必须要从日期对象中调用其中的方法
+        //获取年份
+        // console.log(now.getFullYear()); //2021
+        var year = now.getFullYear();
+        //获取月份
+        // console.log(now.getMonth() +1);
+        var month = add(now.getMonth() +1);
+        // if(month<10){
+        //     month = '0'+month
+        // }
+        //获取日期
+        // console.log(now.getDate());
+        var date = add(now.getDate());
+        // if(date<10){
+        //     date = '0'+date
+        // }
+        //获取小时
+        var hours = add(now.getHours());
+        // if(hours<10){
+        //     hours = '0'+hours
+        // }
+        //获取分钟
+        var mis = add(now.getMinutes());
+        // if(mis<10){
+        //     mis = '0'+mis
+        // }
+        //获取秒
+        var sec = add(now.getSeconds());
+        // if(sec<10){
+        //     sec = '0'+sec
+        // }
+
+        //3.需求：显示今天是
+        document.write('今天是'+year+'年'+month+'月'+date+'日 '+hours+':'+mis+':'+sec);
+
+
+        //创建一个函数 功能：给单位数字的日期添加前导0
+        function add(value){
+            return value<10?'0'+value:value;
+        }
+
+    </script>
+</body>
+</html>

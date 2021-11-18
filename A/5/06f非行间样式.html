@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: purple;
+        }
+    </style>
+</head>
+<body>
+    <!--( <div style="width:200px"></div> -->
+    <div></div>
+    <button>我的娃</button>
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        var div = document.getElementsByTagName("div")[0];
+
+        btn.onclick = function(){
+            // console.log(div.style.width);//如果元素身上没有行间样式则获取为空
+            //语法结构：window.getComputedStyle(哪一个元素).具体的属性名 获取到的是属性值
+            //其中window.是可写可不写，因为当前的方法就所属window对象，所以window对象可以被直接省略
+            //这种写法只能针对于标准/主流浏览器 ie低版本(8下)无法获取
+
+            console.log(window.getComputedStyle(div).width)
+            console.log(window.getComputedStyle(div).height);
+            console.log(window.getComputedStyle(div).background);
+
+            //适合低版本的写法
+            //语法结构：元素.currentStyle.属性名 获取属性值
+            console.log(div.currentStyle.width);
+        }
+    </script>
+</body>
+</html>

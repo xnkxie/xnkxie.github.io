@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //一：字面量创建数组
+        var arr = [];
+        //给数组赋值
+        //两种方式赋值
+        //1：根据下标一个值一个值的给
+        arr[0] = 10;
+        arr[1] = {"a":1,"b":2};
+        arr[2] = true;
+        arr[3] = [1,2,3]
+        arr[5] = "hello";
+        console.log(arr);
+
+        //2：直接在定义数组的时候给值
+        //如果想要表示某个索引位置上没有值，直接用逗号隔开，不写值就可以了
+        var arr = [10,{"a":1,"b":2},true,[1,2,3],,"hello"]
+        console.log(arr);
+
+        //二：找值
+        //200
+        console.log(arr[1]['b']); //200
+        console.log(arr[1].b);  //200
+        
+        //找数字3
+        console.log(arr[3][2]);//3
+
+
+
+        //构造函数方式
+
+        // var arr = new Array(); //格式1
+        // var arr = new Array(数);//格式2
+        // var arr = new Array(数1,数2,数3,,,) //格式3 多个参
+
+        //格式1：想要根据下标来进行赋值(有效的下标)
+        var arr = new Array();
+        arr[0] = 10;
+        arr[1] = "off";
+        arr[3] = false;
+        console.log(arr);
+
+
+        //格式2
+        var arr = new Array(5);//单个参表示数组中的预备长度，后期可以修改(被替换)
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+        console.log(arr);//如果在赋值的时候长度小于预备长度，那么长度就是预备长度，而不是实际长度
+
+        var arr = new Array(5);
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+        arr[3] = 40;
+        arr[4] = 50;
+        arr[5] = 60;
+        console.log(arr);//如果填充的值的长度超过了预备长度，那么就是现在的长度，而不是预备长度
+
+        //总计：如果没有超过预备长度，就是预备长度，如果超过了预备长度，那么就是实际长度
+
+        //格式3：多个参，表示填充的每一个值 -- 更灵活
+        var arr = new Array(10,20,30,40,50)
+        console.log(arr);
+        console.log(arr.length);
+
+
+        //长度(可读可写)
+        var arr = [1,2,3,4,5,6];
+        console.log(arr);//[1,2,3,4,5,6]
+        console.log(arr.length);//6
+        //修改长度
+        arr.length = 4;
+        console.log(arr);//[1,2,3,4]
+        console.log(arr.length);//4
+
+
+
+    </script>
+</body>
+</html>

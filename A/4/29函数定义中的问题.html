@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function f1(){
+        //     console.log('hello');
+        // }
+
+        // function f1() {
+        //     console.log('world');
+        // }
+        // f1();
+        // f1();
+        // //如果函数名中有相同的，后者覆盖前者
+
+        //需求：有多少个值需要做循环不确定？
+        // function fn() {
+        //     console.log(arguments);//类似于伪数组的对象，所以可以按照数组中的属性来获取其长度
+        //     console.log(arguments.length);
+        //     //获取其中某个值
+        //     console.log(arguments[2]);//和数组操作方式一致，通过下标获取值
+        //     // for(var i = 0; i<arguments.length;i++){
+        //     //     console.log(i);
+        //     // }
+        // }
+        // // fn(1,2,3,4,5);
+        // fn(1,2,3,4,5,6)
+
+
+            function fn(a,b,c,d) {
+                // for(var i=0;i<arguments.length;i++){
+                    // console.log(i);
+                // }
+
+                //单纯获取其中某一个
+                console.log(arguments[0]);
+                console.log(a);
+
+                //如果我修改了a的值，看arguments的变化
+                // a = 50;
+                // console.log(arguments[0]);
+            
+                //发过来，如果修改了arguments中的值，那么形参的值会不会有变化？？
+                // arguments[1] = 100;
+                // console.log(b);
+
+                //arguments通过下标获取的值和形参获取的值是一个值，如果改变了其中一种方式，会影响另一种发生值的获取
+            }
+            fn(10,20,30,40)
+
+
+
+
+
+    </script>
+</body>
+</html>

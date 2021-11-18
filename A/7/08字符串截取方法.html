@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = new String("hello world");
+        //索引仍然从0开始
+        //语法结构：
+        //变量.substring(从哪一个下标开始截取，(截取到什么位置(不包含这个位置)))
+        console.log(str.substring(1));//从第一个参数位置开始一直截取到字符串的末尾 ello world
+        console.log(str.substring(1,6));//ello空格
+
+        //特殊情况1：如果第一个参数的值>第二个参数的值，默认该方法会自动调换位置
+        console.log(str.substring(6,1));//ello空格
+        //特殊情况2：如果第一个参数为负数，默认看待为0
+        console.log(str.substring(-1,4));//        console.log(str.substring(0,4));hell
+
+
+        //方法2：slice
+        //语法结构：
+        //变量.slice(从哪一个下标开始截取，(截取到什么位置，(不包含这个位置)))
+        console.log(str.slice(1));//从第一个参数位置开始一直截取到字符串的末尾 ello world
+        console.log(str.slice(1,6));//ello空格
+
+        //特殊情况1：如果第一个参数的值>第二个参数的值，默认该方法不会自动调换位置
+        console.log(str.slice(6,1));//空
+        //特殊情况2：如果第一个参数为负数，默认看待为0
+        console.log(str.slice(-1,4));//第一个参数+字符串整体的长度，如果这个值小于第二个参数，才有结果 -1 +11 = 10 ，4
+
+        //方法3：substr
+        console.log(str.substr(1));//从第一个参数位置开始一直截取到字符串的末尾 ello world
+        //如果是两个参数，第二个参数表示的是获取多长字符，具体的长度
+        console.log(str.substr(1,6)); // ello w
+        
+
+
+    </script>
+</body>
+</html>

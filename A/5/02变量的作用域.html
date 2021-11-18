@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //局部变量
+        // function fn(){
+        //     var a=20;//局部变量(通过var关键字在函数内部声明的变量，在函数外部调用不到)
+        //     // console.log(a);
+        // }
+        // fn();
+        // console.log(a);//a is not defined
+
+            
+        //全局变量(函数内部和函数外部，相当于是整个script中的脚本作用域 -- 整体页面的作用域)
+        // var a = 20;
+        // function fn(c,d){
+        //     console.log(c+d+a);//1+2+20
+        // }
+        // fn(1,2);//23
+        // console.log(a);//20
+
+        // var a = 10;
+        // function fn(a){ //var a = 10
+        //     var a = 20;
+        //     console.log(a);//20
+        //     //变量的查找方式是就近原则
+        //     //变量的作用域链：局部变量 => 形式参数=>全局变量，如果全局变量当中没有这个变量值的定义就要报错
+        // }
+        // fn(a);
+        // console.log(a);//10
+
+        function fn(){
+            a = 20;//如果当前函数内部声明没有利用var关键字声明的话，那么程序会将当前变量提升到函数的外部，作为全局变量对待
+        }
+        fn();
+        console.log(a);
+        /*总结:
+            全局变量：
+                情况1：在函数外部利用var关键字(或者不写)都算做全局变量
+                情况2：在函数内部没有利用var关键字声明的变量也是全局变量
+                    原因：程序将当前变量利用变量提升机制提升到了函数的外部，作为全局变量的声明，然后在函数的内容就其重新赋值
+            局部变量：
+                就是在函数内部利用var关键字声明的变量就是局部变量
+          */  
+    </script>
+    
+</body>
+</html>

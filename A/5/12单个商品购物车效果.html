@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <button>-</button>
+            <span>0</span>
+            <button>+</button>
+            点击:<span>5.2</span>元
+            所等:<span>0</span>元
+        </li>
+    </ul>
+    <script>
+        var btn = document.getElementsByTagName("button");
+        var span = document.getElementsByTagName("span");
+        btn[1].onclick = function(){
+            span[0].innerText++;
+            // span[2].innerText = span[0].innerText * span[1].innerText
+            // toFixed(2)  保留2位小数
+            console.log(typeof span[0].innerText,typeof span[1].innerText);
+            span[2].innerText = (Number(span[0].innerText)* Number(span[1].innerText)).toFixed(2);
+        }
+
+        btn[0].onclick = function(){
+            span[0].innerText--;
+            //判断限制
+            if(span[0].innerText<0){
+                span[0].innerText = 0
+                span[2].innerText = '0'
+            }else{
+                span[2].innerText = (Number(span[0].innerText)* Number(span[1].innerText)).toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>

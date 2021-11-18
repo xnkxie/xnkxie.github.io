@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        #box {
+            width: 650px;
+            height: 110px;
+            margin: 120px auto;
+        }
+        ul li{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin-right: 20px;
+            position: relative;
+        }
+        ul li p{
+            position: absolute;
+            top: 20px;
+            width: 100px;
+            height: 100px;
+            background: pink;
+            text-align: center;
+            line-height: 100px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>
+                <p>1</p>
+            </li>
+            <li>
+                <p>2</p>
+            </li>
+            <li>
+                <p>3</p>
+            </li>
+            <li>
+                <p>4</p>
+            </li>
+            <li>
+                <p>5</p>
+            </li>
+        </ul>
+    </div>
+    <script>
+        //获取元素
+        var li = document.getElementsByTagName("ul")[0].getElementsByTagName("li");
+        //每一个元素都要做同样的事情:必须要for循环
+        var li_cd = li.length;
+        for(var i = 0;i<li_cd;i++){
+            //获取每一个li
+            // console.log(li[i]);
+            //给每一个元素添加点击事件
+            li[i].onmousemove = function(){
+                //找当前发生事件的元素
+                //在每一个循环中的父元素下找到对应的子元素
+                this.getElementsByTagName("p")[0].style.display = "block";
+            }
+            li[i].onmouseout = function(){
+                this.getElementsByTagName("p")[0].style.display = "none"
+            }
+        }
+    </script>
+</body>
+</html>
