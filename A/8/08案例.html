@@ -17,7 +17,21 @@
 			{"date":"2018-08-02","DIU":1525,"contry":"CN"}
         
         ];
-        
+        //找到所有的date的值
+        arr.sort(function(a,b){
+            //将日期字符串直接转换成时间戳
+            // Date.parse(字符串)
+            // console.log(Date.parse(b.date));
+            // console.log(Date.parse(a.date));
+
+            //如果当其中的date相等，则按照DIU降序排序
+            if(b.date == a.date){
+                return b.DIU - a.DIU;
+
+            }
+            return Date.parse(b.date) - Date.parse(a.date)
+        })
+        console.log(arr);
 
     </script>
 </body>

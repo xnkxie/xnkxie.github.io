@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [5,4,3,2,1];
+        for(var i = 0;i<arr.length;i++){
+            //第一圈循环的目的是为了获取到数组中的所有的值
+            // console.log(arr[i]);
+            //为了能够获取当前项的后面的依次项，需要再次循环
+            for(var j = i+1;j<arr.length;j++){
+            /*当i= 0； i=1  i=2     i=3     i=4
+                j=1    j=2  j=3     j=4
+                j=2    j=3  j=4
+                j=3    j=4
+                j=4
+
+                i=0
+                j=4,3,2,1   第一圈
+                i=1
+                j=3,2,1     第二圈
+                i=2
+                j=2,1       第三圈
+                i=3
+                j=1         第四圈
+                i=4
+
+                i=0 j=1 5>4 4,5,3,2,1
+                i=0 j=2 4>3 3,5,4,2,1
+                i=0 j=3 3>2 2,5,4,3,1
+                i=0 j=4 2>1 1,5,4,3,2
+
+                i=1 j=2 5>4 1,4,5,3,2
+                i=1 j=3 4>3 1,3,5,4,2
+                i=1 j=4 3>2 1,2,5,4,3
+
+                i=2 j=3 5>4 1,2,4,5,3
+                i=2 j=4 4>3 1,2,3,5,4
+
+                i=3 j=4 5>4 1,2,3,4,5
+            */ 
+                if(arr[i]>arr[j]){
+                    //因为需要替换值，所以需要将arr[i]备份一份
+                    var temp= arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</body>
+</html>

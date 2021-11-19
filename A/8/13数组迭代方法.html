@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [57,85,12,56,100];
+        /*语法结构：
+            数组.every(function([值,下标]){})
+            every无法修改原数组
+            如果值其中一个为false，结果就为false
+        */
+        console.log(arr.every(function(value){
+            //建立条件(当前这些值必须大于30)
+            return value > 30;
+        }));
+
+
+        //只要有一个值为true，结果就是true
+        //数组.some(function([值,下标]){})
+        console.log(arr.some(function(value){
+            return value > 30;
+        }));
+
+
+
+        //想要知道具体哪一个值符合条件
+        //从数组中进行符合条件的值过滤
+        //语法结构：数组.filter(function([值,下标]){})
+        console.log(arr.filter(function(value){
+            return value>30;//[57,85,56,100]
+        }));
+
+        //想要逐个修改数组中的每一个值
+        //语法结构：数组.map(function([值,下标]){})
+        console.log(arr.map(function(value){
+            return value * 10;
+        }));
+
+
+        //只是想要单纯的循环
+        //语法结构：数组.forEach(function([值,下标]){})
+        arr.forEach(function(value){
+            console.log(value);
+        })
+    </script>
+</body>
+</html>
