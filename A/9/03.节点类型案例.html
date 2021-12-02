@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        文档
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        //先获取ul
+        var ul = document.getElementsByTagName("ul")[0];
+        //创建一个变量来获取ul下的子节点 节点类型
+        var chil = ul.childNodes;
+        for(var i =0;i<chil.length;i++){
+            //标签节点为1  文本节点为3
+            //进行每一个值的类型判断
+            if(chil[i].nodeType==1){
+                chil[i].style.background = "pink"
+            }else if(chil[i].nodeType==3){
+                    //获取节点值：nodeValue
+                    chil[i].nodeValue = "hello world"
+            }
+        }
+    </script>
+</body>
+</html>

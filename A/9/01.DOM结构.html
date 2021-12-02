@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!--  -->
+        <ul>
+            <li>
+                <a href="#">百度</a>
+            </li>
+        </ul>
+        <p>01</p>
+        <span>z</span>
+        <span>x</span>
+        <span>c</span>
+
+        <script>
+            //根据层级来进行获取
+            //从div这个父节点开始找所有的子节点
+            var div = document.getElementsByTagName("div")[0];
+            // console.log(div.childNodes);
+            // NodeList(15)0: text1: comment2: text3: ul4: text5: p6: text7: span8: text9: span10: text11: span12: text13: script14: textlength: 15[[Prototype]]: NodeList
+            //包括：标签节点(直接就是标签名称),注释节点(comment),文本节点(换行符,纯文本)  text
+
+            //children：获取父节点的直接标签子节点
+            // console.log(div.children);
+            
+            var child = div.children[1];
+            console.log(child);
+
+        </script>
+    </div>
+</body>
+</html>

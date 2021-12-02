@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        #box{
+            width: 1400px;
+            margin:auto;
+        }
+        a{
+            background: violet;
+            display: block;
+            color: #ffffff;
+            width: 120px;
+            height: 30px;
+            float: left;
+        }
+        img{
+            width: 110px;
+            height: 100px;
+        }
+        #box2{
+            width: 1100px;
+    
+        }
+        #box2 p{
+            float: left;
+            width: 210px;
+            margin-right: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <a href="#">从小到大</a>
+    </div>
+    <div id="box2">
+        <!-- <p><img src="/A/imgs/01.jpeg"><br>图1</p> -->
+
+    </div>
+
+
+    <script>
+        //完成一个模拟的数据(数组)
+        var box2 = document.getElementById("box2");
+        var a  = document.getElementsByTagName("a")[0];
+        var arr = [
+            {
+                "imgsrc":"/A/imgs/01.jpeg",
+                "title":"图1"
+            },
+            {
+                "imgsrc":"/A/imgs/02.jpeg",
+                "title":"图2"
+            },
+            {
+                "imgsrc":"/A/imgs/03.jpeg",
+                "title":"图3"
+            },
+            {
+                "imgsrc":"/A/imgs/04.jpeg",
+                "title":"图4"
+            },
+            {
+                "imgsrc":"/A/imgs/03.jpeg",
+                "title":"图5"
+            },
+            {
+                "imgsrc":"/A/imgs/01.jpeg",
+                "title":"图6"
+            },
+            {
+                "imgsrc":"/A/imgs/02.jpeg",
+                "title":"图7"
+            },
+            {
+                "imgsrc":"/A/imgs/04.jpeg",
+                "title":"图8"
+            }
+        ]
+        // var str = "";
+        // //2、先还原数据
+        // for(var i =0;i<arr.length;i++){
+        //     str+="<p><img src=\""+arr[i].imgsrc+"\"><br>"+arr[i].title+"</p>"
+        // }
+        // box2.innerHTML = str;
+        show();
+
+        //点击a标签
+        var tag = true;
+
+        a.onclick = function(){
+            if(tag){
+                a.innerText = "由小到大";
+                tag = false;
+                //大=>小降序
+                arr.sort(function(a,b){
+                    return b.title.slice(1) - a.title.slice(1);
+                })
+            }else{
+                a.innerText = "由大到小";
+                tag= true;
+                arr.sort(function(a,b){
+                    return a.title.slice(1) - b.title.slice(1);
+                })
+            }
+            show();
+            
+        }
+        function show(){
+            var str = "";
+            for(var i=0;i<arr.length;i++){
+                str+="<p><img src=\""+arr[i].imgsrc+"\"><br>"+arr[i].title+"</p>"
+            }
+            box2.innerHTML = str;
+        }
+    </script>
+</body>
+</html>

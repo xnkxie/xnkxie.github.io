@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!--  -->
+        <ul>
+            <li>
+                <a href="#">百度</a>
+            </li>
+        </ul>
+        <p>01</p>
+        <span>z</span>
+        <span>x</span>
+        <span>c</span>
+        <script>
+            //根据层级来进行获取
+            //从div这个父节点开始找所有的子节点
+            var div = document.getElementsByTagName("div")[0];
+            //根据节点类型来确定到底是什么节点
+            console.log(div.childNodes[0]);//text
+            //nodeType:检测节点类型    文本节点类型为3
+            console.log(div.childNodes[0].nodeType);
+            
+            //nodeType:检测节点类型   注释节点类型为8
+            console.log(div.childNodes[1]);//注释
+            console.log(div.childNodes[1].nodeType);
+
+
+            //nodrType:检测节点类型    标签节点类型为1
+            console.log(div.childNodes[3]); //ul
+            console.log(div.childNodes[3].nodeType);
+
+            //属性节点：只能获取到具体有这个属性的标签节点之后才能获取到其中的属性节点
+            //找标签的属性？
+            console.log(a.title);//空
+
+            console.log(a.getAttribute("href"));//#
+            //属性节点类型：2
+            //获取属性节点的方式：哪一个标签.getAttributeNode("哪一个属性节点")
+            console.log(a.getAttributeNode("href").nodeType);
+
+            //如果通过getAttribute方法获取没有明确定义的属性，则为null
+            console.log(a.getAttribute("title"));//null
+
+            //给标签添加属性
+            //哪一个标签.setAttribute('属性名',属性值)
+            a.setAttribute("title","在文");
+            console.log(a.getAttribute("title"));
+
+
+            //自定义属性 无法写入标签
+            a.tag = 100;
+            console.log(a.tag);//100
+
+            //可以添加到标签上
+            a.setAttribute("tag",100);
+            console.log(a.getAttribute("tag"));
+            
+
+            
+        
+        
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div style="position: relative;">
+            <div>
+                <ul>
+                    <li>1</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        //想要查找li的直接父节点ul
+        var li = document.getElementsByTagName("li")[0];
+        //离子节点最近的那个包着当前节点 ：直接父节点
+        console.log(li.parentNode);//ul
+        console.log(li.parentNode.parentNode);//div
+        console.log(li.parentNode.parentNode.parentNode);//body
+        console.log(li.parentNode.parentNode.parentNode.parentNode);//html
+        console.log(li.parentNode.parentNode.parentNode.parentNode.parentNode);//#document文档对象
+
+        //找子节点的定位父节点：子节点.offsetParent
+        //position:relative,absolute,fixed,static
+        //找元素，永远是离自己最近的那一个定位父节点
+        console.log(li.offsetParent);
+
+    </script>
+</body>
+</html>

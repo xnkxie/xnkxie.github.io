@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        追加：父节点.appendChild(子节点)
+        插入：父节点.insertBefore(新节点(通过创建),旧节点(通过获取))
+        创建：document.createElement("标签名称") --创建标签节点 document.createTextNode("文本内容")
+        删除：
+            元素的自身删除：元素.remove();
+            通过父节点方式删除：父节点.removeChild(子节点)
+    -->
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        //需求1:想要在ul里面的li添加一个末尾的li
+        //1，获取ul
+        var ul = document.getElementsByTagName("ul")[0];
+        //2创建标签
+        var li = document.createElement("li");
+        //3给标签添加内容
+        //3.1 innerText,innerHTML
+        // li.innerText = 6;
+        //3.2通过创建一个文本节点在追加到标签节点当中
+        var text = document.createTextNode(6)
+        //如何让标签节点追加文本节点
+        li.appendChild(text);
+        
+        //4把创建组装好的新的节点追加给ul
+        ul.appendChild(li);
+
+    
+
+
+        //需求2：想要创建一个新的li节点，放在第二个li的前面
+        var ul = document.getElementsByTagName("ul")[0];
+        var li = document.createElement("li");
+        var text1 = document.createTextNode("hello") 
+        li.appendChild(text1);
+
+        //想要找到li的第二个，必须通过父节点找到第一个子节点，然后操作其后面的兄弟节点
+        var first = ul.firstElementChild || ul.firstChild;
+        var next = first.nextSibling || first.nextElementSibling;
+
+        //完成插入
+        //父节点.insertBefore(新,旧)
+        ul.insertBefore(li,next);
+
+
+        //需求3:想要删除最后一个子节点的前一个子节点
+        //先找最后一个子节点
+        var ul = document.getElementsByTagName("ul")[0];
+        var last = ul.lastChild || ul.lastElementChild;
+        //找到前面一个
+        var prev = last.previousSibling || last.previousElementSibling
+        //元素的自身删除
+        prev.remove();
+        //通过父元素来删除哪一个子节点
+        ul.removeChild(prev);
+
+
+
+
+
+    </script>
+</body>
+</html>

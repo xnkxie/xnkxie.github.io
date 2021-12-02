@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <p>11</p>
+        <a href="#">ss</a>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+
+    <script>
+        //获取父节点下的第一个子节点和最后一个子节点
+        //第一个子节点
+        var div = document.getElementsByTagName("div")[0];
+        //具体获取到是什么节点，和布局有关
+        //语法结构：父节点.firstChild 获取到的是父节点下面的第一个节点，这个节点可能说文本，注释，属性什么的
+        console.log(div.firstChild);
+        //语法结构：父节点.firstElementChild 获取到的是父节点下面的第一个标签节点，
+        console.log(div.firstElementChild);
+        //兼容写法
+        var first = div.firstElementChild || div.firstChild;
+        
+        //获取最后一个子节点
+        console.log(div.lastChild);//最后一个文本节点
+
+        console.log(div.lastElementChild);//ul
+        //兼容
+        var ff = div.lastElementChild || div.lastChild;
+
+
+        //通过层级获取兄弟节点
+        //想要获取第二个span标签，必然要先获取第一个span标签，然后在获取其后面的兄弟节点
+        console.log(first.nextSibling);//换行符
+        console.log(first.nextElementSibling); //后一个兄弟标签节点
+        //兼容写法
+        var next = div.nextSibling || div.nextElementSibling;
+
+        console.log(ff.previousSibling); //#text
+        console.log(ff.previousElemenntSibling) //a
+        //兼容
+        var prev = div.previousSibling || div.previousElementSibling;
+        
+
+
+    </script>
+</body>
+</html>
