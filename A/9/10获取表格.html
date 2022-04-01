@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table width="500" cellpadding="3" cellspacing="3" border="1" align="center" id="table">
+        <thead>
+            <tr>
+                <td>编号</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>微微</td>
+                <td>22</td>
+                <td>男</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>吴</td>
+                <td>22</td>
+                <td>男</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>递温</td>
+                <td>21</td>
+                <td>男</td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+
+    <script>
+        //1获取thead，需要表格中明确标注出thead
+        // var thead = document.getElementById("table").getElementsByTagName("thead")[0];
+        // console.log(document.getElementById("table").tHead);
+        //2.获取tbody
+        // var tbody = document.getElementById("table").getElementsByTagName("tbody")[0];
+        // console.log(document.getElementById("table").tBodies[0]);
+        //3.获取tfoot
+        // var tfoot = document.getElementById("table").getElementsByTagName("tfoot")[0];
+        // console.log(document.getElementById("table").tFoot);
+
+        // var table = document.getElementById("table")
+        //找到表格所有的行
+        // console.log(table.rows); //rows是所有行的集合
+        // console.log(table.rows.length); //4
+        
+        //找到tbody中的所有的行
+        // var tbody = document.getElementById("table").tBodies[0];
+        // console.log(tbody.rows); 
+        // console.log(tbody.rows.length); //3
+        
+        //要想获取列，必须先获取行
+        var tbody = document.getElementById("table").tBodies[0];
+        // console.log(tbody.rows[0].cells);  //是所有列的集合
+        // console.log(tbody.rows[0].cells.length);
+        //获取第0列的值
+        // console.log(tbody.rows[0].cells[0].innerText);
+
+        //创建元素的时候可以封装函数
+        //创建某标签.某标签的值
+        /*
+            obj:创建的哪一个标签名称
+            value：创建的标签的值
+        */
+        function CreateE(obj,value){
+            //创建标签
+            var ele = document.createElement(obj);
+            ele.innerText = value;
+            //反出到函数外部进行后续的使用
+            return ele;
+        }
+        var table = document.getElementById("table")
+        var tbody = document.getElementById("table").tBodies[0];
+        var tr = document.createElement("tr");
+        var td = CreateE("td",tbody.rows.length+1);
+        tr.appendChild(td)
+        table.appendChild(tr)
+
+
+    </script>
+
+
+</body>
+</html>

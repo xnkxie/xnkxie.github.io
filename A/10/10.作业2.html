@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: 2px solid rebeccapurple;
+            position: absolute;
+            display: none;
+        }
+        #bn{
+            float: right;
+        }
+        body{
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <button>显示元素</button>
+    <div>
+        <button id="bn">X</button>
+    </div>
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        var bn = document.getElementById("bn");
+        var div = document.getElementsByTagName("div")[0];
+        btn.onclick = function(){
+            div.style.display = "block";
+
+            div.style.left = document.documentElement.clientWidth / 2 - div.offsetWidth / 2 + "px";
+            div.style.top = document.documentElement.clientHeight / 2 - div.offsetHeight / 2 + "px";
+        }
+
+        window.onscroll = function(){
+            //发生滚动的时候要获取滚动过去的top值
+            var sctop = document.documentElement.scrollTop || document.body.scrollTop;
+            div.style.top = (document.documentElement.clientHeight / 2 - div.offsetHeight / 2) + sctop + "px";
+            div.style.left = document.documentElement.clientWidth / 2 - div.offsetWidth / 2 + "px";
+        }
+        bn.onclick = function(){
+            div.style.display = "none";
+        }
+        window.onresize = function(){
+            var sctop = document.documentElement.scrollTop || document.body.scrollTop;
+    
+            div.style.top = (document.documentElement.clientHeight / 2 - div.offsetHeight / 2) + sctop + "px";
+            div.style.left = document.documentElement.clientWidth / 2 - div.offsetWidth / 2 + "px";
+        }
+    
+    </script>
+</body>
+</html>

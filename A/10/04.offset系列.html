@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #father{
+            width: 200px;
+            height: 200px;
+            background: red;
+            /* padding: 10px; */
+            padding: 10px 20px 30px 40px;
+            /* margin: 25px;
+             */
+            margin: 3px 5px 2px 6px ;
+            border: 1px solid black;
+            position: relative;
+        }
+        #child{
+            width: 100px;
+            height: 100px;
+            background: wheat;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="father">
+        <div id="child"></div>
+    </div>
+    <script>
+        //1.获取div中的可视宽
+        var child = document.getElementById("child");
+        //2.获取元素的占位宽高
+        // console.log(div.offsetWidth);//width+左右padding+左右border
+        // console.log(div.offsetHeight);//height+上下padding+上下border
+
+        //3.元素到定位父节点的距离
+        //如果元素没有定位父节点，直接找到的是body
+        // console.log(div.offsetTop);
+        
+        //如果你的元素中有top和margin，那么就是top+margin
+        console.log(child.offsetTop);
+
+
+    </script>
+</body>
+</html>

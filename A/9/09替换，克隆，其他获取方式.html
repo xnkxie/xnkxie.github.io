@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        替换：父节点.replaceChild(新，旧)
+        克隆：元素.cloneNode([true]) 如果添加true参数表示既克隆标签，又克隆内容，如果不添加true参数，表示只复制标签，没有内容
+        获取：
+            动态获取：
+                getElementById -- 通过ID获取 -- 元素对象
+                getElementsByTagName -- 通过标签名获取 -- 元素集合
+                getElemnetsByClassName -- 通过class类名的形式获取 -- 元素集合
+            静态获取：
+                通过css选择器方式来进行获取
+                获取单元素:document.querySelector("选择器名称")
+                获取多元素：document.querySelectorAll("选择器名称")
+
+                可以ID，标签，类名都可以。
+                ID：document.querySelector("#选择器名称")
+                标签：document.querySelector("哪一个标签名称")
+                class：document.querySelector(".选择器名称")
+            区别：
+                如果通过动态方式获取，在利用追加节点的方式追加新节点之后，长度会发生变化，元素列表也有变化
+                如果通过静态方式获取，在利用追加节点的方式追加新节点之后，长度仍然是原始的长度，元素列表有变化
+    -->
+    <ul>
+        <li>qw</li>
+        <li class="li">ww</li>
+        <li>www</li>
+        <li id="li1">sss</li>
+        <li class="li">xxxx</li>
+        <li class="li">ffff</li>
+    </ul>
+
+    <script>
+
+        //其他的获取元素方式
+        // //想要通过id的形式获取元素
+        // var li = document.querySelector("#li");
+        // //想要通过class的形式获取元素
+        // var li = document.querySelector(".li");
+        // console.log(li); //ww
+        
+        // //想要通过标签名的形式获取元素
+        // var li = document.querySelector("li");
+        // console.log(li); //qw
+
+        // //获取多元素
+        // var li = document.querySelectorAll(".li")
+        // console.log(li);
+        // console.log(li.length);
+        // console.log(li[0]);
+
+        // var li = document.querySelectorAll("li");
+        // console.log(li); //NodeList(6) [li,li.li, li, li#li1, li.li, li.li]
+
+
+        //先按照动态的方式来获取标签
+        // var ul = document.getElementsByTagName("ul")[0];
+        // //先获取所有的li，计算长度，在追加一个新的li，看ul中的列表是否有变化，长度是否有变化
+        // var li = document.getElementsByTagName("li");
+
+        // //追加一个新的li
+        // var new_li = document.createElement("li");
+        // new_li.innerText = "wwwwww";
+
+        // //追加ul
+        // ul.appendChild(new_li)
+        // console.log(li);
+        // console.log(li.length);
+
+        //在按照静态的方式来获取标签
+        var ul = document.querySelector("ul");
+        var li = document.querySelectorAll("li");
+
+        var new_li = document.createElement("li");
+        new_li.innerText = "wwwwwwwwww";
+        ul.appendChild(new_li)
+        console.log(li); //列表发生变化，长度还是原来的长度
+        console.log(li.length);
+
+
+
+
+        //需求1：获取ww替换为3w
+        // var ul = document.getElementsByTagName("ul")[0];
+        // //替换要先创建 所以先创建一个新的li
+        // var li = document.createElement("li");
+        // li.innerText = "3w";
+
+        // //找到ww
+        // var first = ul.firstElementChild || ul.firstChild;
+        // var next = first.nextElementSibling || first.nextSibling;
+
+        // //开始替换
+        // ul.replaceChild(li,next);
+
+        //需求2：把sss替换成ffff (用已知替换已知会形成物理位移)
+        // var li1 = document.getElementById("li1");//sss
+        // var last = ul.lastElementChild || ul.lastChild;//ffff
+        // //ffff 新  sss  旧
+        // ul.replaceChild(last,li1);
+        
+        //需求3：复制一份sss，让复制的副本替换到www
+        // var li1 = document.getElementById("li1");
+        // var new_li1 = li1.childNodes(true);
+        // var prev = li1.previousElementSibling || li1.previousSibling;
+        // //新：new_li1
+        // //旧：prev
+        // ul.removeChild(new_li1,prev)
+
+
+
+
+
+    </script>
+</body>
+</html>

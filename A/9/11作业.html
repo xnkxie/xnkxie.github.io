@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .wrap {
+            height: 28px;
+            background-color: #eee;
+            border-top: 2px solid orangered;
+        }
+        .tit {
+            width: 950px;
+            font-size: 12px;
+            line-height: 28px;
+            margin:  0 auto;
+        }
+        .left {
+            float: left;
+        }
+        .left>ul>li {
+            float: left;
+            padding: 0 20px;
+        }
+        .right {
+            float: right;
+        }
+        .right>ul>li {
+            float: left;
+            padding: 0 20px;
+        }
+        .left>ul>li>div>ul>li,
+        .right>ul>li>div>ul>li {
+            border-top: 1px solid orange;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="tit">
+            <div class="left">
+                <ul>
+                    <li>设为首页</li>
+                    <li>手机新浪网</li>
+                    <li>移动客户端
+                        <div style="display: none;">
+                            <ul
+                                style="background-color: white;color: #000;border: 1px solid orangered;border-top: none;">
+                                <li>新浪微博</li>
+                                <li>新浪无线</li>
+                                <li>新浪网络</li>
+                                <li>新浪体育</li>
+                                <li>新浪插件</li>
+                                <li>新浪网玩</li>
+                                <li>新浪爆款</li>
+                                <li>新浪物理</li>
+                                <li>新浪网速</li>
+                                <li>新浪客户端</li>
+                                <li>新浪邮箱</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div class="right">
+        <ul>
+            <li>登录</li>
+            <li>微博
+                <div style="display: none;">
+                    <ul style="background-color: white; color: #000;border: 1px solid orangered;border-top: none;">
+                        <li>实行</li>
+                        <li>评论</li>
+                        <li>@我</li>
+                    </ul>
+                </div>
+            </li>
+            <li>博客
+                <div style="display: none;">
+                    <ul style="background-color: white; color: #000;border: 1px solid orangered;border-top: none;">
+                        <li>博客实行</li>
+                        <li>博客评论</li>
+                    </ul>
+                </div>
+            </li>
+            <li>邮箱
+                <div style="display: none;">
+                    <ul style="background-color: white; color: #000;border: 1px solid orangered;border-top: none;">
+                        <li>邮箱实行</li>
+                        <li>邮箱评论</li>
+                    </ul>
+                </div>
+            </li>
+            <li>网站导航</li>
+        </ul>
+    </div>
+    </div>
+</div>
+</body>
+</html>

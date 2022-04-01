@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100%;
+            height: 100px;
+            background: violet;
+            margin-bottom: 10px;
+
+        }
+        #pingjia{
+            background: wheat;
+            position: absolute;
+        }
+        body{
+            height: 3000px;
+        }
+        #pingjia.active{
+            /* //固定定位 */
+            position: fixed;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="pingjia"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var pingjia = document.getElementById("pingjia");
+        var pingjia_top = pingjia.offsetTop;//1218
+        //窗体发生滚动事件
+        window.onscroll = function(){
+            //获取滚动过去的top值
+            var sctop = document.documentElement.scrollTop || document.body.scrollTop;
+            if(sctop>=pingjia_top){
+                pingjia.className = "active"
+            }else{
+                pingjia.className = ""
+            }
+        }
+    </script>
+</body>
+</html>

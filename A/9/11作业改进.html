@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font-size: 13px;
+        }
+        .box>ul>li>a{
+            color: rgb(76, 76, 76);
+            text-decoration: none;
+        }
+        .box{
+            width: 100%;
+            height: 45px;
+            background: rgb(252, 252, 252);
+            margin: auto;
+            border-top: 2px solid rgb(252, 125, 0);
+            border-bottom: 1px solid rgb(252, 252, 252);
+        }
+        .box>ul{
+            width: 1100px;
+            height: 5px;
+            margin: auto;
+        }
+        .box>ul>li{
+            width: auto;
+            height: 5px;
+            float: left;
+            line-height: 5px;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .box>ul>li:nth-child(4){
+            width: 320px;
+            height: 5px;
+            display: block;
+        }
+        .box>ul>li:hover{
+            background: rgb(237, 238, 240);
+            cursor: pointer;
+        }
+        .box>ul>li:hover>a{
+            color: rgb(255, 124, 0);
+        }
+        .box>ul>li>ul{
+            display: none;
+            width: 120px;
+            height: auto;
+            overflow: hidden;
+            background: #ffffff;
+            border-left: 1px solid rgb(255, 202, 88);
+            position: absolute;
+            line-height: 40px;
+            text-align: left;
+            border-right: 1px solid rgb(255, 202, 88);
+            left: 0px;
+            top: 45px;
+        }
+        .box>ul>li>ul>li{
+            border-bottom: 1px solid rgb(255, 202, 88);
+            padding-left: 15px;
+        }
+        .box>ul>li>ul>li>a{
+            color: rgb(51, 51, 51);
+            text-decoration: none;
+        }
+        .box>ul>li>ul>li:hover{
+            background: rgb(255, 245, 218);
+        }
+        .box>ul>li>ul>li:hover>a{
+            color: rgb(250, 114, 0);
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        作业分析：
+            1，导航栏里面的li都要有鼠标经过效果，所以需要循环注册鼠标事件
+            2，核心原理：当鼠标经过li里面的第二个孩子ul显示，当鼠标离开。则ul隐藏
+    -->
+    <div class="box">
+        <ul class="box_list">
+            <li><a href="#">设为首页</a></li>
+            <li><a href="#">手机新浪网</a> </li>
+            <li>
+                <a href="#">移动客户端</a>
+                <ul>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">新浪新闻</a></li>
+                    <li><a href="#">新浪财经</a></li>
+                    <li><a href="#">新浪体育</a></li>
+                    <li><a href="#">新浪双学位</a></li>
+                    <li><a href="#">新浪博客</a></li>
+                    <li><a href="#">新浪天气</a></li>
+                    <li><a href="#">学习通</a></li>
+                    <li><a href="#">新浪邮箱</a></li>
+                    <li><a href="#">新浪客户端</a></li>
+                    <li><a href="#">新浪游戏</a></li>
+                </ul>
+            </li>
+            <li class="kong"></li>
+            <li><a href="#">登录</a></li>
+            <li>
+                <a href="#">微博</a>
+            <ul>
+                <li><a href="#">私信</a></li>
+                <li><a href="#">评论</a></li>
+                <li><a href="#">@我</a></li>
+            </ul>
+            </li>
+            <li>
+                <a href="#">博客</a>
+            <ul>
+                <li><a href="#">博客评论</a></li>
+                <li><a href="#">未读提醒</a></li>
+            </ul>
+            </li>
+            <li>
+                <a href="#">邮箱</a>
+            <ul>
+                <li><a href="#">免费邮箱</a></li>
+                <li><a href="#">VIP邮箱</a></li>
+                <li><a href="#">企业邮箱</a></li>
+                <li><a href="#">新浪邮箱客户端</a></li>
+            </ul>
+            </li>
+            <li><a href="#">网站导航</a></li>
+        </ul>
+    </div>
+
+
+<script>
+    //1：先获取一级菜单
+    var box_list = document.getElementsByClassName("box_list")[0];
+    var child = box_list.children;
+    //2:每一个一级菜单都需要鼠标移入移出
+    for(var i = 0 ;i < child.length;i++){
+        child[i].onmouseover = function(){
+            //找到一级菜单中的ul
+            // console.log(this.getElementsByTagName("ul")[0]);
+            //如果有就是对应的标签，没有就是undefined
+            if(this.getElementsByTagName("ul")[0]!=undefined){
+                this.getElementsByTagName("ul")[0].style.display = "block"
+            }
+        }
+        child[i].onmouseout = function(){
+            if(this.getElementsByTagName("ul")[0]!=undefined){
+                this.getElementsByTagName("ul")[0].style.display = "none"
+            }
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

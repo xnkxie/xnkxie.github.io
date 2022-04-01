@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        const div = document.getElementsByTagName("div")[0];
+        //取消事件
+        //一：给元素添加普通的事件
+        // div.onclick = function(){
+        //     console.log('click');
+        // }
+        // div.onmouseover = function(){
+        //     console.log('mouseover');
+        // }
+        // //取消事件
+        // //语法结构：哪一个元素.事件类型 = null
+        // div.onmouseover = null;
+
+        //2： 给元素绑定事件
+        // div.addEventListener('click',f1);
+        // div.addEventListener('mouseover',f2)
+        // div.attachEvent('onclick',f1)
+        // div.attachEvent('onmouseover',f2)
+
+        //判断时的   
+        function addEvent(obj,type,fn){
+            if(obj.addEventListener){
+                obj.addEventListener(type,fn);
+            }else{
+                obj.attachEvent('on'+type,fn);
+            }
+        }
+         //调用函数
+        addEvent(div,'click',f1);
+        // addEvent(div,'dblclick',f2);
+        addEvent(div,'mouseover',f2);
+
+
+
+        function f1(){
+            console.log('click');
+        }
+        function f2(){
+            console.log('mouseover');
+        }
+        //取消绑定事件
+        // div.removeEventListener(事件函数，触发函数)
+        // div.removeEventListener('mouseover',f2);
+        //哪一个元素.detachEvent(事件类型，触发函数)
+        // div.detachEvent('onclick',f1);
+
+
+        //判断
+        // console.log(div.removeEventListener);
+
+        // if(div.removeEventListener){
+        //     //标准以及IE9+
+        //     div.removeEventListener('mouseover',f2);
+        // }else{
+        //     //IE8-
+        //     div.detachEvent('onmouseover',f2)
+        // }
+
+
+        //封装函数
+        /*
+            obj：具体发生事件的哪一个元素对象
+            type：具体发生事件元素的哪一个事件类型
+            fn：具体触发的函数
+        */
+        function removeEvent(obj,type,fn){
+        if(obj.removeEventListener){
+            //标准以及IE9+
+            obj.removeEventListener(type,fn);
+        }else{
+            //IE8-
+            obj.detachEvent('on'+type,fn)
+        }
+        }
+        removeEvent(div,'click',f1)
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

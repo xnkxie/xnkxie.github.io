@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            /* padding: 10px; */
+            padding: 10px 20px 30px 40px;
+            margin: 25px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        //1.获取div中的可视宽
+        var div = document.getElementsByTagName("div")[0];
+        //clientWidth:width+左右两侧的padding
+        console.log(div.clientWidth);//200 + 20+20=240// 200 + 20 +40=260
+        //2.获取可视高度
+        console.log(div.clientHeight);//200+10+30=240
+
+        //3.获取border-top的值
+        // console.log(div.clientTop);
+        //获取border—left的值
+        // console.log(div.clientLeft);
+        //获取屏幕的可视宽度
+        // console.log(document.documentElement.clientWidth);
+        //可视高度
+        // console.log(document.documentElement.clientHeight);
+
+
+
+
+
+    </script>
+</body>
+</html>

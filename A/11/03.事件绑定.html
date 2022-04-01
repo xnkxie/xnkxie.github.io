@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 300px;
+            width: 300px;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        const div = document.getElementsByTagName("div")[0];
+        //给元素添加事件
+        // div.onclick = function(){
+        //     console.log('click1');
+        // }
+        // div.onclick = function(){
+        //     console.log('click2');
+        // }
+
+        //总结：给同一个元素添加同一种事件类型的话，后者会覆盖前者
+        //为了解决这种事件覆盖的效果，实现方式为给元素添加绑定事件
+        // div.addEventListener(事件类型，事件触发的函数，【是否为捕获/冒泡】)标准浏览器以及IE9+
+        //事件类型不添加on
+        
+        // div.addEventListener('click',function(){
+        //     console.log('click1');
+        // })
+        // div.addEventListener('click',function(){
+        //     console.log('click2');
+        // })
+
+        //this：表示的是触发事件的元素对象
+        // div.addEventListener('click',f1);
+        // div.addEventListener('click',f2);
+        // function f1(){
+        //     console.log(this);
+        //     console.log('click1');
+        // }
+        // function f2(){
+        //     console.log(this);
+        //     console.log('click2');
+        // }
+
+            /*
+                事件写法上：addEventListener事件不加on，而attachEvent需要添加on
+                事件执行顺序上：addEventListener正序执行，attachEvent倒序执行
+                this的指向上：addEventListener触发事件的元素，attachEvent是window对象
+            */
+
+        //低版本的IE8
+        //语法结构：div.attachEvent(事件类型，事件触发的函数)；没有第三个参数，因为IE默认第三个参数为冒泡
+        //事件类型必须要添加on
+        //倒序执行
+        //this：window对象 
+        // div.attachEvent('onclick',f1);
+        // div.attachEvent('onclick',f2);
+
+        // function f1(){
+        //     console.log(this);
+        //     console.log('click1');
+        // }
+        // function f2(){
+        //     console.log(this);
+        //     console.log('click2');
+        // }
+
+        //两种绑定事件做兼容
+        //有值的时候：ƒ addEventListener() { [native code] } 没有的时候是：undefined
+        // console.log(div.addEventListener);标准浏览器以及IE9+环境
+        // if(div.addEventListener){
+        //     div.addEventListener('click',f1)
+        // }else{
+        //     div.attachEvent('onclick',f1)
+        // }
+
+        // function f1(){
+        // console.log(this);
+        // console.log('click1');
+        // }
+        // function f2(){
+        // console.log(this);
+        // console.log('click2');
+        // }
+
+        //最终版：封装函数
+        /*
+            obj：具体发生事件的哪一个元素对象
+            type：具体发生事件元素的哪一个事件类型
+            fn：具体触发的函数
+        */
+        function addEvent(obj,type,fn){
+            if(obj.addEventListener){
+                obj.addEventListener(type,fn);
+            }else{
+                obj.attachEvent('on'+type,fn);
+            }
+
+        }
+        //调用函数
+        addEvent(div,'click',f1);
+        // addEvent(div,'dblclick',f2);
+        addEvent(div,'mouseover',f2);
+
+
+        function f1(){
+            console.log(this);
+            console.log('click1');
+        }
+        function f2(){
+            console.log(this);
+            console.log('click2');
+        }
+
+
+
+    </script>
+</body>
+</html>

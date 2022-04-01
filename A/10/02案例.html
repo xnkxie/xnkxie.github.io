@@ -40,56 +40,61 @@
         //1 创建模拟数据对象
         var arr = [
             {
+                "id":1,
                 "imgsrc":"/A/imgs/01.jpeg",
                 "title":"细嗅蔷薇",
                 "score":7.9,
                 "infro":"十多万的车大王大大",
-                "time":"2021-02-03"
+                "time":"2021-02-03",
+                "videosrc":"https://vod.pipi.cn/8f6897d9vodgzp1251246104/432970d6387702292353863175/f0.mp4"
                 
             },
             {
-            
+                "id":2,
                 "imgsrc":"/A/imgs/02.jpeg",
                 "title":"无法撒旦",
                 "score":8.5,
                 "infro":"但是发过去",
-                "time":"2021-05-11"
+                "time":"2021-05-11",
+                "videosrc":"https://vod.pipi.cn/8f6897d9vodgzp1251246104/8aa00275387702292171249880/f0.mp4"
             },
             {
-            
+                "id":3,
                 "imgsrc":"/HTML/images/03.webp",
                 "title":"生的伟大",
                 "score":8.2,
                 "infro":"撒大网的撒",
-                "time":"2021-11-10"
+                "time":"2021-11-10",
+                "videosrc":"https://vod.pipi.cn/8f6897d9vodgzp1251246104/6ce5eccf387702292710178316/f0.mp4"
             },
             {
                     
-            
+                "id":4,
                 "imgsrc":"/HTML/images/01.webp",
                 "title":"四点五",
                 "score":9.2,
                 "infro":"哇塞刚我的父亲我仿佛",
-                "time":"2020-12-21"
+                "time":"2020-12-21",
+                "videosrc":"https://vod.pipi.cn/8f6897d9vodgzp1251246104/6ce5eccf387702292710178316/f0.mp4"
             },
             {
                 
-                    
-                    
-                    
+                "id":5,
                 "imgsrc":"/A/imgs/03.jpeg",
                 "title":"沈达威c",
                 "score":9.1,
                 "infro":"客户就是那次打开文件牛年春节",
-                "time":"2021-05-12"
+                "time":"2021-05-12",
+                "videosrc":"https://vod.pipi.cn/8f6897d9vodgzp1251246104/6ce5eccf387702292710178316/f0.mp4"
             },
             {
-                    
+                "id":6,
                 "imgsrc":"/A/imgs/04.jpeg",
                 "title":"发货的泡",
                 "score":5.2,
                 "infro":"稳定出口伙伴我",
-                "time":"2021-10-11"
+                "time":"2021-10-11",
+                "videosrc":"https://vod.pipi.cn/8f6897d9vodgzp1251246104/6ce5eccf387702292710178316/f0.mp4"
             }
             
         ]
@@ -103,7 +108,7 @@
             var str = "";
             //3.写回到页面上
             for(var i = 0; i< arr.length;i++){
-                str+="<li><a href=''><img src='"+arr[i].imgsrc+"'/></a><p>"+arr[i].title+"</p><span>"+arr[i].score+"</span><p>"+arr[i].infro+"</p></li>"
+                str+="<li><a href='02details.html?id="+arr[i].id+"'><img src='"+arr[i].imgsrc+"'/></a><p><a href='02details.html'>"+arr[i].title+"</a></p><span>"+arr[i].score+"</span><p>"+arr[i].infro+"</p></li>"
             }
             ul.innerHTML = str;
     </script>

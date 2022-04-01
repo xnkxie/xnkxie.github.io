@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        //针对按钮发生事件
+        var btn = document.getElementsByTagName("button")[0];
+        //为了能够解决低版本火狐获取不到事件对象的问题，在事件函数中传入一个参数就是事件对象
+        btn.onclick = function(ev){
+            //获取事件对象（永远在事件函数的内部）
+            alert(event);//低版火狐不兼容，IE和谷歌全部兼容
+            alert(window.event)//低版本火狐虽然兼容，但是为undefined
+            alert(ev)//这种写法可以兼容于低版本火狐，低版本IE不兼容
+
+            //为了能够满足于所有的浏览器需要，那么需要对事件对象的创建做兼容性
+            var ev = ev || window.event;
+            alert(ev);
+
+        }
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #form{
+            text-align: center;
+        }
+        #tab{
+            width: 500px;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px solid #000;
+            padding: 5px;
+        }
+        tbody tr td:first-child{
+            text-align: center;
+        }
+        input[type=":checked"]{
+            width: 15px;
+            height: 15px;
+        }
+        #div1{
+            position: relative;
+            width: 480px;
+            padding: 10px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="form">
+        请输入姓名：<input type="text" id="name"><br>
+        请输入性别：<input type="radio" id="sex" name="sex" checked>男<input type="radio" name="sex">女<br>
+        请输入年龄：<input type="text" id="age">
+        <button>添加到表格</button>
+    </div>
+    <table id="tab">
+        <thead>
+            <tr>
+                <th width="20%"><input type="checkbox" id="all">全选</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>张三</td>
+                <td>男</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>李四</td>
+                <td>男</td>
+                <td>33</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="div1">
+        <button>删除所有行</button>
+    </div>
+
+
+    <script>
+        var btn = document.getElementsByTagName("button");
+        var tab = document.getElementById("tab");
+        var input = document.getElementsByTagName("input");
+        var tbody = tab.tBodies[0];
+        var all = document.getElementById("all");
+        btn[0].onclick = function(){
+            //创建tr
+            var tr = document.createElement("tr");
+            tr.appendChild(createE("td","<input type='checkbox'/>"))
+            tr.appendChild(createE("td",input[0].value))
+            tr.appendChild(createE("td",input[1].checked?'男':'女'))
+            tr.appendChild(createE("td",input[3].value))
+
+            //追加给tbody
+            tbody.appendChild(tr)
+
+        // var inputs = tbody.getElementsByTagName("input");
+        // //循环给每一个复选框添加点击事件
+        // for(var i = 0;i<inputs.length;i++){
+        //     inputs[i].onclick = function(){
+        //         //判断多个元素的状态，放在循环点击事件里面 如果是针对单个元素的状态判断，放在for循环外面
+        //         var tag = true;
+        //         for(var j=0;j<inputs.length;j++){
+        //             if(inputs[j].checked){
+        //                 tag = false;
+        //                 break;
+        //             }
+        //         }
+        //         all.checked = tag;
+        //     }
+        // }
+        show();
+
+        }
+        btn[1].onclick = function(){
+            var inputs = tbody.getElementsByTagName("input");
+            //循环判断是不是有选中的
+            for(var i = 0;i <inputs.length;i++){
+                if(inputs[i].checked){
+                    //开始删除
+                    inputs[i].parentNode.parentNode.remove();
+                    //下标的调整
+                    i--;
+                }
+            }
+        }
+
+        function show(){
+        var inputs = tbody.getElementsByTagName("input");
+        //循环给每一个复选框添加点击事件
+        for(var i = 0;i<inputs.length;i++){
+            inputs[i].onclick = function(){
+                //判断多个元素的状态，放在循环点击事件里面 如果是针对单个元素的状态判断，放在for循环外面
+                var tag = true;
+                for(var j=0;j<inputs.length;j++){
+                    if(inputs[j].checked){
+                        tag = false;
+                        break;
+                    }
+                }
+                all.checked = tag;
+            }
+        }
+
+        }
+
+        all.onclick = function(){
+            //找tbody中的所有复选框
+            var chk = tbody.getElementsByTagName("input");
+            //操作每一个复选框的选中状态
+            for(var i = 0;i < chk.length;i++){
+                chk[i].checked = this.checked;
+            }
+        }
+        //获取tbody中的所有的复选框
+        // var inputs = tbody.getElementsByTagName("input");
+        // //循环给每一个复选框添加点击事件
+        // for(var i = 0;i<inputs.length;i++){
+        //     inputs[i].onclick = function(){
+        //         //判断多个元素的状态，放在循环点击事件里面 如果是针对单个元素的状态判断，放在for循环外面
+        //         var tag = true;
+        //         for(var j=0;j<inputs.length;j++){
+        //             if(inputs[j].checked){
+        //                 tag = false;
+        //                 break;
+        //             }
+        //         }
+        //         all.checked = tag;
+        //     }
+        // }
+            show();
+
+
+
+        function createE(obj,value){
+            //1创建标签
+            var ele = document.createElement(obj);
+            ele.innerHTML = value;
+            return ele;
+        }
+    </script>
+</body>
+</html>

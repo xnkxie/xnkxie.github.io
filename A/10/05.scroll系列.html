@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background: violet;
+            /* overflow: auto;
+             */
+            overflow-x: auto;
+            white-space: normal;/*元素内容强制不换行*/
+        }
+        body{
+            width: 2000px;
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <div>大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档大大文档</div>
+    <script>
+        //1.需要先激发滚动条事件
+        // window.onscroll = function(){
+            //2.获取滚动过去的Top值（被劵去的高）
+            //IE5浏览器无法通过document.documentElemnt.scrollTop方式来获取
+            // console.log(document.body.scrollTop);
+            //兼容性
+            // var top = document.documentElement.scrollTop || document.body.scrollTop
+            //滚动left值
+            // console.log(document.documentElement.scrollLeft);
+        // }
+
+        var div = document.getElementsByTagName("div")[0];
+        div.onscroll = function(){
+            //元素中的内容实际被卷去的top值
+            // console.log(div.scrollTop);
+            //元素中的内容实际被卷去的left值
+            console.log(div.scrollLeft);
+        }
+    </script>
+    
+</body>
+</html>

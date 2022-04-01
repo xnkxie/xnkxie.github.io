@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        //输出方式
+        var btn = document.getElementsByTagName("button")[0];
+        btn.onclick = function(){
+            //直接输出
+            //document.write和innerText以及innerHTML之间的区别
+            //document.write()是可以覆盖页面中已有的内容，包括发生事件的元素，如果需要循环输出值的时候，有一行输出一行，不会进行替换输出
+            // document.write("hello world")
+            //innerText和innerHTML:直接作用于标签身上的值的改变，元素本身不消失
+            btn.innerText = "hello world"
+        }
+
+        //弹框输出
+        alert("大苏打大大我的饭否博纳");
+        //alert:有阻塞程序的作用
+        window.alert("大大发哇的") //全写
+
+        //判断框
+        //确定用户点击的是哪一个按钮，解决办法看返回值
+        var xx = window.confirm("确定？")
+        if(xx){
+            alert("嗯")
+        }else{
+            alert("不确定")
+        }
+
+        //输入框
+        var xi = window.prompt("啊大多数是多少？")
+        if(xi!=null){
+            //用户点击确定按钮
+            //判断是不是数字？ isNaN
+            if(isNaN(xi)){
+                alert("请输入数字")
+            }else{
+
+            }
+        }
+
+        var btn = document.getElementsByTagName("button");
+        btn[1].onclick = function(){
+            window.open("http://www.offcn.com","_blank","width:200px;height:200px;");
+        }
+        btn[2].onclick = function(){
+            window.close();//每一个选项卡都是一个独立的window，所以只能关闭当前选项卡。而不是整体浏览器窗口
+        }
+
+
+    </script>
+</body>
+</html>

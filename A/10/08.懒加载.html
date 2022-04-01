@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li><img _src="/HTML/imag/图层 142.png" alt=""></li>
+        <li><img _src="/HTML/imag/图层 142.png" alt=""></li>
+        <li><img _src="/HTML/imag/图层 142.png" alt=""></li>
+        <li><img _src="/HTML/imag/图层 142.png" alt=""></li>
+        <li><img _src="/HTML/imag/图层 142.png" alt=""></li>
+        <li><img _src="/HTML/imag/图层 142.png" alt=""></li>
+        <li><img _src="/HTML/imag/图层 142.png" alt=""></li>
+        <li><img _src="/HTML/imag/图层 142.png" alt=""></li>
+        <li><img _src="/HTML/imag/图层 142.png" alt=""></li>
+        <li><img _src="/HTML/imag/图层 142.png" alt=""></li>
+        <li><img _src="/HTML/imag/图层 142.png" alt=""></li>
+        <li><img _src="/HTML/imag/图层 142.png" alt=""></li>
+    </ul>
+    <script>
+        //1.获取每一张图片的offsetTop
+        var img = document.getElementsByTagName("img");
+        for(var i = 0;i<img.length;i++){
+            var imgtop = img[i].offsetTop;
+            var sctop = document.documentElement.scrollTop || document.body.scrollTop
+            var eyetop = document.documentElement.clientHeight//可视高度距离
+
+            //页面一开始的时候先不加载图片，当用户发生滚动事件的时候才开始
+            //解决办法：给每一个图片添加一个自定义的属性
+
+            if(imgtop<=sctop+eyetop){
+                //加载图片
+                img[i].src = img[i].getAttribute("_src");
+                console.log(img[i].src);
+                
+            }
+        }
+    </script>
+</body>
+</html>

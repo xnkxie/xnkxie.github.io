@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background: violet;
+        }
+        body{
+            height: 3000px;
+            width: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <div>按钮</div>
+    <script>
+        //针对按钮发生事件
+        var btn = document.getElementsByTagName("div")[0];
+        //为了能够解决低版本火狐获取不到事件对象的问题，在事件函数中传入一个参数就是事件对象
+        btn.onclick = function(ev){
+            //获取事件对象（永远在事件函数的内部）
+            // alert(event);//低版火狐不兼容，IE和谷歌全部兼容
+            // alert(window.event)//低版本火狐虽然兼容，但是为undefined
+            // alert(ev)//这种写法可以兼容于低版本火狐，低版本IE不兼容
+
+            //为了能够满足于所有的浏览器需要，那么需要对事件对象的创建做兼容性
+            var ev = ev || window.event;
+            // alert(ev);
+
+            //功能键
+            //在发生事件的同时是否同时激发了这三个功能键，如果是则为true，否则默认为false
+            console.log(ev.ctrlKey,ev.altKey,ev.shiftKey);
+
+            //事件类型
+            console.log(ev.type);//onclick
+
+            //发生事件的元素
+            // console.log(this);//在发生事件的时候所获取到的元素
+
+            // console.log(ev.target);//IE以及以下无法获取
+            // console.log(ev.scrElement);//满足于IE8以及以下获取
+
+            //兼容性
+            const obj = ev.target || ev.srcElement;//实际发生事件的元素
+
+            //元素的位置
+            //client系列，offset系列，page系列，screen系列
+            console.log(ev.offsetX,ev.offsetY);//鼠标点到元素的x轴和Y轴的距离
+            console.log(ev.clientX,ev.clientY);//鼠标点到页面body的x轴和Y轴的距离
+            console.log(ev.pageX,ev.pageY);//page系列是client系列+滚动轴的距离
+            //如果页面中没有滚动轴的话，client系列的值和page系列的值是一样的
+            console.log(ev.screenX,ev.screenY);//鼠标点到屏幕的x轴和Y轴的距离
+            
+
+
+
+
+        }
+</script>
+    
+</body>
+</html>
