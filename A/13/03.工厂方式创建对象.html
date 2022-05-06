@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        优点：
+            解决了多个对象中共同的属性值的问题，通过函数带入参数来表示不同的对象
+    -->
+    <script>
+        function CreateObj(name,age,sex){
+            //利用实例的方式来创建
+            var obj = new Object();//原材料
+            //加工
+            obj.name = name;
+            obj.age = age;
+            obj.sex = sex;
+
+            obj.study = function(){
+                return this.name +"微微"  //学生1微微!=学生2微微
+                // return "微微"  //true
+            }
+            return obj;//出厂
+        }
+        var p1 = CreateObj("学生1",12,'男')
+        // console.log(p1.study());//学生1微微
+        var p2 = CreateObj("学生2",13,'男')
+        // console.log(p2.study());//学生2微微
+
+        // console.log(p1.study() == p2.study());//学生1微微!=学生2微微
+        // console.log(p1.study == p2.study);//对象.方法名 表示的是当前这个对象在内存中的地址值，每一个对象都是一个独立的地址，相互之间比较肯定为false
+
+        //p1 p2是由object创建的还是createobj创建的呢？
+        //实例对象到底是哪一个函数来创建的 识别问题？？
+        //语法结构：实例对象.instanceof 构造函数名 如果是当前构造函数创建的那么就是true，否则就是false
+        console.log(p1 instanceof Object);//true
+        console.log(p1 instanceof CreateObj);//false
+
+    </script>
+</body>
+</html>

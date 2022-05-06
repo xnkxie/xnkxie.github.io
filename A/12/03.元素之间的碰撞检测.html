@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            position: absolute;
+            height: 200px;
+            background-color: rebeccapurple;
+        }
+        #box2{
+            width: 200px;
+            height: 200px;
+            background-color: wheat;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+            /* margin-left: 300px; */
+            /* margin-top: 300px; */
+            /* margin: auto; */
+            /* position: absolute; */
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <script src="/A/12/common/Drag.js"></script>
+    <script>
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        //调用函数
+        Drag1(box1,box2);
+        // //1，元素1被按下的时候
+        // box1.onmousedown = function(ev){
+        //     //鼠标点到元素的距离？？ offsetX offsetY
+        //     var ev = ev || window.event;
+        //     var x = ev.offsetX;
+        //     var y = ev.offsetY;
+
+        //     //屏幕的可视宽度和高度
+        //     var screen_width = document.documentElement.clientWidth;
+        //     var screen_height = document.documentElement.clientHeight;
+
+        //     //元素的宽度和高度
+        //     var box1_width = box1.offsetWidth;
+        //     var box1_height = box1.offsetHeight;
+
+
+        //     //获取box2的四条边的边距
+        //     var box2_left = box2.offsetLeft;
+        //     var box2_top = box2.offsetTop;
+        //     var box2_right = box2_left + box2.offsetWidth;
+        //     var box2_bottom = box2_top + box2.offsetHeight;
+
+        //     document.onmousemove = function(ev){
+        //         //鼠标点到body的距离
+        //         var ev = ev || window.event;
+        //         var cx = ev.clientX;
+        //         var cy = ev.clientY;
+
+        //         var move_left = cx - x;
+        //         var move_top = cy - y;
+        //         if(move_left<0){
+        //             move_left = 0;
+        //         }else if(move_left>screen_width-box1_width){
+        //             move_left = screen_width-box1_width;
+        //         }if(move_top<0){
+        //             move_top = 0;
+        //         }else if(move_top>screen_height-box1_height){
+        //             move_top = screen_height-box1_height;
+        //         }
+
+
+        //         box1.style.left = move_left+'px';
+        //         box1.style.top = move_top+'px';
+
+        //         //两个元素的比较
+        //         //获取box1的四条边的边距
+        //         var box1_left = move_left;
+        //         var box1_top = move_top;
+        //         var box1_right = box1_left + box1.offsetWidth;
+        //         var box1_bottom = box1_top + box1.offsetHeight;
+                
+        //         if(box1_right<box2_left || box1_left>box2_right || box1_bottom<box2_top || box1_top>box2_bottom){
+        //             box2.style.background = "wheat";
+        //         }else{
+        //             box2.style.background = "orange";
+        //         }
+
+
+        //     }
+        //     document.onmouseup = function(){
+        //         //取消移动事件
+        //         document.onmousemove = null;
+        //         // document.onmouseup = null;
+        //     }
+        // }
+    </script>
+</body>
+</html>

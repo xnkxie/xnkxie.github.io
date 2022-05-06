@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //父类：学生
+        function Student(name,age,sex){
+            //公共的属性和方法
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.study = function(){
+                console.log('study');
+            }
+        }
+        //子类：高中生
+        function HightStudent(){
+            //子类自己的特有属性和方法
+            this.play = function(){
+                console.log('play');
+            }
+        }
+        Student.prototype.aa = 100;
+        //子类的原型对象prototype的父类的实例对象__proto__继承
+        HightStudent.prototype = new Student('小明',18,'男');
+        //子类需要有实际的实例对象
+        var high1 = new HightStudent();
+        console.log(high1);
+        // high1.study();
+        // high1.play();
+        // console.log(high1.aa);
+
+        var high2 = new HightStudent();
+        console.log(high2);
+        //原型链继承的缺点：在父类的构造函数中创建的参数，在子类继承过程中无论有多少个子类继承的都是相同的值
+    </script>
+</body>
+</html>

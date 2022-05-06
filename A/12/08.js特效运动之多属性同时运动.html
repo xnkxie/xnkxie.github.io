@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            opacity: 0.4;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button>多属性运动</button>
+    <div></div>
+    <script src="/A/12/common/style.js"></script>
+    <script src="/A/12/common/move.js"></script>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        var btn = document.getElementsByTagName('button')[0];
+        // btn.onclick = function(){
+        //     //调用函数
+        //     // BufferJSON(div,{"width":400,"height":400,"opacity":90,"left":30,"top":30});
+
+        //     //前者的运动达到了目标点之后再运动
+        //     BufferJSON(div,{"width":300,"height":400,"opacity":90},function(){
+        //         BufferJSON(div,{"left":30,"top":30});
+        //     });
+        // }
+
+        div.onclick = function(){
+            //调用函数
+            // BufferJSON(div,{"width":400,"height":400,"opacity":90,"left":30,"top":30});
+
+            //将在当前环境下的this指向保存一份
+            var _this = this;
+            //前者的运动达到了目标点之后再运动
+            BufferJSON(this,{"width":300,"height":400,"opacity":90},function(){
+                BufferJSON(_this,{"left":30,"top":30});
+            });
+
+
+
+        }
+    </script>
+</body>
+</html>

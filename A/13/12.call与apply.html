@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(a,b){
+        console.log(this);
+        console.log(a+b)
+        }
+        //fn();
+        //改变this指向
+        fn.call(document)//从window对象指向document对象
+        fn.call(document.body)//从window对象指向document对象
+        fn.call(location)//从window对象指向location对象
+        fn.call(history)//从window对象指向history对象
+        //有参数情况
+        fn.call(document.body,100,200)
+
+        // 2、apply方法
+        // 语法结构：
+        // 哪一个函数.call(需要改变的指向,[参数1,参数2,...])表示参数为数组形式，前提有参数的情况下
+        // 例如：
+        function fn(a,b){
+            console.log(this);
+            console.log(a+b);
+        }
+            fn(100,200);
+            //改变this指向
+            fn.apply(document,[100,200])//从window对象指向document对象
+            fn.apply(document.body,[100,200])//从window对象指向document对象
+            fn.apply(location,[100,200])//从window对象指向location对象
+            fn.apply(history,[100,200])//从window对象指向history对象
+            //有参数情况下
+            fn.apply(document,[100,200])
+
+        //特殊情况
+        //求最大值和最小值
+        var arr = [1,2,3,4,5,6,7,8,9,10];
+        //从数组中挑选出最大值
+        console.log(Math.max.call(this,1,2,3,4,5,6,7,8,9,10));
+        console.log(Math.max.apply(this,arr));
+
+        //从数组中挑选出最小值
+        console.log(Math.min.call(this,1,2,3,4,5,6,7,8,9,10));
+        console.log(Math.min.apply(this,arr));
+    </script>
+</body>
+</html>

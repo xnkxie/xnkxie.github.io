@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //构造函数：Array String Number Boolean object date RegExp Error
+        // var arr1 = new Array();
+        // var arr2 = new Array();
+        // //arr1和arr2这种对象被称作：实例对象，具体操作也是实例对象
+        // arr1.push();
+        // arr1.pop();
+        // console.log(new Array());
+
+        //创建自定义的构造函数
+        //构造函数名的首字母大写，只是一种约定
+        //在定义构造函数结构的时候不需要再内部进行实例对象创建，因为this指向的就是当前构造函数本身
+        function Student(){
+            //属性
+            // console.log(this);
+            this.name = "微微";
+            this.age = 12;
+            this.sex = "男"
+            //方法
+            this.study = function(){
+                //微微爱学习
+                return this.name+'爱学习';
+            }
+        }
+        var s1 = new Student();
+        // console.log(s1);
+        console.log(s1.study());
+    </script>
+</body>
+</html>

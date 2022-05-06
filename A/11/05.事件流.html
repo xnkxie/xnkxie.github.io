@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #father{
+            width: 300px;
+            height: 300px;
+            background-color: rebeccapurple;
+        }
+        #child{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+        #box{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="father">
+            father
+            <div id="child">
+                child
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        //1,给另一个元素添加点击事件
+        var box = document.getElementById('box');
+        var father = document.getElementById("father");
+        var child = document.getElementById("child")
+        //如果是冒泡：事件行为是从当前发生事件的元素一直传播到父节点一直到window对象
+        //如果是捕获：由根节点一直将事件行为传递给子节点，子节点。。。传递到实际发生事件的元素
+
+        //冒泡
+        // father.addEventListener('click',f1);
+        // child.addEventListener('click',f2);
+        // box.addEventListener('click',f3);
+
+        //捕获
+        // father.addEventListener('click',f1,true);
+        // child.addEventListener('click',f2,true);
+        // box.addEventListener('click',f3,true);
+
+        //如果有捕获和冒泡同时存在,捕获优先
+        // father.addEventListener('click',f1,false);
+        // child.addEventListener('click',f2,false);
+        // box.addEventListener('click',f3,true);
+
+        //阻止冒泡
+        // father.addEventListener('click',f1,false);
+        // child.addEventListener('click',f2,false);
+        // box.addEventListener('click',f3,false);
+
+        function addEvent(ele,type,fn,status){
+            if(ele.addEventListener){
+                ele.addEventListener(type,fn,status);
+            }else{
+                ele.attachEvent('on'+type,fn,status);
+            }
+        }
+        addEvent(father,'click',f1,false);
+        addEvent(child,'click',f2,false);
+        addEvent(box,'click',f3,false);
+        
+        function f1(ev){
+            console.log('father');
+            //添加事件对象
+            var ev = ev || window.event;
+            // ev.stopPropagation();
+            // ev.canBubble = true; //适用于IE8及以下
+
+            //兼容性写法
+            ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
+
+            // stop();
+            
+        }
+        function f2(ev){
+            console.log('child');
+            //添加事件对象
+            var  ev = ev || window.event;
+            // ev.stopPropagation();
+            // ev.canBubble = true; //适用于IE8及以下
+
+            //兼容性写法
+            ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
+
+            // stop();
+        }
+        function f3(ev){
+            console.log('box');
+            //添加事件对象
+            var  ev = ev || window.event;
+            // ev.stopPropagation();
+            // ev.canBubble = true; //适用于IE8及以下
+
+            // 兼容性写法
+            ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
+
+            // stop();
+        }
+        // function stop(){
+        //     const ev = ev || window.event;
+
+        //     //兼容性写法
+        //     ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+        div.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button>选项卡1</button>
+    <button>选项卡2</button>
+    <button>选项卡3</button>
+    <div class="active">内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+
+    <script>
+        var btn = document.querySelectorAll("button");
+        var div = document.querySelectorAll("div");
+        //循环来点击每一个按钮
+        for(var i = 0; i < btn.length; i++){
+            //给每一个按钮添加一个自定义的索引值
+            btn[i].index = i;
+            btn[i].onclick = function(){
+                //先将所有的div隐藏
+                for(var j = 0; j < btn.length; j++){
+                    btn[j].className = "";
+                    div[j].className = "";
+                }
+                //让对应的按钮和div显示
+                // this.className = "active";
+                div[this.index].className = "active";
+            }
+        }
+    </script>
+</body>
+</html>

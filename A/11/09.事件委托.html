@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        //1,点击哪一个li给哪一个li添加背景颜色为粉红色
+        var oUl = document.getElementsByTagName('ul')[0];
+        //2，将事件行为委托给ul父元素，并且给ul父元素添加一个点击事件
+        oUl.onclick = function(ev){
+            //3，获取事件对象
+            var oEvent = ev || window.event;
+            //4，获取事件对象的目标对象
+            var oTarget = oEvent.target || oEvent.srcElement;
+            //5，判断目标对象是否是li
+            if(oTarget.nodeName.toLowerCase() == 'li'){
+                //6，给目标对象添加背景颜色
+                oTarget.style.backgroundColor = 'pink';
+            }
+        }
+
+        //好处：如果点击的是li，那么就不需要再判断了，直接给li添加背景颜色
+        var li = document.createElement('li');
+        li.innerHTML = '6';
+        oUl.appendChild(li);
+    </script>
+</body>
+</html>

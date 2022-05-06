@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button>开始向前运动</button>
+    <!-- <button>开始往回运动</button> -->
+    <div></div>
+    <script src="/A/12/common/style.js"></script>
+    <script src="/A/12/common/move.js"></script>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        var btn = document.getElementsByTagName('button')[0];
+        btn.onclick = function(){
+            //调用函数
+            move(div,"left",10,600);
+
+            //开启定时器
+            // var timer = setInterval(function(){
+            // //非行间样式
+            // var start = parseInt(getStyle(div,'left')) + 10;
+            // //设置边界
+            // if(start>=500){
+            //     start = 500;
+            // }
+            // div.style.left = start + 'px';
+
+            // if(start==500){
+            //     clearInterval(timer);
+            //     }
+            // },100);
+            
+            
+
+
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <button>开始</button>
+    <!-- <button>开始往回运动</button> -->
+    <div></div>
+    <script src="/A/12/common/style.js"></script>
+    <script src="/A/12/common/move.js"></script>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        var btn = document.getElementsByTagName('button');
+        btn[0].onclick = function(){
+            //调用函数
+            BufferMove(div,"opacity",20);
+
+            //     timer = setInterval(function(){
+            //     var start = parseFloat(getStyle(div,'opacity')* 100);
+            //     //设置缓冲速度
+            //     var speed = (80-start)/10;
+            //     //单独判断
+            //     speed = speed>0 ? Math.ceil(speed) : Math.floor(speed);
+
+            //     //设置元素的行间样式
+            //     div.style.opacity = (start + speed) / 100;
+            // },100)
+
+
+
+        }
+    </script>
+</body>
+</html>

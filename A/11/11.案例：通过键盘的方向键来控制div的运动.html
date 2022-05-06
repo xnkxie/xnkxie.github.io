@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        //1，获取div元素
+        var div = document.getElementsByTagName('div')[0];
+        var screen_width = document.documentElement.clientWidth;
+        var screen_height = document.documentElement.clientHeight;
+        //2,找到按键的ASCII码
+        document.onkeydown = function(ev){
+            var e = ev || window.event;
+            var code = e.keyCode;
+            console.log(code);
+            //上：38 下：40 左：37 右：39
+
+            switch(code){
+                case 38:
+                    if(div.offsetTop <= 0){
+                        div.style.top = '0px';
+                    }else{
+                        div.style.top = div.offsetTop - 10 + 'px';
+                    }
+                    break;
+                case 40:
+                    if(div.offsetTop >= screen_height - div.offsetHeight){
+                        div.style.top = (screen_height - div.offsetHeight) + 'px';
+                    }else{
+                        div.style.top = div.offsetTop + 10 + 'px';
+                    }
+                    break;
+                case 37:  
+                    if(div.offsetLeft <= 0){
+                        div.style.left = '0px';
+                    }else{
+                        div.style.left = div.offsetLeft - 10 + 'px';
+                    }
+                    
+                    break;
+                case 39:   
+                    if(div.offsetLeft >= screen_width - div.offsetWidth){
+                        div.style.left = (screen_width - div.offsetWidth) + 'px';
+                    }else{  
+                        div.style.left = div.offsetLeft + 10 + 'px';
+
+                    }
+                
+                    break;
+
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 190px;
+            height: auto;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #eeeeee;
+            line-height: 40px;
+            display: none;
+            position: absolute;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>吴大维</li>
+        <li>武当山</li>
+        <li>士大夫</li>
+        <li>傅吉安</li>
+        <li>为对方</li>
+    </ul>
+
+    <script>
+        var ul = document.getElementsByTagName('ul')[0];
+        document.oncontextmenu = function(ev){
+            //1,让ul显示出来
+            ul.style.display = 'block';
+            //2，获取鼠标点到浏览器body的X和Y坐标的位置
+            var ev = ev || window.event;
+            var x = ev.clientX;
+            var y = ev.clientY;
+            ul.style.left = x + 'px';
+            ul.style.top = y + 'px';
+
+            //3，阻止事件的默认行为
+            return false;
+        }
+    </script>
+</body>
+</html>

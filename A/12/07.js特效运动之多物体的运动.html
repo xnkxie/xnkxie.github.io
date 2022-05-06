@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+            margin-right: 14px;
+        }
+    </style>
+</head>
+<body>
+    <script src="/A/12/common/style.js"></script>
+    <script src="/A/12/common/move.js"></script>
+    <script>
+        //利用for循环创建4个div
+        for(var i =0;i< 4;i++){
+            document.body.innerHTML += '<div></div>';
+        }
+
+        //获取所有的div
+        var div = document.getElementsByTagName('div');
+        div[0].onmousemove = function(){
+            BufferMove(this,"height",500)
+        }
+        div[0].onmouseout = function(){
+            BufferMove(this,"height",100)
+        }
+        div[1].onmousemove = function(){
+            BufferMove(this,"height",500)
+        }
+        div[1].onmouseout = function(){
+            BufferMove(this,"height",100)
+        }
+        div[2].onmousemove = function(){
+            BufferMove(this,"height",500)
+        }
+        div[2].onmouseout = function(){
+            BufferMove(this,"height",100)
+        }
+        div[3].onmousemove = function(){
+            BufferMove(this,"height",500)
+        }
+        div[3].onmouseout = function(){
+            BufferMove(this,"height",100)
+        }
+
+    </script>
+</body>
+</html>

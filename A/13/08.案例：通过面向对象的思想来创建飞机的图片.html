@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+        }
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        //构造函数的结构
+        function Plane(x,y,src){
+            //每一个对象的共同的属性有什么，就封装到这个构造函数中
+            //地址
+            //位置
+            //图片节点
+            this.imgNode = null;
+            this.planeX = x;
+            this.planeY = y;
+            this.src = src;
+
+            //共同的方法
+            //需要显示出来
+
+            //混合模式
+            if(typeof this.show !== "function"){
+                Plane.prototype.show = function(){
+                    this.imgNode = document.createElement('img');
+                    this.imgNode.src = this.src;
+                    this.imgNode.style.left = this.planeX + 'px';
+                    this.imgNode.style.top = this.planeY + 'px';
+                    div.appendChild(this.imgNode);
+                }
+            }
+        }
+
+        // Plane.prototype.show = function(){
+        //     //创建一个图片节点
+        //     this.imgNode = document.createElement('img');
+        //     //设置图片节点的属性
+        //     this.imgNode.src = this.src;
+        //     this.imgNode.style.left = this.planeX + 'px';
+        //     this.imgNode.style.top = this.planeY + 'px';
+        //     //将图片节点添加到div中
+        //     div.appendChild(this.imgNode);
+
+        // }
+        var p1 = new Plane(30,300,"/logo.png");
+        p1.show();
+        var p2 = new Plane(10,100,"/logo.png");
+        p2.show();
+        var p3 = new Plane(140,400,"/logo.png");
+        p3.show();
+    </script>
+</body>
+</html>

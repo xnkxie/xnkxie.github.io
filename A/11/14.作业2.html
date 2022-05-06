@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div =document.getElementsByTagName('div')[0];
+        div.onmousewheel = scroll;
+        div.addEventListener('DOMMouseScroll',scroll);
+        var tag = true;//默认向下滚动
+
+        function scroll(ev){
+            //滚动方向
+            var ev = ev || window.event;
+            // console.log(ev.wheelDelta);//-120下 120上
+            // console.log(ev.detail);//3下 -3上
+
+            //滚动方向
+            if(ev.wheelDelta){
+                //非火狐浏览器
+                if(ev.wheelDelta>0){
+                    //向上滚动
+                    tag = false
+                }else{
+                    //向下滚动
+                    tag = true
+                }
+            }else{
+                //火狐浏览器
+                if(ev.detail>0){
+                    //向下滚动
+                    tag = true
+            }else{
+                //向上滚动
+                tag = false
+            }
+
+        }
+            if(tag){
+                //向下
+                div.style.height = div.offsetHeight+10+'px';
+            }else{
+                //向上
+                if(div.offsetHeight<=100){
+                    div.offsetHeight = "100px";
+
+                }else{
+                    div.style.height = div.offsetHeight-10+'px';
+                }
+                
+            }
+    }
+    </script>
+</body>
+</html>

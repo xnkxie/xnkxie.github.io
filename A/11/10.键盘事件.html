@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //在页面的空白处任意点击一个按键，显示当前的键盘事件名称
+        // document.onkeydown = function(ev){
+        //     var oEvent = ev || window.event;
+        //     var keyCode = oEvent.keyCode;
+        //     alert(keyCode);
+        // }
+        
+        document.onkeydown = function(ev){
+            var e = ev || window.event;
+            // console.log(e.key);//ie8以下不支持  undefined
+            // console.log(e.keyCode);//对应ASCII码
+            console.log('按键按下');
+        }
+        document.onkeypress = function(){
+            console.log('按键按下的一瞬间抬起');
+        }
+        document.onkeyup = function(){
+            console.log('按键抬起');
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.offcn.com">嗡嗡嗡</a>
+    <form action="http://www.offcn.com" method="get">
+        <button>提交</button>
+    </form>
+    <script>
+        //需求：给a标签添加弹框效果，并且阻止跳转
+        var a = document.querySelector('a');
+        // a.addEventListener('click',function(e){
+        //     e.preventDefault();
+        //     alert('嗡嗡嗡');
+        // })
+
+        a.attachEvent('onclick',function(e){
+            alert('嗡嗡嗡');
+            var e = e || window.event;
+            e.returnValue = false;
+            
+        })
+    </script>
+</body>
+</html>

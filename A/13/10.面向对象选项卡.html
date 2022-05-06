@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+        div.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button>选项卡1</button>
+    <button>选项卡2</button>
+    <button>选项卡3</button>
+    <div class="active">内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+    <script>
+        //构造函数
+        function  Tab(){
+            //属性
+            this.btn = document.querySelectorAll("button");
+            this.div = document.querySelectorAll("div");
+            //方法
+            var that = this;
+            //循环点击每一个按钮
+            for(var i = 0; i < this.btn.length; i++){
+                //给每一个按钮添加一个自定义的索引值
+                this.btn[i].index = i;
+                this.btn[i].onclick = function(){
+                    //调用原型对象中的方法
+                    that.clickFun(this.index);
+                }
+            }
+        }
+        //原型
+            Tab.prototype.clickFun = function(index){
+                 //先将所有的div隐藏
+                for(var j = 0; j < this.btn.length; j++){
+                    this.btn[j].className = "";
+                    this.div[j].className = "";
+                }
+                //找到对应的div然后显示出来
+                this.div[index].className = "active";
+            }
+        new Tab();
+    </script>
+</body>
+</html>

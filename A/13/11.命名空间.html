@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a = {"aa":1,"bb":2};
+        // var a = {"aa":3,"bb":4};
+        // console.log(a);
+
+        //解决办法：让每一个变量处于不同的空间，这样就不会相互影响
+        var offcn = {
+            "aa":1,
+            "bb":2
+        }
+        offcn.site = {
+            "aa":3,
+            "bb":4
+        }
+        console.log(offcn);
+        //调用3
+        console.log(offcn.site.aa);
+    </script>
+</body>
+</html>

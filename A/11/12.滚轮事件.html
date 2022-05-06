@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        //普通事件
+        // div.onmousewheel = function(ev){
+        //     // console.log('滚轮');
+
+        //     //滚动方向
+        //     // var e = ev || window.event;
+        //     // console.log(e.wheelDelta);//-120 下 120 上
+        // }
+
+        div.onmousewheel = scroll;
+
+        //操作火狐
+        // div.addEventListener('DOMMouseScroll',function(ev){
+            // console.log('滚轮');
+
+            //滚动方向
+            // var e = ev || window.event;
+            // console.log(e.detail);//-3 下 3 上
+        // })
+
+        div.addEventListener('DOMMouseScroll',scroll);
+
+        function scroll(e){
+            var e = e || window.event;
+            if(e.wheelDelta){
+                //非火狐
+                //判断方向
+                if(e.wheelDelta>0){
+                    //向上
+                    console.log('向上');
+                }else{
+                    //向下
+                    console.log('向下');
+                }
+            }else{
+                //火狐
+                //判断方向
+                if(e.detail>0){
+                    //向上
+                    console.log('向上');
+                }else{
+                    //向下
+                    console.log('向下');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

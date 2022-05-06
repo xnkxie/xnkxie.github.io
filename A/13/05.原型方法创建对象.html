@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //Array是构造函数，arr是由构造函数产生的实例对象，构造函数可以产生很多个实例对象
+        // var arr = new Array();
+        // // arr.push();
+        // // console.log(arr);
+        // //在实例对象中会有一个__proto__这样的实例属性
+        // // console.log(Array.prototype);//原型对象
+        // // console.log(arr.__proto__);
+        // // //构造函数中的原型对象(prototype)和实例对象中的实例属性(__proto__)是一样的
+        // // console.log(Array.prototype == arr.__proto__);//true
+
+        // //破坏构造函数中在原型对象上定义的方法结构，看是否能够影响实例对象调用这个方法之后的结果
+        // Array.prototype.push = function(){
+        //     console.log('木有了');
+        // }
+        // //如果在构造函数中的原型对象下的方法被修改了，那么会影响到实例对象调用这个方法的结果
+        // arr.push();
+        // console.log(arr);
+
+
+
+        //创建一个构造函数，在其原型对象上创建某些方法或者属性，让其实例对象来调用
+        function Student(){
+
+        }
+        //操作构造函数的原型对象
+        Student.prototype.name = '微微';
+        Student.prototype.age = 12;
+        Student.prototype.sex = "男"
+        Student.prototype.study = function(){
+            //输出名字
+            console.log(this.name);
+        }
+        var s = new Student();
+        s.study();
+    </script>
+</body>
+</html>

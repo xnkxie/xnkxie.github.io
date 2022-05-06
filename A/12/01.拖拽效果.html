@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div>wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</div>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        div.onmousedown = function(ev){
+            //元素的设置全局捕获
+            //专门解决ie8以下浏览器的默认行为问题
+            //标准浏览器：undefined
+            if(div.setCapture){
+                div.setCapture();
+            }
+
+        
+
+
+            //所有不变化的值都放在这个事件中
+            //鼠标点到元素的距离
+            var ev = ev||window.event;
+            var x = ev.offsetX;
+            var y = ev.offsetY;
+
+            //屏幕的可视宽度和高度
+            var screen_width = document.documentElement.clientWidth;
+            var screen_height = document.documentElement.clientHeight;
+
+            var div_width = div.offsetWidth;
+            var div_height = div.offsetHeight;
+
+
+            document.onmousemove = function(ev){
+                //只要是变化中的值都在这个事件中
+                //鼠标点到body的距离
+                var ev = ev || window.event;
+                var x1 = ev.clientX;
+                var y1 = ev.clientY;
+                var move_left = x1-x;
+                var move_top = y1-y;
+                //判断元素的运动边界
+                if(move_left<0){
+                    move_left = 0;
+                }else if(move_left>screen_width-div_width){
+                    move_left = screen_width-div_width;
+                }
+                if(move_top<0){
+                    move_top = 0;
+                }else if(move_top>screen_height-div_height){
+                    move_top = screen_height-div_height;
+                }
+
+
+
+                div.style.left = move_left+'px';
+                div.style.top = move_top+'px';
+            }
+
+            document.onmouseup = function(){
+                //释放元素的设置全局捕获
+                if(div.releaseCapture){
+                    div.releaseCapture();
+                }
+
+                //取消事件移动行为
+                document.onmousemove = null;
+            }
+            //取消浏览器在认为用户选中文字的默认行为
+            return false;
+                
+        }
+    </script>
+</body>
+</html>

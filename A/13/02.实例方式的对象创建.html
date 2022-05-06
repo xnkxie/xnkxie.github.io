@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person1 = new Object();
+        var person2 = new Object();
+        //person1和person2都是实例对象（具体的哪一个实例）
+        // console.log(person1.toString());
+        //constructor:构造函数 给对象中的属性进行初始值的建立
+
+        person1.name = "张三";
+        person1.age = 20;
+        person1.sex = "男";
+        person1.speek = function(){
+            // console.log(person1.name+'事实上');
+            //另一种写法
+            //张三的年龄是23
+            //如果在函数内部的结果在函数外部仍然想要使用的话，必须函数内将内容作为返回值return出去
+            return this.name+'的年龄是'+this.age+'岁';
+        }
+        //打印出来
+        //哪里调用函数，返回值就返回到哪里
+        console.log(person1.speek());//方法名谁调用，this就指向谁
+
+        person2.name = "三";
+        person2.age = 22;
+        person2.sex = "男";
+        person2.speek = function(){
+            // console.log(person1.name+'事实上');
+            //另一种写法
+            //张三的年龄是23
+            //如果在函数内部的结果在函数外部仍然想要使用的话，必须函数内将内容作为返回值return出去
+            return this.name+'的年龄是'+this.age+'岁';
+        }
+        //打印出来
+        //哪里调用函数，返回值就返回到哪里
+        console.log(person2.speek());//方法名谁调用，this就指向谁
+
+        //无法获取，因为this指向的是window对象
+        // console.log(this.speek());
+        function speek(){
+            console.log('speek');
+        }
+        this.speek();
+
+
+        //缺点：仍然在建立多个对象的时候无法进行相同方法的一次建立
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://www.offcn.com" method="get">
+        <input type="text" name="username">
+        <button>提交</button>
+    </form>
+
+    <script>
+        var btn = document.getElementsByTagName('button')[0];
+        var input = document.getElementsByTagName('input')[0];
+        // btn.onclick = function(){
+        //     var value = input.value;
+        //     if(value == ''){
+        //         alert('请输入内容');
+        //         //阻止默认行为
+        //         return false;
+        //     }
+        // }
+
+        //绑定事件
+        btn.addEventListener('click',function(e){
+            var value = input.value;
+            var e = e || window.event;
+            if(value == ''){
+                alert('请输入内容');
+                //阻止默认行为
+                e.preventDefault();
+            }
+        })
+        
+        //IE8及以下不支持addEventListener
+        btn.attachEvent('onclick',function(e){
+            var value = input.value;
+            var e = e || window.event;
+            if(value == ''){
+                alert('请输入内容');
+                //阻止默认行为
+                e.returnValue = false;
+            }
+        })
+    </script>
+
+</body>
+</html>

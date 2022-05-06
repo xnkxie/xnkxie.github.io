@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建一个构造函数，在其原型对象上创建某些方法或者属性，让其实例对象来调用
+        //因为创建的属性表示的是不同的值，需要放在函数中利用参数来带入
+        //混合写法：将多个实例对象中需要共享的方法创建在构造函数的原型对象上
+        //只要信息不同表示在构造函数中来创建参数
+        function Student(name,age,sex){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        //操作构造函数的原型对象
+        // Student.prototype.name = '微微';
+        // Student.prototype.age = 12;
+        // Student.prototype.sex = "男"
+        Student.prototype.study = function(){
+        //输出名字
+        console.log(this.name);
+        }
+        var s = new Student("微微",12,"男");
+        s.study();
+        // console.log(s);
+
+        var s1 = new Student("微",13,"男");
+        s1.study();
+
+        console.log(s1.study() == s.study());//true 当前study方法在构造函数的原型对象中，目的是要多个实例对象的方法进行共享
+
+
+    </script>
+</body>
+</html>

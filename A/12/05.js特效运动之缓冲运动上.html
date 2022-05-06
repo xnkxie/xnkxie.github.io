@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button>开始向前运动</button>
+    <button>开始往回运动</button>
+    <div></div>
+    <script src="/A/12/common/style.js"></script>
+    <script src="/A/12/common/move.js"></script>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        var btn = document.getElementsByTagName('button');
+        btn[0].onclick = function(){
+            //开启定时器
+            //目标值 500
+            //起始值 
+            // var timer = setInterval(function(){
+            //     var start = parseInt(getStyle(div,'left'));//8
+            //     var speed = Math.ceil((500-start)/10);
+
+            //     div.style.left = start + speed + 'px';
+
+            //     if(start>=500){
+            //         clearInterval(timer);
+            //     }
+            // },100);
+            BufferMove(div,"left",500);
+        }
+        btn[1].onclick = function(){
+            //开启定时器
+            //目标值 0
+            //起始值 500
+            // var timer = setInterval(function(){
+            //     var start = parseInt(getStyle(div,'left'));//8
+            //     var speed = Math.floor((8 - start)/10);
+
+            //     div.style.left = start + speed + 'px';
+
+            //     if(start==8){
+            //         clearInterval(timer);
+            //     }
+            // },100);
+            BufferMove(div,"left",8);
+            
+        }
+
+        
+            
+    </script>
+</body>
+</html>

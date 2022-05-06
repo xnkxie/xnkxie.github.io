@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            width: 400px;
+            height: auto;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        ul{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            padding-bottom: 10px;
+        }
+        button{
+            margin-left: 200px;
+            width: 60px;
+            height: 30px;
+        }
+        li{
+            width: 100%;
+            height: 40px;
+            border-bottom: 1px solid rebeccapurple;
+            line-height: 40px;
+        }
+        .update{
+            width: 45px;
+            height: 30px;
+            background: greenyellow;
+            text-align: center;
+            line-height: 30px;
+            color: #ffffff;
+            display: block;
+            float: right;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        .delete{
+            width: 45px;
+            height: 30px;
+            background: red;
+            text-align: center;
+            line-height: 30px;
+            color: #ffffff;
+            display: block;
+            float: right;
+            margin-top: 5px;
+        }
+    </style>
+    <div id="box">
+        <ul>
+            <li>列表1
+                <span class="delete">删除</span>
+                <span class="update">修改</span>
+            </li>
+            <li>列表2
+                <span class="delete">删除</span>
+                <span class="update">修改</span>
+            </li>
+            <li>列表3
+                <span class="delete">删除</span>
+                <span class="update">修改</span>
+            </li>
+            <li>列表4
+                <span class="delete">删除</span>
+                <span class="update">修改</span>
+            </li>
+            <li>列表5
+                <span class="delete">删除</span>
+                <span class="update">修改</span>   
+            </li>
+        </ul>
+        <button>添加</button>
+    </div>
+    <script>
+        var btn = document.getElementsByTagName('button')[0];
+        var ul = document.getElementsByTagName('ul')[0];
+        btn.onclick = function(){
+            //弹出输入框
+            var result = window.prompt("请输入");
+            if(result!=null){
+                //创建节点
+                var str = result+"<span class=\"delete\">删除</span><span class=\"update\">修改</span>";
+                var li = createE('li',str);
+                //添加到ul中
+                ul.appendChild(li);
+            }
+        }
+
+        ul.onclick = function(ev){ 
+            var ev = ev || window.event;
+            var target = ev.target || ev.srcElement;
+            if(target.className == 'delete'){
+                //删除
+                // target.parentNode.remove();
+                //判断框
+                var result = window.confirm("确定删除吗？");
+                if(result){
+                    target.parentNode.remove();
+                }else{
+                    return false;; 
+                }
+            }else if(target.className == 'update'){
+                //修改
+                var result = window.prompt("请输入");//target.parentNode.innerHTML
+                if(result!=null){
+                    //判断输入内容不能为空
+                    if(result!=''){
+                        target.parentNode.innerHTML = result+"<span class=\"delete\">删除</span><span class=\"update\">修改</span>";
+                    }else{
+                        alert("不能为空");
+                    }
+                    // var str = result+"<span class=\"delete\">删除</span><span class=\"update\">修改</span>";
+                    
+                    // target.parentNode.innerHTML = str;
+                }
+            }
+        }
+        
+        function createE(obj,value){
+            var ele = document.createElement(obj);
+            ele.innerHTML = value;
+            return ele;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Student(){
+        //     // this.a = 11;
+        //     // this.b = 22;
+        //     //如果单纯的定义函数，那么this指向window对象，因为在调用的时候window.Student() this指向window
+        // }
+        // // Student.prototype.a = 11;
+        // // Student.prototype.b = 22;
+        // //查找属性和方法：先找构造函数中是否存在属性和方法，如果构造函数中不存在，去构造函数的原型对象中查找，如果原型对象中也不存在，那么就是空对象
+        // var s = new Student();
+        // console.log(s);
+
+
+
+        function Student(name,age,sex){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+
+            //在构造函数中先查找当前构造函数中是否存在study方法，如果不存在才去原型对象中来找
+            // this.study = function(){}
+
+            if(typeof this.study !== "function"){
+                //在原型对象上来声明
+                Student.prototype.study = function(){
+                    return this.name + "在学习";
+                }
+            }
+        }
+        //操作构造函数的原型对象
+        // Student.prototype.name = '微微';
+        // Student.prototype.age = 12;
+        // Student.prototype.sex = "男"
+        
+        var s = new Student("微微",12,"男");
+        s.study();
+        // console.log(s);
+
+        var s1 = new Student("微",13,"男");
+        s1.study();
+    </script>
+</body>
+</html>
